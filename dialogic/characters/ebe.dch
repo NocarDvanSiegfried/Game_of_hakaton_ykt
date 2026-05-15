@@ -14,7 +14,7 @@
 &"description": "Слепая сказительница",
 &"display_name": "Бабушка Эбэ",
 &"mirror": false,
-&"nicknames": [],
+&"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {},
 &"scale": 1.0
