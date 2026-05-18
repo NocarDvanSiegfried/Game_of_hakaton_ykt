@@ -10,12 +10,43 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "",
+&"default_portrait": "neutral",
 &"description": "Мальчик 10 лет, главный герой",
 &"display_name": "Айсен",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {},
+&"portraits": {
+"focused": {
+"export_overrides": {
+"image": "res://assets/art/characters/aisen/aisen_focused.png"
+},
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+},
+"neutral": {
+"export_overrides": {
+"image": "res://assets/art/characters/aisen/aisen_neutral.png"
+},
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+},
+"relieved": {
+"export_overrides": {
+"image": "res://assets/art/characters/aisen/aisen_relieved.png"
+},
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+},
+"scared": {
+"export_overrides": {
+"image": "res://assets/art/characters/aisen/aisen_scared.png"
+},
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+},
+"sorrowful": {
+"export_overrides": {
+"image": "res://assets/art/characters/aisen/aisen_sorrowful.png"
+},
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+}
+},
 &"scale": 1.0
 }

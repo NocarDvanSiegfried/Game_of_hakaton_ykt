@@ -23,6 +23,7 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 directories/dch_directory={
 "aisen": "res://dialogic/characters/aisen.dch",
+"bargyy": "res://dialogic/characters/bargyy.dch",
 "ebe": "res://dialogic/characters/ebe.dch",
 "kunney": "res://dialogic/characters/kunney.dch",
 "narrator": "res://dialogic/characters/narrator.dch",
@@ -32,6 +33,18 @@ directories/dtl_directory={
 "scene1_timeline": "res://dialogic/timelines/scene1_timeline.dtl"
 }
 layout/style_directory={}
+variables={
+"boss_end": "",
+"boss_tactic": "",
+"scene1_choice": ""
+}
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 

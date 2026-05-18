@@ -10,12 +10,25 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "",
+&"default_portrait": "neutral",
 &"description": "Девочка 8 лет, сестра Айсена",
 &"display_name": "Кюннэй",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {},
+&"portraits": {
+"enchanted": {
+"export_overrides": {
+"image": "res://assets/art/characters/kunney/kunney_enchanted.png"
+},
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+},
+"neutral": {
+"export_overrides": {
+"image": "res://assets/art/characters/kunney/kunney_neutral.png"
+},
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+}
+},
 &"scale": 1.0
 }

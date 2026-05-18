@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(0.9098039, 0.6627451, 0.36078432, 1),
+&"color": Color(0.84705883, 0.84705883, 0.84705883, 1),
 &"custom_info": {
 "prefix": "",
 "sound_mood_default": "",
@@ -11,15 +11,15 @@
 "suffix": ""
 },
 &"default_portrait": "default",
-&"description": "Слепая сказительница",
-&"display_name": "Бабушка Эбэ",
+&"description": "Верный пёс-спутник Айсена и Кюннэй. Якутская лайка с белой звездой на груди.",
+&"display_name": "Баргый",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
 &"portraits": {
 "default": {
 "export_overrides": {
-"image": "res://assets/art/characters/ebe/ebe.png"
+"image": "res://assets/art/characters/bargyy/bargyy.png"
 },
 "scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 }

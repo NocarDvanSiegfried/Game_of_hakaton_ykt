@@ -10,12 +10,19 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "",
+&"default_portrait": "default",
 &"description": "Мерзлый Глаз, первый Абааса",
 &"display_name": "Тонгус Харах",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {},
+&"portraits": {
+"default": {
+"export_overrides": {
+"image": "res://assets/art/characters/tongus_harakh/tongus_harakh.png"
+},
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+}
+},
 &"scale": 1.0
 }
