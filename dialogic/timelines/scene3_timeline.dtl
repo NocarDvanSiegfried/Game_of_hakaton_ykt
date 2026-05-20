@@ -13,7 +13,7 @@ narrator: Айсен шёл на звук. Кюннэй держала его з
 
 # ────────────── ЧАСТЬ 1: ЛЕДЯНАЯ РАВНИНА ──────────────
 
-[background arg="res://assets/art/backgrounds/scene3/ice_plain.png" fade="0.8"]
+[background arg="res://assets/art/backgrounds/scene3/ice_pillars.png" fade="0.8"]
 
 join aisen (neutral) pos=x0.35 y0.95 size=x0.18 y0.60 [z_index="2"]
 join kunney (neutral) pos=x0.65 y0.95 size=x0.16 y0.56 [z_index="3"]
@@ -213,6 +213,8 @@ narrator: Эмээхсин встаёт. Из-за спины достаёт т�
 
 emeehsin: Первый. Поющий Нож. Он слышит слабые места. Если держать правильно — сам покажет, куда ударить.
 
+[background arg="res://assets/art/artifacts/kuoregey_knife.png" fade="0.5"]
+
 narrator: Нож протянут Айсену. Рукоять тёплая, хотя снаружи мороз.
 
 update aisen (reach) pos=x0.60 y0.95 size=x0.18 y0.60 [z_index="3"]
@@ -225,7 +227,11 @@ narrator: Айсен берёт нож. Тот замолкает — как б�
 
 update aisen (neutral) pos=x0.60 y0.95 size=x0.18 y0.60 [z_index="3"]
 
+[background arg="res://assets/art/backgrounds/scene3/yurt_interior.png" fade="0.5"]
+
 emeehsin: Второй. Зеркало Сути. Оно показывает не лицо — оно показывает то, что внутри.
+
+[background arg="res://assets/art/artifacts/haryskhal_mirror.png" fade="0.5"]
 
 narrator: Зеркало протянуто Кюннэй. Маленькое, в оправе из кости.
 
@@ -233,7 +239,11 @@ kunney: Я вижу... себя. Но не так, как в обычном зе
 
 emeehsin: Так — значит настоящей. Береги.
 
+[background arg="res://assets/art/backgrounds/scene3/yurt_interior.png" fade="0.5"]
+
 emeehsin: Третий. Дыхание Предков.
+
+[background arg="res://assets/art/artifacts/tyyn_pouch.png" fade="0.5"]
 
 narrator: Небольшой мешочек, завязанный красной нитью. Шаманка держит его на ладони.
 
@@ -244,6 +254,8 @@ narrator: Мешочек передан Айсену. Почти невесом�
 aisen: Мы будем беречь.
 
 emeehsin: Знаю. Иначе не дала бы.
+
+[background arg="res://assets/art/backgrounds/scene3/yurt_interior.png" fade="0.5"]
 
 # ────────────── СЕГМЕНТ ОБУЧЕНИЯ АРТЕФАКТАМИ ──────────────
 
@@ -399,6 +411,8 @@ narrator: Они спускаются. На стенах — барельефы,
 
 # БАРЕЛЬЕФ 1 — МИРОВОЕ ДРЕВО (лор, без флага)
 
+[background arg="res://assets/art/reliefs/relief_world_tree.png" fade="0.5"]
+
 narrator: Первый барельеф: дерево. Огромное. Ветви уходят вверх за край рисунка, корни — вниз. На ветвях — птицы. В корнях — змеи.
 
 - Изучить (Мировое Древо)
@@ -411,6 +425,8 @@ narrator: Первый барельеф: дерево. Огромное. Вет�
 	narrator: Айсен идёт мимо.
 
 # БАРЕЛЬЕФ 2 — ЛУННАЯ ДЕВА → knows_lunar_maiden
+
+[background arg="res://assets/art/reliefs/relief_lunar_maiden.png" fade="0.5"]
 
 narrator: Второй барельеф: женская фигура. Лунный диск вместо лица. В руках — нити, тянущиеся к маленьким фигуркам внизу.
 
@@ -426,19 +442,23 @@ narrator: Второй барельеф: женская фигура. Лунны
 
 # БАРЕЛЬЕФ 3 — СУДЬЯ → knows_judge
 
+[background arg="res://assets/art/reliefs/relief_judge_throne.png" fade="0.5"]
+
 narrator: Третий барельеф: фигура на троне. Перед ней весы. На одной чаше — перо. На другой — тёмное. Тёмное тяжелее.
 
 - Изучить (Судья)
 	set knows_judge = true
 	narrator: Весы не ровные — тёмное перевешивает.
-	emeehsin: Эрлик. Хозяин Нижних Миров. Не злой — справедливый. Это хуже.
+	emeehsin: Хара Сандал. Судья Нижнего Мира. Не злой — справедливый. Это хуже.
 	aisen: Хуже?
 	emeehsin: Зло можно обмануть. Справедливость — нельзя. Если окажетесь перед ним — говорите только правду. Даже неудобную.
 	aisen: Даже если правда нам навредит?
 	emeehsin: Особенно тогда.
-	narrator: Айсен запомнил: Эрлик — справедливый судья.
+	narrator: Айсен запомнил: Хара Сандал — справедливый судья.
 - Пропустить (Судья)
 	narrator: Айсен идёт мимо.
+
+[background arg="res://assets/art/backgrounds/scene3/ice_stairs.png" fade="0.5"]
 
 # КОНЕЦ СПУСКА — ПРОЩАНИЕ С ЭМЭЭХСИН
 

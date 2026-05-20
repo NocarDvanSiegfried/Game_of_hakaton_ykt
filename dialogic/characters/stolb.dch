@@ -19,7 +19,7 @@
 &"portraits": {
 "default": {
 "export_overrides": {
-"image": "res://assets/art/portraits/stolb_default.png"
+"image": "res://assets/art/backgrounds/scene3/ice_pillars.png"
 },
 "scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 }
