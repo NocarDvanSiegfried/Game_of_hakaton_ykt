@@ -1,0 +1,28 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.35294118, 0.41568627, 0.47843137, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "default",
+&"description": "Голоса застывших путников",
+&"display_name": "Голос столба",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"default": {
+"export_overrides": {
+"image": "res://assets/art/portraits/stolb_default.png"
+},
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+}
+},
+&"scale": 1.0
+}
