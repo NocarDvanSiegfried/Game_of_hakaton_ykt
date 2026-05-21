@@ -19,16 +19,25 @@ func _ready() -> void:
 
 func _start_timeline(timeline_name: String) -> void:
 	current_timeline = timeline_name
+	print("Запуск таймлайна: %s" % timeline_name)
 	Dialogic.start(timeline_name)
 
 
 func _on_timeline_ended() -> void:
 	match current_timeline:
 		"scene1_timeline":
+			await get_tree().process_frame
 			_start_timeline("scene2_timeline")
 		"scene2_timeline":
+			await get_tree().process_frame
 			_start_timeline("scene3_timeline")
 		"scene3_timeline":
-			print("Сцена 3 завершена. Здесь будет переход к Сцене 4.")
+			await get_tree().process_frame
+			_start_timeline("scene4_timeline")
+		"scene4_timeline":
+			await get_tree().process_frame
+			_start_timeline("scene5_timeline")
+		"scene5_timeline":
+			print("Сцена 5 завершена. Здесь будет переход к Сцене 6.")
 		_:
 			print("Таймлайн завершён: %s" % current_timeline)
