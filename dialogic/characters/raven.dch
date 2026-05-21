@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(0.47843137, 0.41568627, 0.35294118, 1),
+&"color": Color(0.47843137, 0.41568628, 0.3529412, 1),
 &"custom_info": {
 "prefix": "",
 "sound_mood_default": "",
@@ -21,6 +21,7 @@
 "export_overrides": {
 "image": "res://assets/art/portraits/raven_default.png"
 },
+"offset": Vector2(0, 0),
 "scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 }
 },

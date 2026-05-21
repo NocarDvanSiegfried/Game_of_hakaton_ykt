@@ -21,6 +21,7 @@
 "export_overrides": {
 "image": "res://assets/art/characters/aisen/aisen_attack_fire.png"
 },
+"offset": Vector2(0, 0),
 "scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 },
 "focused": {

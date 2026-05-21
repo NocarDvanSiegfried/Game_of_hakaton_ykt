@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(0.43529412, 0.3529412, 0.3529412, 1),
+&"color": Color(0.10196079, 0.05882353, 0.12156863, 1),
 &"custom_info": {
 "prefix": "",
 "sound_mood_default": "",
@@ -11,8 +11,8 @@
 "suffix": ""
 },
 &"default_portrait": "",
-&"description": "Осколок прошлого, вынутый из души во время ритуала Мясника.",
-&"display_name": "Тень-воспоминание",
+&"description": "Финальный босс-явление. Источник холода, пульсирующий в глубине Нижнего Мира.",
+&"display_name": "Сердце Тьмы",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),

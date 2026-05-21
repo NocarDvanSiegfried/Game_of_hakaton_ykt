@@ -2,7 +2,7 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 &"_translation_id": "",
-&"color": Color(0.94117647, 0.92156863, 0.84705883, 1),
+&"color": Color(0.9411765, 0.92156863, 0.84705883, 1),
 &"custom_info": {
 "prefix": "",
 "sound_mood_default": "",
@@ -21,6 +21,7 @@
 "export_overrides": {
 "image": "res://assets/art/portraits/emeehsin_drumming.png"
 },
+"offset": Vector2(0, 0),
 "scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 },
 "neutral": {

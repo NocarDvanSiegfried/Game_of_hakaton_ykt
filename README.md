@@ -42,7 +42,7 @@ res://
 | Сцена 7 | Мясник | `develop` | Dialogic-основа готова, подключена после Scene 6 |
 | Сцена 8 | Водоворот Разума | `develop` | Dialogic-основа готова, подключена после Scene 7 |
 | Сцена 9 | Зовущий Дух | `develop` | Dialogic-основа готова, подключена после Scene 8 |
-| Сцена 10 | — | — | Не начата |
+| Сцена 10 | Сердце Тьмы | `develop` | Финальный Dialogic-каркас готов, подключён после Scene 9 |
 
 ---
 
@@ -74,6 +74,10 @@ res://
 | `uguyar_tyyn.dch` | Угуйар Тыын | #6A3A3A | Зовущий Дух, Предок-Предатель, Сцена 9 |
 | `ancestral_shadow.dch` | Тень предка | #5A4A4A | Родовая память о предательстве и вине, Сцена 9 |
 | `father_voice.dch` | Голос отца | #9A7A5A | Голос отца через Угуйар Тыына, Сцена 9 |
+| `first_abaasy.dch` | Первые Абаасы | #2E2E38 | Три древние сущности у Сердца Тьмы, Сцена 10 |
+| `heart_of_darkness.dch` | Сердце Тьмы | #1A0F1F | Финальный босс-явление, источник холода |
+| `freed_spirit.dch` | Освобождённый дух | #B8D4E8 | Голос исцелённых духов в финале |
+| `dyuluskhan.dch` | Дьулусхан | #7A4A3A | Проводник к финалу после принятия/прощения |
 
 ---
 
@@ -126,6 +130,12 @@ res://
 | `forgiveness_strength` | Number | Сцена 9 — сила прощения |
 | `father_truth` | Number | Сцена 9 — правда об отце |
 | `uguyar_outcome` | String | Сцена 9 — итог Зовущего Духа |
+| `scene10_final_choice` | String | Сцена 10 — главный финальный выбор |
+| `heart_resonance` | Number | Сцена 10 — понимание ритма Сердца Тьмы |
+| `sacrifice_score` | Number | Сцена 10 — готовность платить цену героя |
+| `spirits_support` | Number | Сцена 10 — поддержка освобождённых духов |
+| `door_state` | String | Сцена 10 — состояние двери между мирами |
+| `final_outcome` | String | Сцена 10 — итог игры |
 
 ---
 
@@ -145,7 +155,8 @@ scene1_timeline
 → scene7_timeline
 → scene8_timeline
 → scene9_timeline
-→ Output: «Сцена 9 завершена. Здесь будет переход к Сцене 10.»
+→ scene10_timeline
+→ Output: «Игра завершена. Финальный каркас пройден.»
 ```
 
 Первая реплика:
@@ -163,6 +174,7 @@ scene1_timeline
 - `docs/testing/run_scene4_5.md`
 - `docs/testing/run_scene6_7.md`
 - `docs/testing/run_scene8_9.md`
+- `docs/testing/run_scene10.md`
 
 Чеклисты недостающего арта:
 
@@ -170,6 +182,7 @@ scene1_timeline
 - `docs/asset_checklists/scene4_5_assets.md`
 - `docs/asset_checklists/scene6_7_assets.md`
 - `docs/asset_checklists/scene8_9_assets.md`
+- `docs/asset_checklists/scene10_assets.md`
 
 Для Scene 4 и Scene 5 фоны пока не подключены командами `[background ...]`, если соответствующих файлов нет. В таймлайнах оставлены TODO-комментарии с ожидаемыми путями.
 
