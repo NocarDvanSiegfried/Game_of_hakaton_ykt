@@ -25,18 +25,29 @@ directories/dch_directory={
 "aisen": "res://dialogic/characters/aisen.dch",
 "bargyy": "res://dialogic/characters/bargyy.dch",
 "ebe": "res://dialogic/characters/ebe.dch",
+"emeehsin": "res://dialogic/characters/emeehsin.dch",
 "kunney": "res://dialogic/characters/kunney.dch",
 "narrator": "res://dialogic/characters/narrator.dch",
+"raven": "res://dialogic/characters/raven.dch",
+"stolb": "res://dialogic/characters/stolb.dch",
 "tongus": "res://dialogic/characters/tongus.dch"
 }
 directories/dtl_directory={
-"scene1_timeline": "res://dialogic/timelines/scene1_timeline.dtl"
+"ending_bad_early": "res://dialogic/timelines/ending_bad_early.dtl",
+"scene1_timeline": "res://dialogic/timelines/scene1_timeline.dtl",
+"scene3_timeline": "res://dialogic/timelines/scene3_timeline.dtl"
 }
 layout/style_directory={}
 variables={
+"accepted_initiation": false,
 "boss_end": "",
 "boss_tactic": "",
-"scene1_choice": ""
+"knows_judge": false,
+"knows_lunar_maiden": false,
+"met_emeehsin_full": false,
+"scene1_choice": "",
+"scene3_path": "",
+"shaman_trust": 0
 }
 
 [display]
