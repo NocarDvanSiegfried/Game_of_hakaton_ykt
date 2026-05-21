@@ -5,13 +5,13 @@ Start the project with F5 in Godot.
 The expected chain is:
 
 ```text
-scene1_timeline -> scene2_timeline -> scene3_timeline -> scene4_timeline -> scene5_timeline -> scene6_timeline -> scene7_timeline
+scene1_timeline -> scene2_timeline -> scene3_timeline -> scene4_timeline -> scene5_timeline -> scene6_timeline -> scene7_timeline -> scene8_timeline -> scene9_timeline
 ```
 
-Play through Scenes 1, 2, 3, 4, and 5. After Scene 5 ends, Scene 6 should start automatically. After Scene 6 ends, Scene 7 should start automatically. After Scene 7 ends, the Output panel should print:
+Play through Scenes 1, 2, 3, 4, and 5. After Scene 5 ends, Scene 6 should start automatically. After Scene 6 ends, Scene 7 should start automatically. Scene 7 should now continue into Scene 8, then Scene 9. After Scene 9 ends, the Output panel should print:
 
 ```text
-Сцена 7 завершена. Здесь будет переход к Сцене 8.
+Сцена 9 завершена. Здесь будет переход к Сцене 10.
 ```
 
 ## Variables To Watch

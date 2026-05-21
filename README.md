@@ -40,7 +40,9 @@ res://
 | Сцена 5 | Железный Зуб | `develop` | Dialogic-основа готова, подключена после Scene 4 |
 | Сцена 6 | Чёрный Трон | `develop` | Dialogic-основа готова, подключена после Scene 5 |
 | Сцена 7 | Мясник | `develop` | Dialogic-основа готова, подключена после Scene 6 |
-| Сцена 8 | — | — | Не начата |
+| Сцена 8 | Водоворот Разума | `develop` | Dialogic-основа готова, подключена после Scene 7 |
+| Сцена 9 | Зовущий Дух | `develop` | Dialogic-основа готова, подключена после Scene 8 |
+| Сцена 10 | — | — | Не начата |
 
 ---
 
@@ -67,6 +69,11 @@ res://
 | `accused_shadow.dch` | Тень обвинённого | #777777 | Тень души в коридорах Чёрного Трона, Сцена 6 |
 | `syuyulukke.dch` | Сююлюккэ | #8A3F3F | Мясник, символический инициатор Сцены 7 |
 | `butcher_memory.dch` | Тень-воспоминание | #6F5A5A | Осколок прошлого в ритуале Мясника, Сцена 7 |
+| `oibon_kuturuk.dch` | Ойбон Кутурук | #6B4FA3 | Водоворот Разума, хаос и созданный смысл, Сцена 8 |
+| `failed_life.dch` | Несостоявшаяся жизнь | #8A7AA0 | Возможная жизнь героя, Сцена 8 |
+| `uguyar_tyyn.dch` | Угуйар Тыын | #6A3A3A | Зовущий Дух, Предок-Предатель, Сцена 9 |
+| `ancestral_shadow.dch` | Тень предка | #5A4A4A | Родовая память о предательстве и вине, Сцена 9 |
+| `father_voice.dch` | Голос отца | #9A7A5A | Голос отца через Угуйар Тыына, Сцена 9 |
 
 ---
 
@@ -109,6 +116,16 @@ res://
 | `self_acceptance` | Number | Сцена 7 — принятие себя |
 | `memory_weight` | Number | Сцена 7 — тяжесть воспоминаний |
 | `butcher_outcome` | String | Сцена 7 — итог инициации |
+| `scene8_meaning_choice` | String | Сцена 8 — созданный смысл |
+| `chaos_acceptance` | Number | Сцена 8 — принятие хаоса |
+| `mirror_truth` | Number | Сцена 8 — правда зеркал |
+| `false_life_released` | Number | Сцена 8 — отпущенные несостоявшиеся жизни |
+| `oibon_outcome` | String | Сцена 8 — итог Водоворота Разума |
+| `scene9_ancestor_choice` | String | Сцена 9 — выбор по Предку-Предателю |
+| `ancestral_guilt` | Number | Сцена 9 — сила родовой вины |
+| `forgiveness_strength` | Number | Сцена 9 — сила прощения |
+| `father_truth` | Number | Сцена 9 — правда об отце |
+| `uguyar_outcome` | String | Сцена 9 — итог Зовущего Духа |
 
 ---
 
@@ -126,7 +143,9 @@ scene1_timeline
 → scene5_timeline
 → scene6_timeline
 → scene7_timeline
-→ Output: «Сцена 7 завершена. Здесь будет переход к Сцене 8.»
+→ scene8_timeline
+→ scene9_timeline
+→ Output: «Сцена 9 завершена. Здесь будет переход к Сцене 10.»
 ```
 
 Первая реплика:
@@ -143,12 +162,14 @@ scene1_timeline
 - `docs/testing/run_scene2.md`
 - `docs/testing/run_scene4_5.md`
 - `docs/testing/run_scene6_7.md`
+- `docs/testing/run_scene8_9.md`
 
 Чеклисты недостающего арта:
 
 - `docs/asset_checklists/scene2_assets.md`
 - `docs/asset_checklists/scene4_5_assets.md`
 - `docs/asset_checklists/scene6_7_assets.md`
+- `docs/asset_checklists/scene8_9_assets.md`
 
 Для Scene 4 и Scene 5 фоны пока не подключены командами `[background ...]`, если соответствующих файлов нет. В таймлайнах оставлены TODO-комментарии с ожидаемыми путями.
 

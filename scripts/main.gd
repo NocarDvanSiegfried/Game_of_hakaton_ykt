@@ -44,6 +44,12 @@ func _on_timeline_ended() -> void:
 			await get_tree().process_frame
 			_start_timeline("scene7_timeline")
 		"scene7_timeline":
-			print("Сцена 7 завершена. Здесь будет переход к Сцене 8.")
+			await get_tree().process_frame
+			_start_timeline("scene8_timeline")
+		"scene8_timeline":
+			await get_tree().process_frame
+			_start_timeline("scene9_timeline")
+		"scene9_timeline":
+			print("Сцена 9 завершена. Здесь будет переход к Сцене 10.")
 		_:
 			print("Таймлайн завершён: %s" % current_timeline)

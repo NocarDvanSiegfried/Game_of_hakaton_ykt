@@ -1,0 +1,158 @@
+# БАРГЫЙ: ПУТЬ СКВОЗЬ ЛЁД — СЦЕНА 8: ВОДОВОРОТ РАЗУМА
+# Dialogic 2 timeline. Каркас VN-сцены: хаос, зеркала, несостоявшиеся жизни, созданный смысл.
+
+# ---------- ЧАСТЬ 0: ЗАГРУЗОЧНЫЙ ТЕКСТ ----------
+
+narrator: Хаос не враг.
+
+narrator: Смысл не находят, как вещь в лесу. Смысл создают, как песню.
+
+narrator: Герои идут туда, где всё распадается, чтобы выбрать, что собрать заново.
+
+narrator: Глава VIII: Водоворот Разума.
+
+# ---------- ЧАСТЬ 1: ПОРТАЛ ХАОСА ----------
+# TODO background: res://assets/art/backgrounds/scene8/bg_scene8_chaos_portal.png
+
+join aisen (focused) pos=x0.35 y0.95 size=x0.18 y0.60 [z_index="2"]
+join kunney (neutral) pos=x0.62 y0.95 size=x0.16 y0.56 [z_index="3"]
+join bargyy (default) pos=x0.18 y0.97 size=x0.13 y0.34 [z_index="1"]
+
+narrator: Перед ними круглый провал во льду. Внутри не вода, а звёзды, обрывки лиц, воспоминаний и слов.
+
+emeehsin: Это не бой силой. Это испытание смысла. Не ищите дорогу. Выберите, почему она должна появиться.
+
+- Смотреть в хаос прямо
+	set chaos_acceptance += 1
+	aisen: Я смотрю. Пусть всё движется.
+	narrator: Хаос не становится понятнее, но перестаёт быть только угрозой.
+- Держаться за голос Кюннэй
+	set mirror_truth += 1
+	aisen: Говори со мной, Кюннэй. Твой голос настоящий.
+	kunney: Я здесь. Я тоже боюсь, но я здесь.
+- Попросить Баргыя вывести по запаху
+	set false_life_released += 1
+	aisen: Баргый, если здесь есть мой настоящий след — найди его.
+	narrator: Баргый нюхает воздух и отворачивается от самых красивых отражений.
+
+# ---------- ЧАСТЬ 2: ЛАБИРИНТ ЗЕРКАЛ ----------
+# TODO background: res://assets/art/backgrounds/scene8/bg_scene8_mirror_labyrinth.png
+
+narrator: Коридоры меняются. Зеркала показывают не лица, а версии героев, которые могли быть.
+
+failed_life: Ты мог быть спокойнее.
+
+failed_life: Ты мог не идти.
+
+failed_life: Ты мог выбрать себя без боли.
+
+- Разбить ложное зеркало
+	set scene8_meaning_choice = "reject"
+	aisen: Нет. Ты не моя дорога.
+	narrator: Зеркало трескается, но каждый осколок продолжает смотреть.
+- Выслушать отражение
+	set mirror_truth += 1
+	aisen: Говори. Я дослушаю.
+	narrator: Отражение рассказывает не ложь, а неполную правду.
+- Спросить: “Что ты хочешь от меня?”
+	set chaos_acceptance += 1
+	set mirror_truth += 1
+	aisen: Что ты хочешь от меня?
+	failed_life: Чтобы ты перестал доказывать, что я не существую.
+
+# ---------- ЧАСТЬ 3: ЗАЛ НЕСОСТОЯВШИХСЯ ЖИЗНЕЙ ----------
+# TODO background: res://assets/art/backgrounds/scene8/bg_scene8_failed_lives_hall.png
+
+narrator: Перед Айсеном появляются жизни, которые он мог прожить: без страха, без ответственности, без любви, но и без боли.
+
+- Выбрать жизнь без страха
+	set scene8_meaning_choice = "fearless_false"
+	aisen: Если бы я не боялся, всё было бы проще.
+	narrator: Жизнь без страха улыбается пусто. В ней нет дрожи, но нет и осторожности.
+- Выбрать жизнь без ответственности
+	set scene8_meaning_choice = "escape_false"
+	aisen: Если бы я никому не был нужен...
+	narrator: Эта жизнь легче. Слишком легче. Она не держит ничего, даже радость.
+- Отпустить все ложные жизни
+	set false_life_released += 2
+	set chaos_acceptance += 1
+	aisen: Вы могли быть. Но не стали. Я отпускаю вас.
+	narrator: Несостоявшиеся жизни не исчезают. Они становятся тише.
+
+# ---------- ЧАСТЬ 4: КРАЙ ВОДОВОРОТА ----------
+# TODO background: res://assets/art/backgrounds/scene8/bg_scene8_whirlpool_edge.png
+
+join oibon_kuturuk pos=x0.72 y0.94 size=x0.28 y0.72 [z_index="2"]
+
+oibon_kuturuk: Если смысла нет заранее, почему ты ещё идёшь?
+
+- Ради Кюннэй
+	set oibon_outcome = "love_reason"
+	aisen: Ради Кюннэй. Потому что любовь — это уже причина.
+	kunney: Айсен...
+- Ради Баргыя и тех, кто верит
+	set oibon_outcome = "bond_reason"
+	aisen: Ради Баргыя. Ради тех, кто верит, даже когда я не уверен.
+	narrator: Баргый тихо встаёт ближе.
+- Потому что я сам выбираю идти
+	set oibon_outcome = "created_meaning"
+	set chaos_acceptance += 1
+	aisen: Потому что я сам выбираю идти. Этого достаточно, чтобы сделать следующий шаг.
+	oibon_kuturuk: Тогда ты начал создавать смысл.
+
+# ---------- ЧАСТЬ 5: ПРЫЖОК ВЕРЫ ----------
+# TODO background: res://assets/art/backgrounds/scene8/bg_scene8_whirlpool_center.png
+
+narrator: Водоворот раскрывается. Чтобы пройти, нужно прыгнуть туда, где нет дороги.
+
+- Прыгнуть первым
+	if {chaos_acceptance} >= 2:
+		set oibon_outcome = "accepted_chaos"
+		aisen: Я первый.
+		narrator: Хаос принимает шаг и становится движением, а не падением.
+	else:
+		set oibon_outcome = "panic"
+		aisen: Я должен!
+		narrator: Прыжок срывается в страх. Дорога появляется, но царапает память.
+- Попросить Кюннэй спеть
+	if {mirror_truth} >= 2:
+		set oibon_outcome = "harmonized"
+		kunney: Я спою, пока всё распадается.
+		narrator: Песня собирает зеркала в один тихий круг.
+	else:
+		set oibon_outcome = "lost_song"
+		kunney: Я попробую...
+		narrator: Песня теряется среди отражений, но не исчезает совсем.
+- Закрыть глаза и довериться хаосу
+	if {false_life_released} >= 2:
+		set oibon_outcome = "free_fall"
+		aisen: Я не буду цепляться за то, чего не прожил.
+		narrator: Падение становится свободным, а свобода — направлением.
+	else:
+		set oibon_outcome = "clinging"
+		aisen: Я доверюсь.
+		narrator: Но пальцы всё ещё ищут край прежней жизни.
+
+# ---------- ЧАСТЬ 6: ИТОГ ----------
+
+if {oibon_outcome} == "accepted_chaos":
+	narrator: Герои проходят, поняв, что смысл создаётся выбором.
+	oibon_kuturuk: Хаос дал форму тому, что вы выбрали.
+else:
+	if {oibon_outcome} == "harmonized":
+		narrator: Песня Кюннэй находит ритм внутри хаоса. Водоворот становится тихим.
+	else:
+		if {oibon_outcome} == "free_fall":
+			narrator: Несостоявшиеся жизни отпущены. В падении больше нет просьбы вернуться назад.
+		else:
+			if {oibon_outcome} == "created_meaning":
+				narrator: Айсен проходит не потому, что получил ответ, а потому, что выбрал его создать.
+			else:
+				set aisen_fear += 1
+				narrator: Они проходят, но часть страха остаётся в зеркалах.
+
+narrator: Из центра водоворота открывается путь к Последней Границе.
+
+narrator: КОНЕЦ СЦЕНЫ 8. Переход к Сцене 9.
+
+[end_timeline]

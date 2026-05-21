@@ -1,0 +1,172 @@
+# БАРГЫЙ: ПУТЬ СКВОЗЬ ЛЁД — СЦЕНА 9: ЗОВУЩИЙ ДУХ
+# Dialogic 2 timeline. Каркас VN-сцены: родовая вина, Предок-Предатель, отец, прощение или осуждение.
+
+# ---------- ЧАСТЬ 0: ЗАГРУЗОЧНЫЙ ТЕКСТ ----------
+
+narrator: Кровь помнит всё.
+
+narrator: Это не вина детей, кем они родились. Но они выбирают, кем быть.
+
+narrator: В глубине Нижнего Мира зовёт дух их рода — тот, кто предал, а теперь просит прощения.
+
+narrator: Глава IX: Зовущий Дух.
+
+# ---------- ЧАСТЬ 1: ПРОВАЛ ПОСЛЕДНЕЙ ГРАНИЦЫ ----------
+# TODO background: res://assets/art/backgrounds/scene9/bg_scene9_last_boundary_rift.png
+
+join aisen (focused) pos=x0.35 y0.95 size=x0.18 y0.60 [z_index="2"]
+join kunney (neutral) pos=x0.62 y0.95 size=x0.16 y0.56 [z_index="3"]
+join bargyy (default) pos=x0.18 y0.97 size=x0.13 y0.34 [z_index="1"]
+
+narrator: Герои подходят к разлому во льду. На каменных столбах — лица предков.
+
+narrator: Одно лицо стёрто сильнее остальных и светится красновато.
+
+uguyar_tyyn: Айсен. Кюннэй.
+
+kunney: Он знает наши имена.
+
+- Ответить голосу
+	set ancestral_guilt += 1
+	aisen: Кто ты?
+	narrator: Разлом отвечает эхом, будто вопрос уже был задан много поколений назад.
+- Спросить Эмээхсин, кто это
+	set father_truth += 1
+	aisen: Эмээхсин, кто нас зовёт?
+	emeehsin: Тот, кого в вашем роду боялись назвать даже ошибкой.
+- Молчать и слушать
+	set forgiveness_strength += 1
+	narrator: Айсен молчит. Иногда первый ответ — не спорить с зовом.
+
+# ---------- ЧАСТЬ 2: КОСТЯНОЙ МОСТ ----------
+# TODO background: res://assets/art/backgrounds/scene9/bg_scene9_bone_bridge.png
+
+join ancestral_shadow pos=x0.76 y0.92 size=x0.16 y0.50 [z_index="1"]
+
+narrator: Мост собран из старых костяных пластин. На каждой — царапина, знак, имя или отсутствие имени.
+
+ancestral_shadow: Он предал нас.
+
+ancestral_shadow: Он боялся.
+
+ancestral_shadow: Он выбрал себя.
+
+- Верить обвиняющим голосам
+	set ancestral_guilt += 1
+	aisen: Если все говорят одно, значит, так и было.
+	narrator: Мост становится тяжелее под ногами.
+- Искать второй голос
+	set father_truth += 1
+	aisen: В каждом суде есть то, что не успели сказать.
+	narrator: Среди шёпота появляется другая нота — тише, но не слабее.
+- Попросить Баргыя идти впереди
+	set forgiveness_strength += 1
+	aisen: Баргый, веди.
+	narrator: Пёс идёт первым, выбирая не самый громкий путь, а самый живой.
+
+leave ancestral_shadow
+
+# ---------- ЧАСТЬ 3: ТЕМНИЦА ПРЕДАТЕЛЯ ----------
+# TODO background: res://assets/art/backgrounds/scene9/bg_scene9_traitor_prison.png
+
+join uguyar_tyyn pos=x0.72 y0.94 size=x0.26 y0.70 [z_index="2"]
+
+narrator: Угуйар Тыын не выглядит великим злодеем. Он выглядит усталым духом, который слишком долго звал.
+
+uguyar_tyyn: Я говорил с вашим отцом.
+
+aisen: Не произноси его просто так.
+
+- Обвинить его в смерти отца
+	set scene9_ancestor_choice = "accuse"
+	set ancestral_guilt += 1
+	aisen: Это из-за тебя он погиб.
+	uguyar_tyyn: Возможно. Но не вся правда помещается в обвинение.
+- Спросить, что отец ответил
+	set father_truth += 2
+	aisen: Что он ответил тебе?
+	uguyar_tyyn: Что дети не должны платить за страхи предков.
+- Спросить, почему он предал род
+	set forgiveness_strength += 1
+	set father_truth += 1
+	aisen: Почему ты предал род?
+	uguyar_tyyn: Потому что боялся потерять тех, кого любил. И потерял их именно этим.
+
+# ---------- ЧАСТЬ 4: ГОЛОС ОТЦА ----------
+# TODO background: res://assets/art/backgrounds/scene9/bg_scene9_ancestral_hall.png
+
+narrator: Через Угуйар Тыына звучит голос отца. Не как призрак, а как память, которую наконец перестали глушить.
+
+father_voice: Айсен.
+
+father_voice: Не живи ради моей смерти. Живи дальше.
+
+kunney: Это... правда он?
+
+- Не верить голосу
+	set ancestral_guilt += 1
+	aisen: Нет. Это ещё одна ловушка.
+	narrator: Голос не спорит. Настоящая память не заставляет верить силой.
+- Слушать до конца
+	set father_truth += 1
+	aisen: Я слушаю.
+	father_voice: Береги Кюннэй. Но не становись цепью для неё. И не становись цепью для себя.
+- Позвать Кюннэй, чтобы она тоже услышала
+	set forgiveness_strength += 1
+	set father_truth += 1
+	aisen: Кюннэй, подойди. Это должно быть не только моим.
+	kunney: Папа...
+
+# ---------- ЧАСТЬ 5: ФИНАЛЬНАЯ ДИЛЕММА — ПРОСТИТЬ ИЛИ ОСУДИТЬ ----------
+
+uguyar_tyyn: Я не прошу оправдать меня. Я прошу решить, что делать с тем, что я оставил вам.
+
+- Осудить и оставить в темнице
+	set scene9_ancestor_choice = "condemn"
+	set uguyar_outcome = "sealed"
+	aisen: Ты останешься здесь. Не как месть. Как граница.
+	narrator: Темница принимает приговор без звука.
+- Простить, но не оправдать
+	if {forgiveness_strength} >= 2:
+		set scene9_ancestor_choice = "forgive"
+		set uguyar_outcome = "forgiven"
+		aisen: Я прощаю. Но не оправдываю.
+		narrator: Родовая вина теряет голос, которым командовала.
+	else:
+		set scene9_ancestor_choice = "forgive"
+		set uguyar_outcome = "uncertain_mercy"
+		aisen: Я хочу простить.
+		narrator: Милосердие есть, но оно ещё не стало силой.
+- Освободить и принять его помощь
+	if {father_truth} >= 3:
+		set scene9_ancestor_choice = "release"
+		set uguyar_outcome = "guide_unlocked"
+		aisen: Если отец знал правду и всё равно просил жить дальше — веди нас.
+		narrator: Угуйар Тыын склоняет голову. Не как победитель. Как должник.
+	else:
+		set scene9_ancestor_choice = "release"
+		set uguyar_outcome = "dangerous_release"
+		aisen: Веди.
+		narrator: Цепи падают слишком быстро. Не всякая свобода сразу становится правдой.
+
+# ---------- ЧАСТЬ 6: ИТОГ ----------
+# TODO background: res://assets/art/backgrounds/scene9/bg_scene9_black_ice_door.png
+
+if {uguyar_outcome} == "forgiven":
+	narrator: Угуйар Тыын становится проводником к финалу. Не чистым, но названным.
+	uguyar_tyyn: Я покажу дверь. Дальше выбор будет ваш.
+else:
+	if {uguyar_outcome} == "guide_unlocked":
+		narrator: Правда об отце открывает путь без лишней тени.
+		father_voice: Идите. Я с вами не как боль. Как память.
+	else:
+		set ancestral_guilt += 1
+		narrator: Герои всё равно идут дальше, но финальный путь будет тяжелее.
+
+narrator: Темница раскрывается.
+
+narrator: Вдалеке появляется дверь из чёрного льда. За ней бьётся Сердце Тьмы.
+
+narrator: КОНЕЦ СЦЕНЫ 9. Переход к Сцене 10.
+
+[end_timeline]
