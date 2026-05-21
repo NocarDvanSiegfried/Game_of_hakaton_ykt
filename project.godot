@@ -46,7 +46,10 @@ directories/dtl_directory={
 "scene4_timeline": "res://dialogic/timelines/scene4_timeline.dtl",
 "scene5_timeline": "res://dialogic/timelines/scene5_timeline.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://dialogic/styles/bargyy_vn_style.tres",
+"Bargyy VN Style": "res://dialogic/styles/bargyy_vn_style.tres"
+}
 variables={
 "accepted_initiation": false,
 "aisen_fear": 0,
@@ -74,6 +77,8 @@ variables={
 "water_truth": 0,
 "ytyyr_outcome": ""
 }
+layout/default_style="res://dialogic/styles/bargyy_vn_style.tres"
+layout/style_list=PackedStringArray("res://dialogic/styles/bargyy_vn_style.tres")
 
 [display]
 
