@@ -22,11 +22,14 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
+"accused_shadow": "res://dialogic/characters/accused_shadow.dch",
 "aisen": "res://dialogic/characters/aisen.dch",
 "bargyy": "res://dialogic/characters/bargyy.dch",
+"butcher_memory": "res://dialogic/characters/butcher_memory.dch",
 "ebe": "res://dialogic/characters/ebe.dch",
 "emeehsin": "res://dialogic/characters/emeehsin.dch",
 "iron_echo": "res://dialogic/characters/iron_echo.dch",
+"khara_sandal": "res://dialogic/characters/khara_sandal.dch",
 "kunney": "res://dialogic/characters/kunney.dch",
 "kyulyuk_suyuryuk": "res://dialogic/characters/kyulyuk_suyuryuk.dch",
 "memory_shadow": "res://dialogic/characters/memory_shadow.dch",
@@ -34,6 +37,7 @@ directories/dch_directory={
 "raven": "res://dialogic/characters/raven.dch",
 "shadow": "res://dialogic/characters/shadow.dch",
 "stolb": "res://dialogic/characters/stolb.dch",
+"syuyulukke": "res://dialogic/characters/syuyulukke.dch",
 "timir_tiis": "res://dialogic/characters/timir_tiis.dch",
 "tongus": "res://dialogic/characters/tongus.dch",
 "ytyyr_uu": "res://dialogic/characters/ytyyr_uu.dch"
@@ -44,7 +48,9 @@ directories/dtl_directory={
 "scene2_timeline": "res://dialogic/timelines/scene2_timeline.dtl",
 "scene3_timeline": "res://dialogic/timelines/scene3_timeline.dtl",
 "scene4_timeline": "res://dialogic/timelines/scene4_timeline.dtl",
-"scene5_timeline": "res://dialogic/timelines/scene5_timeline.dtl"
+"scene5_timeline": "res://dialogic/timelines/scene5_timeline.dtl",
+"scene6_timeline": "res://dialogic/timelines/scene6_timeline.dtl",
+"scene7_timeline": "res://dialogic/timelines/scene7_timeline.dtl"
 }
 layout/style_directory={
 "": "res://dialogic/styles/bargyy_vn_style.tres",
@@ -56,24 +62,34 @@ variables={
 "bargyy_bond": 0,
 "boss_end": "",
 "boss_tactic": "",
+"butcher_outcome": "",
 "empathy_score": 0,
 "forge_rhythm": 0,
 "forgiveness_choice": "",
+"guilt_score": 0,
 "idea_strength": 0,
+"khara_outcome": "",
 "knife_resonance": 0,
 "knows_judge": false,
 "knows_lunar_maiden": false,
 "kunney_courage": 0,
+"memory_weight": 0,
+"mercy_score": 0,
 "met_emeehsin_full": false,
+"pain_released": 0,
 "scene1_choice": "",
 "scene2_path": "",
 "scene3_path": "",
 "scene4_memory": "",
 "scene5_forge_path": "",
+"scene6_verdict": "",
+"scene7_cut_choice": "",
+"self_acceptance": 0,
 "shadow_noise": 0,
 "shadow_runner_outcome": "",
 "shaman_trust": 0,
 "timir_outcome": "",
+"truth_seen": 0,
 "water_truth": 0,
 "ytyyr_outcome": ""
 }
