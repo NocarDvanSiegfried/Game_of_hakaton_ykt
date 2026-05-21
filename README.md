@@ -38,7 +38,9 @@ res://
 | Сцена 3 | Белая Шаманка | `develop` | Таймлайн готов, подключён после Scene 2 |
 | Сцена 4 | Плачущая Вода | `develop` | Dialogic-основа готова, подключена после Scene 3 |
 | Сцена 5 | Железный Зуб | `develop` | Dialogic-основа готова, подключена после Scene 4 |
-| Сцена 6 | — | — | Не начата |
+| Сцена 6 | Чёрный Трон | `develop` | Dialogic-основа готова, подключена после Scene 5 |
+| Сцена 7 | Мясник | `develop` | Dialogic-основа готова, подключена после Scene 6 |
+| Сцена 8 | — | — | Не начата |
 
 ---
 
@@ -61,6 +63,10 @@ res://
 | `memory_shadow.dch` | Тень-воспоминание | #7A8A9A | Тень прошлого в Пещере Слёз, Сцена 4 |
 | `timir_tiis.dch` | Тимир Тиис | #B45A3C | Железный Зуб, босс-перековка Сцены 5 |
 | `iron_echo.dch` | Железный отголосок | #8C6A5A | Миньон кузни, Сцена 5 |
+| `khara_sandal.dch` | Хара Сандал | #3A3A46 | Чёрный Трон, Судья Нижнего Мира, Сцена 6 |
+| `accused_shadow.dch` | Тень обвинённого | #777777 | Тень души в коридорах Чёрного Трона, Сцена 6 |
+| `syuyulukke.dch` | Сююлюккэ | #8A3F3F | Мясник, символический инициатор Сцены 7 |
+| `butcher_memory.dch` | Тень-воспоминание | #6F5A5A | Осколок прошлого в ритуале Мясника, Сцена 7 |
 
 ---
 
@@ -93,6 +99,16 @@ res://
 | `idea_strength` | Number | Сцена 5 — сила идеи/надежды |
 | `knife_resonance` | Number | Сцена 5 — резонанс Поющего Ножа |
 | `timir_outcome` | String | Сцена 5 — итог boss-перековки |
+| `scene6_verdict` | String | Сцена 6 — выбранный путь суда |
+| `guilt_score` | Number | Сцена 6 — принятая/усиленная вина |
+| `mercy_score` | Number | Сцена 6 — способность к милосердию |
+| `truth_seen` | Number | Сцена 6 — увиденная полная правда |
+| `khara_outcome` | String | Сцена 6 — итог суда Хара Сандала |
+| `scene7_cut_choice` | String | Сцена 7 — что герой готов отпустить |
+| `pain_released` | Number | Сцена 7 — отпущенная боль |
+| `self_acceptance` | Number | Сцена 7 — принятие себя |
+| `memory_weight` | Number | Сцена 7 — тяжесть воспоминаний |
+| `butcher_outcome` | String | Сцена 7 — итог инициации |
 
 ---
 
@@ -108,7 +124,9 @@ scene1_timeline
 → scene3_timeline
 → scene4_timeline
 → scene5_timeline
-→ Output: «Сцена 5 завершена. Здесь будет переход к Сцене 6.»
+→ scene6_timeline
+→ scene7_timeline
+→ Output: «Сцена 7 завершена. Здесь будет переход к Сцене 8.»
 ```
 
 Первая реплика:
@@ -124,11 +142,13 @@ scene1_timeline
 
 - `docs/testing/run_scene2.md`
 - `docs/testing/run_scene4_5.md`
+- `docs/testing/run_scene6_7.md`
 
 Чеклисты недостающего арта:
 
 - `docs/asset_checklists/scene2_assets.md`
 - `docs/asset_checklists/scene4_5_assets.md`
+- `docs/asset_checklists/scene6_7_assets.md`
 
 Для Scene 4 и Scene 5 фоны пока не подключены командами `[background ...]`, если соответствующих файлов нет. В таймлайнах оставлены TODO-комментарии с ожидаемыми путями.
 
