@@ -27,26 +27,35 @@ directories/dch_directory={
 "ebe": "res://dialogic/characters/ebe.dch",
 "emeehsin": "res://dialogic/characters/emeehsin.dch",
 "kunney": "res://dialogic/characters/kunney.dch",
+"kyulyuk_suyuryuk": "res://dialogic/characters/kyulyuk_suyuryuk.dch",
 "narrator": "res://dialogic/characters/narrator.dch",
 "raven": "res://dialogic/characters/raven.dch",
+"shadow": "res://dialogic/characters/shadow.dch",
 "stolb": "res://dialogic/characters/stolb.dch",
 "tongus": "res://dialogic/characters/tongus.dch"
 }
 directories/dtl_directory={
 "ending_bad_early": "res://dialogic/timelines/ending_bad_early.dtl",
 "scene1_timeline": "res://dialogic/timelines/scene1_timeline.dtl",
+"scene2_timeline": "res://dialogic/timelines/scene2_timeline.dtl",
 "scene3_timeline": "res://dialogic/timelines/scene3_timeline.dtl"
 }
 layout/style_directory={}
 variables={
 "accepted_initiation": false,
+"aisen_fear": 0,
+"bargyy_bond": 0,
 "boss_end": "",
 "boss_tactic": "",
 "knows_judge": false,
 "knows_lunar_maiden": false,
+"kunney_courage": 0,
 "met_emeehsin_full": false,
 "scene1_choice": "",
+"scene2_path": "",
 "scene3_path": "",
+"shadow_noise": 0,
+"shadow_runner_outcome": "",
 "shaman_trust": 0
 }
 
