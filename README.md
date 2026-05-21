@@ -11,13 +11,16 @@ res://
 ├── addons/dialogic/           ← плагин Dialogic 2
 ├── assets/
 │   └── art/
-│       ├── backgrounds/       ← фоны по сценам (scene_01/, scene3/)
-│       └── characters/        ← портреты персонажей (aisen/, kunney/, …)
+│       ├── backgrounds/       ← фоны по сценам (scene_01/, scene2/, scene3/, scene4/, scene5/)
+│       ├── characters/        ← портреты персонажей (aisen/, kunney/, …)
+│       └── cg/                ← CG-иллюстрации по сценам
 ├── dialogic/
 │   ├── characters/            ← .dch файлы персонажей
 │   └── timelines/             ← .dtl файлы таймлайнов
 ├── docs/
-│   └── scenarios/             ← рабочие тексты сценариев
+│   ├── asset_checklists/      ← списки недостающих артов
+│   ├── scenarios/             ← рабочие тексты сценариев
+│   └── testing/               ← инструкции ручного тестирования
 ├── scenes/
 │   └── main.tscn              ← главная сцена (запускает Scene 1)
 └── scripts/
@@ -31,9 +34,11 @@ res://
 | Сцена | Название | Ветка | Статус |
 |-------|----------|-------|--------|
 | Сцена 1 | Пурга | `develop` | Готова, запускается |
-| Сцена 2 | Теневой Бегун | _(другой разработчик)_ | В работе |
-| Сцена 3 | Белая Шаманка | `feature/scene3-shaman` | Таймлайн готов, ожидает арт и ревью |
-| Сцена 4+ | — | — | Не начата |
+| Сцена 2 | Теневой Бегун | `develop` | Dialogic-основа готова, подключена после Scene 1 |
+| Сцена 3 | Белая Шаманка | `develop` | Таймлайн готов, подключён после Scene 2 |
+| Сцена 4 | Плачущая Вода | `develop` | Dialogic-основа готова, подключена после Scene 3 |
+| Сцена 5 | Железный Зуб | `develop` | Dialogic-основа готова, подключена после Scene 4 |
+| Сцена 6 | — | — | Не начата |
 
 ---
 
@@ -50,6 +55,12 @@ res://
 | `emeehsin.dch` | Эмээхсин Удаганка | #F0EBD8 | Белая Шаманка, Сцена 3 |
 | `raven.dch` | Ворон | #7A6A5A | Ворон-страж у юрты, Сцена 3 |
 | `stolb.dch` | Голос столба | #5A6A7A | Голоса застывших путников, Сцена 3 |
+| `kyulyuk_suyuryuk.dch` | Кюлюк Сююрюк | #3A2F55 | Теневой Бегун, Сцена 2 |
+| `shadow.dch` | Тень | #555566 | Тень-миньон, голос лабиринта, Сцена 2 |
+| `ytyyr_uu.dch` | Ытыыр Уу | #6DB7D6 | Плачущая Вода, босс-исцеление Сцены 4 |
+| `memory_shadow.dch` | Тень-воспоминание | #7A8A9A | Тень прошлого в Пещере Слёз, Сцена 4 |
+| `timir_tiis.dch` | Тимир Тиис | #B45A3C | Железный Зуб, босс-перековка Сцены 5 |
+| `iron_echo.dch` | Железный отголосок | #8C6A5A | Миньон кузни, Сцена 5 |
 
 ---
 
@@ -60,18 +71,45 @@ res://
 | `scene1_choice` | String | Сцена 1 — первый выбор (light/bark/kunney) |
 | `boss_tactic` | String | Сцена 1 — тактика против Тонгуса |
 | `boss_end` | String | Сцена 1 — добить или пощадить |
+| `scene2_path` | String | Сцена 2 — выбранный путь в лабиринте |
+| `bargyy_bond` | Number | Сцена 2 — связь с Баргыем |
+| `shadow_noise` | Number | Сцена 2 — шум и риск обнаружения |
+| `kunney_courage` | Number | Сцена 2 — смелость Кюннэй |
+| `aisen_fear` | Number | Сцена 2/4 — страх Айсена |
+| `shadow_runner_outcome` | String | Сцена 2 — итог встречи с Теневым Бегуном |
 | `scene3_path` | String | Сцена 3 — путь через трещину (jump/detour) |
 | `met_emeehsin_full` | Bool | Сцена 3 — полная встреча с шаманкой |
 | `shaman_trust` | Number | Сцена 3 — доверие Эмээхсин (0–3) |
 | `knows_lunar_maiden` | Bool | Сцена 3→4 — изучен барельеф Лунной Девы |
 | `knows_judge` | Bool | Сцена 3→6 — изучен барельеф Хара Сандала |
 | `accepted_initiation` | Bool | Сцена 3 — согласие на инициации (главный флаг) |
+| `scene4_memory` | String | Сцена 4 — выбранное ключевое воспоминание |
+| `empathy_score` | Number | Сцена 4 — понимание боли Ытыыр Уу |
+| `water_truth` | Number | Сцена 4 — правда о Лунной Деве |
+| `forgiveness_choice` | String | Сцена 4 — месть, прощение или свидетельство |
+| `ytyyr_outcome` | String | Сцена 4 — итог boss-исцеления |
+| `scene5_forge_path` | String | Сцена 5 — путь через кузню |
+| `forge_rhythm` | Number | Сцена 5 — попадание в ритм молота |
+| `idea_strength` | Number | Сцена 5 — сила идеи/надежды |
+| `knife_resonance` | Number | Сцена 5 — резонанс Поющего Ножа |
+| `timir_outcome` | String | Сцена 5 — итог boss-перековки |
 
 ---
 
-## Запуск Сцены 1
+## Запуск игры
 
 Нажми **F5** — запустится `scenes/main.tscn`, которая стартует `scene1_timeline`.
+
+Текущая цепочка в `scripts/main.gd`:
+
+```text
+scene1_timeline
+→ scene2_timeline
+→ scene3_timeline
+→ scene4_timeline
+→ scene5_timeline
+→ Output: «Сцена 5 завершена. Здесь будет переход к Сцене 6.»
+```
 
 Первая реплика:
 > «Слушай, путник. Слушай так, как слушали мои предки тысячу зим назад...»
@@ -80,30 +118,19 @@ res://
 
 ---
 
-## Запуск Сцены 3 (для тестирования)
+## Тестирование сцен
 
-Сцена 3 живёт на ветке `feature/scene3-shaman`. Для теста:
+Подробные инструкции:
 
-```gdscript
-# В main.gd измени строку запуска на:
-Dialogic.start("scene3_timeline")
-```
+- `docs/testing/run_scene2.md`
+- `docs/testing/run_scene4_5.md`
 
-Арт-ассеты (фоны и портреты) пока отсутствуют — Dialogic покажет пустой фон, диалог при этом работает.
+Чеклисты недостающего арта:
 
-Фоны, которые нужно добавить в `assets/art/backgrounds/scene3/`:
-- `ice_plain.png`
-- `ice_pillars.png`
-- `blizzard.png`
-- `yurt_exterior.png`
-- `yurt_interior.png`
-- `ice_stairs.png`
-- `middle_world_entrance.png`
+- `docs/asset_checklists/scene2_assets.md`
+- `docs/asset_checklists/scene4_5_assets.md`
 
-Портреты в `assets/art/portraits/`:
-- `emeehsin_neutral.png`, `emeehsin_drumming.png`, `emeehsin_sorrowful.png`
-- `raven_default.png`
-- `stolb_default.png`
+Для Scene 4 и Scene 5 фоны пока не подключены командами `[background ...]`, если соответствующих файлов нет. В таймлайнах оставлены TODO-комментарии с ожидаемыми путями.
 
 ---
 
@@ -115,7 +142,7 @@ Dialogic.start("scene3_timeline")
 
 **Новые `.dch`/`.dtl` не видны** — правый клик на `res://` в файловой системе Godot → **«Обновить файловую систему»**. `.uid` файлы создадутся автоматически.
 
-**Переменные Сцены 3 не видны в Dialogic → Variables** — открой `project.godot` и проверь секцию `variables={}` в блоке `[dialogic]`.
+**Переменные новых сцен не видны в Dialogic → Variables** — открой `project.godot` и проверь секцию `variables={}` в блоке `[dialogic]`.
 
 ---
 
@@ -124,5 +151,6 @@ Dialogic.start("scene3_timeline")
 | Ветка | Содержимое |
 |-------|-----------|
 | `main` | Стабильный релиз |
-| `develop` | Текущая разработка (Сцена 1 работает) |
-| `feature/scene3-shaman` | Сцена 3, ожидает ревью и арт |
+| `develop` | Текущая разработка: Scene 1→5 через Dialogic |
+| `feature/scene2-shadow-runner` | Историческая ветка разработки Scene 2 |
+| `feature/scene3-shaman` | Историческая ветка разработки Scene 3 |
