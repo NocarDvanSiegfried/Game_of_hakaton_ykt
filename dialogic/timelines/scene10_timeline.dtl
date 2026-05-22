@@ -14,9 +14,10 @@ narrator: Глава X: Сердце Тьмы.
 # ---------- ЧАСТЬ 1: ПОРОГ ГЛУБИННОГО МИРА ----------
 # TODO background: res://assets/art/backgrounds/scene10/bg_scene10_deep_world_threshold.png
 
-join aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
-join kunney (neutral) pos=x0.62 y0.72 size=x0.16 y0.56 [z_index="3"]
-join bargyy (default) pos=x0.18 y0.78 size=x0.13 y0.34 [z_index="1"]
+join aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
+join kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
+join bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: dyuluskhan TODO: x0.75 y0.70 z_index=3. dyuluskhan.dch has no portraits yet.
 
 narrator: Перед героями дверь из чёрного льда. На ней барельеф трёх фигур: высокий тонкий силуэт, широкий тяжёлый силуэт и бесформенная тень.
 
@@ -40,7 +41,11 @@ dyuluskhan: Там древняя природа холода. Она не не�
 # ---------- ЧАСТЬ 2: ЧЕРТОГИ ПЕРВЫХ ----------
 # TODO background: res://assets/art/backgrounds/scene10/bg_scene10_first_halls.png
 
-join first_abaasy pos=x0.72 y0.60 size=x0.30 y0.74 [z_index="2"]
+update aisen (focused) pos=x0.25 y0.72 size=x0.18 y0.60 [z_index="2"]
+update kunney (neutral) pos=x0.42 y0.72 size=x0.16 y0.56 [z_index="3"]
+update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: first_abaasy TODO: x0.70 y0.60 z_index=5 / center x0.50 y0.60 z_index=5. first_abaasy.dch has no portraits yet.
+# TODO: dyuluskhan.dch has no portraits yet. Witness position: x0.90 y0.70 z_index=2.
 
 narrator: Появляются Первые Абаасы. Они не кричат и не угрожают. Их тишина старше страха.
 
@@ -66,6 +71,12 @@ first_abaasy: Мы не звали.
 # ---------- ЧАСТЬ 3: ТРОННЫЙ ЗАЛ ТРОИХ ----------
 # TODO background: res://assets/art/backgrounds/scene10/bg_scene10_throne_of_three.png
 
+update aisen (focused) pos=x0.20 y0.72 size=x0.18 y0.60 [z_index="2"]
+update kunney (neutral) pos=x0.80 y0.72 size=x0.16 y0.56 [z_index="3"]
+update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: first_abaasy.dch has no portraits yet. Throne center: x0.50 y0.60 z_index=5.
+# TODO: freed_spirit TODO: x0.12/x0.88 y0.70 z_index=1. freed_spirit.dch has no portraits yet.
+
 narrator: Три Первых Абаасы окружают героев. Каждый показывает одну истину: холод без злобы, голод без насыщения, вечность без памяти.
 
 - Ответить силой
@@ -84,8 +95,11 @@ narrator: Три Первых Абаасы окружают героев. Каж
 # ---------- ЧАСТЬ 4: СЕРДЦЕ ТЬМЫ ----------
 # TODO background: res://assets/art/backgrounds/scene10/bg_scene10_heart_of_darkness.png
 
-leave first_abaasy
-join heart_of_darkness pos=x0.72 y0.58 size=x0.32 y0.76 [z_index="2"]
+update aisen (focused) pos=x0.25 y0.72 size=x0.18 y0.60 [z_index="2"]
+update kunney (neutral) pos=x0.75 y0.72 size=x0.16 y0.56 [z_index="3"]
+update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: heart_of_darkness TODO: x0.50 y0.58 z_index=6. heart_of_darkness.dch has no portraits yet.
+# TODO: freed_spirit.dch has no portraits yet. If helping, show at x0.15 or x0.85 y0.70 z_index=2.
 
 narrator: Сердце Тьмы не похоже на существо. Это огромный пульсирующий источник холода.
 
@@ -118,26 +132,39 @@ heart_of_darkness: Миры должны дышать. Холод должен �
 
 # ---------- ЧАСТЬ 5: ЦЕНА ГЕРОЯ ----------
 
+update aisen (focused) pos=x0.45 y0.72 size=x0.18 y0.60 [z_index="3"]
+update kunney (neutral) pos=x0.62 y0.72 size=x0.16 y0.56 [z_index="2"]
+update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+
 narrator: Чтобы закрыть дверь, нужно оставить часть тепла, памяти или пути. Победа не бесплатна.
 
 - Айсен отдаёт часть своего страха, чтобы больше не передавать его другим
 	set sacrifice_score += 1
 	set scene10_final_choice = "aisen_price"
+	update aisen (focused) pos=x0.50 y0.72 size=x0.18 y0.60 [z_index="3"]
 	aisen: Пусть мой страх останется здесь. Не как враг. Как цена.
 	narrator: Его дыхание становится ровнее, но путь назад кажется дальше.
 - Кюннэй отдаёт часть одиночества, чтобы никто не был потерян в темноте
 	set sacrifice_score += 1
 	set scene10_final_choice = "kunney_price"
+	update aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
+	update kunney (neutral) pos=x0.50 y0.72 size=x0.16 y0.56 [z_index="3"]
 	kunney: Я оставлю одиночество здесь. Пусть оно станет ниткой для потерянных.
 	narrator: Тьма вокруг двери становится мягче.
 - Баргый отдаёт дыхание предков, чтобы найти дорогу домой
 	set sacrifice_score += 1
 	set scene10_final_choice = "bargyy_price"
+	update bargyy (default) pos=x0.35 y0.78 size=x0.13 y0.34 [z_index="3"]
 	narrator: Баргый подходит к двери и выдыхает. В этом дыхании — снег, дым очага и следы всех дорог.
 	aisen: Баргый...
 
 # ---------- ЧАСТЬ 6: ФИНАЛЬНЫЙ ВЫБОР — ДВЕРЬ ----------
 # TODO background: res://assets/art/backgrounds/scene10/bg_scene10_black_ice_door_final.png
+
+update aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
+update kunney (neutral) pos=x0.58 y0.72 size=x0.16 y0.56 [z_index="3"]
+update bargyy (default) pos=x0.25 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: heart_of_darkness.dch has no portraits yet. Keep heart/door as background/TODO here so it does not cover the heroes.
 
 narrator: Дверь ждёт решения.
 
@@ -156,6 +183,11 @@ narrator: Дверь ждёт решения.
 
 # ---------- ЧАСТЬ 7: ЭПИЛОГ ----------
 # TODO background: res://assets/art/backgrounds/scene10/bg_scene10_return_home_epilogue.png
+
+update aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
+update kunney (neutral) pos=x0.58 y0.72 size=x0.16 y0.56 [z_index="3"]
+update bargyy (default) pos=x0.35 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: freed_spirit.dch has no portraits yet. If shown softly at the edge, leave freed_spirit before the final narration.
 
 if {door_state} == "closed":
 	narrator: Мир людей становится тише. Пурги больше не зовут детей огнями.
