@@ -14,9 +14,10 @@ narrator: Глава IX: Зовущий Дух.
 # ---------- ЧАСТЬ 1: ПРОВАЛ ПОСЛЕДНЕЙ ГРАНИЦЫ ----------
 # TODO background: res://assets/art/backgrounds/scene9/bg_scene9_last_boundary_rift.png
 
-join aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
+join aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
 join kunney (neutral) pos=x0.62 y0.72 size=x0.16 y0.56 [z_index="3"]
-join bargyy (default) pos=x0.18 y0.78 size=x0.13 y0.34 [z_index="1"]
+join bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: ancestral_shadow TODO: x0.88 y0.70 z_index=2 / edge x0.15 or x0.85 y0.70 z_index=2. ancestral_shadow.dch has no portraits yet.
 
 narrator: Герои подходят к разлому во льду. На каменных столбах — лица предков.
 
@@ -41,7 +42,10 @@ kunney: Он знает наши имена.
 # ---------- ЧАСТЬ 2: КОСТЯНОЙ МОСТ ----------
 # TODO background: res://assets/art/backgrounds/scene9/bg_scene9_bone_bridge.png
 
-join ancestral_shadow pos=x0.76 y0.70 size=x0.16 y0.50 [z_index="1"]
+update aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
+update kunney (neutral) pos=x0.58 y0.72 size=x0.16 y0.56 [z_index="3"]
+update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: ancestral_shadow.dch has no portraits yet. Bone bridge edges: x0.15 or x0.85 y0.70 z_index=2.
 
 narrator: Мост собран из старых костяных пластин. На каждой — царапина, знак, имя или отсутствие имени.
 
@@ -64,12 +68,13 @@ ancestral_shadow: Он выбрал себя.
 	aisen: Баргый, веди.
 	narrator: Пёс идёт первым, выбирая не самый громкий путь, а самый живой.
 
-leave ancestral_shadow
-
 # ---------- ЧАСТЬ 3: ТЕМНИЦА ПРЕДАТЕЛЯ ----------
 # TODO background: res://assets/art/backgrounds/scene9/bg_scene9_traitor_prison.png
 
-join uguyar_tyyn pos=x0.72 y0.66 size=x0.26 y0.70 [z_index="2"]
+update aisen (focused) pos=x0.30 y0.72 size=x0.18 y0.60 [z_index="2"]
+update kunney (neutral) pos=x0.48 y0.72 size=x0.16 y0.56 [z_index="3"]
+update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: uguyar_tyyn TODO: x0.75 y0.66 z_index=4 / forgiven x0.65 y0.70 z_index=3. uguyar_tyyn.dch has no portraits yet.
 
 narrator: Угуйар Тыын не выглядит великим злодеем. Он выглядит усталым духом, который слишком долго звал.
 
@@ -95,6 +100,12 @@ aisen: Не произноси его просто так.
 # ---------- ЧАСТЬ 4: ГОЛОС ОТЦА ----------
 # TODO background: res://assets/art/backgrounds/scene9/bg_scene9_ancestral_hall.png
 
+update aisen (focused) pos=x0.50 y0.72 size=x0.18 y0.60 [z_index="3"]
+update kunney (neutral) pos=x0.65 y0.72 size=x0.16 y0.56 [z_index="2"]
+update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: father_voice TODO: x0.50 or x0.75 y0.64 z_index=3. father_voice.dch has no portraits yet.
+# TODO: uguyar_tyyn.dch has no portraits yet. If he remains visible here, move him to x0.85 y0.66 z_index=4.
+
 narrator: Через Угуйар Тыына звучит голос отца. Не как призрак, а как память, которую наконец перестали глушить.
 
 father_voice: Айсен.
@@ -114,10 +125,16 @@ kunney: Это... правда он?
 - Позвать Кюннэй, чтобы она тоже услышала
 	set forgiveness_strength += 1
 	set father_truth += 1
+	update kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="2"]
 	aisen: Кюннэй, подойди. Это должно быть не только моим.
 	kunney: Папа...
 
 # ---------- ЧАСТЬ 5: ФИНАЛЬНАЯ ДИЛЕММА — ПРОСТИТЬ ИЛИ ОСУДИТЬ ----------
+
+update aisen (focused) pos=x0.50 y0.72 size=x0.18 y0.60 [z_index="3"]
+update kunney (neutral) pos=x0.35 y0.72 size=x0.16 y0.56 [z_index="2"]
+update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: uguyar_tyyn.dch has no portraits yet. Dilemma phase: x0.75 y0.66 z_index=4, forgiven approach x0.65 y0.70 z_index=3.
 
 uguyar_tyyn: Я не прошу оправдать меня. Я прошу решить, что делать с тем, что я оставил вам.
 
@@ -130,6 +147,7 @@ uguyar_tyyn: Я не прошу оправдать меня. Я прошу ре�
 	if {forgiveness_strength} >= 2:
 		set scene9_ancestor_choice = "forgive"
 		set uguyar_outcome = "forgiven"
+		# TODO: uguyar_tyyn.dch has no portraits yet. If forgiven, move him closer to x0.65 y0.70 z_index=3.
 		aisen: Я прощаю. Но не оправдываю.
 		narrator: Родовая вина теряет голос, которым командовала.
 	else:
@@ -141,6 +159,7 @@ uguyar_tyyn: Я не прошу оправдать меня. Я прошу ре�
 	if {father_truth} >= 3:
 		set scene9_ancestor_choice = "release"
 		set uguyar_outcome = "guide_unlocked"
+		# TODO: uguyar_tyyn.dch has no portraits yet. If he becomes a guide, move him closer to x0.65 y0.70 z_index=3.
 		aisen: Если отец знал правду и всё равно просил жить дальше — веди нас.
 		narrator: Угуйар Тыын склоняет голову. Не как победитель. Как должник.
 	else:
@@ -153,15 +172,22 @@ uguyar_tyyn: Я не прошу оправдать меня. Я прошу ре�
 # TODO background: res://assets/art/backgrounds/scene9/bg_scene9_black_ice_door.png
 
 if {uguyar_outcome} == "forgiven":
+	# TODO: uguyar_tyyn.dch has no portraits yet. Forgiven guide: x0.65 y0.70 z_index=3.
 	narrator: Угуйар Тыын становится проводником к финалу. Не чистым, но названным.
 	uguyar_tyyn: Я покажу дверь. Дальше выбор будет ваш.
 else:
 	if {uguyar_outcome} == "guide_unlocked":
+		# TODO: father_voice.dch has no portraits yet. If shown, leave father_voice after this line.
 		narrator: Правда об отце открывает путь без лишней тени.
 		father_voice: Идите. Я с вами не как боль. Как память.
 	else:
+		# TODO: uguyar_tyyn.dch has no portraits yet. Sealed/uncertain/dangerous: x0.75 y0.66 z_index=4, then leave.
 		set ancestral_guilt += 1
 		narrator: Герои всё равно идут дальше, но финальный путь будет тяжелее.
+
+update aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
+update kunney (neutral) pos=x0.58 y0.72 size=x0.16 y0.56 [z_index="3"]
+update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
 
 narrator: Темница раскрывается.
 
