@@ -20,7 +20,11 @@ join bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
 
 narrator: Перед ними круглый провал во льду. Внутри не вода, а звёзды, обрывки лиц, воспоминаний и слов.
 
+join emeehsin (neutral) pos=x0.25 y0.70 size=x0.18 y0.60 [z_index="2"]
+
 emeehsin: Это не бой силой. Это испытание смысла. Не ищите дорогу. Выберите, почему она должна появиться.
+
+leave emeehsin
 
 - Смотреть в хаос прямо
 	set chaos_acceptance += 1

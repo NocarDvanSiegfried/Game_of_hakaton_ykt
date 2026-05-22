@@ -22,6 +22,8 @@ join bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
 
 narrator: После суда герои становятся тяжелее, но честнее. Каждый шаг звучит так, будто под ногами лежит не лёд, а память.
 
+join emeehsin (neutral) pos=x0.25 y0.70 size=x0.18 y0.60 [z_index="2"]
+
 emeehsin: Следующая инициация не про врага.
 
 emeehsin: Она про то, что внутри. Про то, что ты называешь собой, хотя это давно стало цепью.
@@ -38,6 +40,8 @@ emeehsin: Она про то, что внутри. Про то, что ты на
 	set pain_released += 0
 	aisen: Мне нужно немного времени.
 	kunney: Я подожду рядом.
+
+leave emeehsin
 
 # ---------- ЧАСТЬ 2: ТУННЕЛЬ РАССЕЧЕНИЯ ----------
 # TODO background: res://assets/art/backgrounds/scene7/bg_scene7_cutting_tunnel.png
