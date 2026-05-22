@@ -14,9 +14,9 @@ narrator: Глава V: Железный Зуб.
 # ---------- ЧАСТЬ 1: БАГРОВЫЙ ТУННЕЛЬ ----------
 # TODO background: res://assets/art/backgrounds/scene5/bg_scene5_crimson_tunnel.png
 
-join aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
+join aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
 join kunney (neutral) pos=x0.62 y0.72 size=x0.16 y0.56 [z_index="3"]
-join bargyy (default) pos=x0.18 y0.78 size=x0.13 y0.34 [z_index="1"]
+join bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
 
 narrator: Из Лунного Грота герои входят в горячий туннель. Лёд здесь покрыт чёрной окалиной.
 
@@ -30,7 +30,7 @@ aisen: Здесь даже тишина работает как кузня.
 	narrator: Туннель будто принимает их движение и перестаёт давить жаром.
 - Закрыть уши и бежать
 	set scene5_forge_path = "rush"
-	update aisen (run) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
+	update aisen (run) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
 	aisen: Быстрее! Пока звук не залез в голову!
 	narrator: Они бегут, но молот всё равно попадает в кости.
 - Прислушаться к Поющему Ножу
@@ -41,7 +41,10 @@ aisen: Здесь даже тишина работает как кузня.
 # ---------- ЧАСТЬ 2: КУЗНЕЧНЫЙ ЗАЛ ----------
 # TODO background: res://assets/art/backgrounds/scene5/bg_scene5_forge_hall.png
 
-join iron_echo pos=x0.74 y0.70 size=x0.18 y0.52 [z_index="2"]
+update aisen (focused) pos=x0.32 y0.72 size=x0.18 y0.60 [z_index="2"]
+update kunney (neutral) pos=x0.58 y0.72 size=x0.16 y0.56 [z_index="3"]
+update bargyy (default) pos=x0.18 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: iron_echo.dch has no portraits yet. Add one Iron Echo portrait, then show it at pos=x0.80 y0.70 size=x0.18 y0.52 [z_index="2"].
 
 narrator: Кузнечный зал раскрывается огромной пастью. Вдоль стен движутся Железные отголоски.
 
@@ -65,12 +68,13 @@ iron_echo: Я не ошибался.
 	kunney: Что ты хотел сделать, пока не стал только гордиться?
 	iron_echo: Дом. Мост. Знак. Не помню.
 
-leave iron_echo
-
 # ---------- ЧАСТЬ 3: ПАСТЬ — ВСТРЕЧА С ТИМИР ТИИСОМ ----------
 # TODO background: res://assets/art/backgrounds/scene5/bg_scene5_maw_arena.png
 
-join timir_tiis pos=x0.72 y0.66 size=x0.28 y0.72 [z_index="2"]
+update aisen (focused) pos=x0.25 y0.72 size=x0.18 y0.60 [z_index="2"]
+update kunney (neutral) pos=x0.45 y0.72 size=x0.16 y0.56 [z_index="3"]
+update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: timir_tiis.dch has no portraits yet. Add one Timir Tiis portrait, then reveal him at pos=x0.78 y0.66 size=x0.28 y0.72 [z_index="4"].
 
 timir_tiis: Металл, память, имя, надежда — всё можно перемолоть зубами.
 
@@ -93,15 +97,22 @@ timir_tiis: Доказательство. Что я крепче.
 
 # ---------- ЧАСТЬ 4: БОСС-ПЕРЕКОВКА ----------
 
+update aisen (focused) pos=x0.22 y0.72 size=x0.18 y0.60 [z_index="2"]
+update kunney (neutral) pos=x0.78 y0.72 size=x0.16 y0.56 [z_index="3"]
+update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: timir_tiis.dch has no portraits yet. During boss reforging, move him to pos=x0.58 y0.64 size=x0.28 y0.72 [z_index="4"].
+
 narrator: Бой начинается не с удара, а с ритма. Наковальня ждёт смысла, который можно вложить в металл.
 
 - Бить в ритм молота
 	if {forge_rhythm} >= 2:
 		set timir_outcome = "rhythm"
+		update aisen (focused) pos=x0.38 y0.72 size=x0.18 y0.60 [z_index="2"]
 		aisen: Удар. Пауза. Два удара. Я слышу.
 		narrator: Ритм больше не принадлежит только Тимир Тиису.
 	else:
 		set timir_outcome = "broken_rhythm"
+		update aisen (focused) pos=x0.38 y0.72 size=x0.18 y0.60 [z_index="2"]
 		aisen: Сейчас!
 		narrator: Удар приходит рано. Металл трескается неровно.
 - Вложить идею в заготовку
@@ -116,15 +127,22 @@ narrator: Бой начинается не с удара, а с ритма. На
 - Направить резонанс Поющего Ножа
 	if {knife_resonance} >= 2:
 		set timir_outcome = "resonance"
+		update aisen (focused) pos=x0.38 y0.72 size=x0.18 y0.60 [z_index="2"]
 		aisen: Пой громче. Покажи, где металл врёт.
 		narrator: Резонанс проходит по кузне как свет по трещине.
 	else:
 		set timir_outcome = "dissonance"
+		update aisen (focused) pos=x0.38 y0.72 size=x0.18 y0.60 [z_index="2"]
 		aisen: Нож, помоги!
 		narrator: Звук срывается. Кузня отвечает глухим скрежетом.
 
 # ---------- ЧАСТЬ 5: НАКОВАЛЬНЯ ----------
 # TODO background: res://assets/art/backgrounds/scene5/bg_scene5_anvil_phase.png
+
+update aisen (focused) pos=x0.40 y0.72 size=x0.18 y0.60 [z_index="2"]
+update kunney (neutral) pos=x0.58 y0.72 size=x0.16 y0.56 [z_index="3"]
+update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO: timir_tiis.dch has no portraits yet. If softened, place him at pos=x0.70 y0.66 size=x0.28 y0.72 [z_index="4"].
 
 narrator: Герои понимают: Тимир Тиис не голоден металлом. Он голоден признанием.
 
@@ -163,6 +181,11 @@ else:
 			narrator: Победа есть, но тяжёлая. Кузня запоминает их шаги и ещё долго отвечает скрежетом.
 
 narrator: Кузня остывает.
+
+# TODO: leave timir_tiis here after timir_tiis.dch gets a real portrait and join above.
+update aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
+update kunney (neutral) pos=x0.58 y0.72 size=x0.16 y0.56 [z_index="3"]
+update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
 
 narrator: Вдалеке появляется коридор серого света.
 
