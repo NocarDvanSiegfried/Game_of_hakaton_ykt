@@ -381,7 +381,7 @@ emeehsin: Вы понимаете, что обратной дороги може
 	aisen: Я не могу. Это слишком. Мы... мы вернёмся домой.
 	emeehsin: Это твой выбор. Я не держу.
 	narrator: Айсен берёт Кюннэй за руку. Они уходят. Ворон молчит.
-	jump ending_bad_early
+	[end_timeline]
 - [Спросить: «А что будет с тобой?»]
 	aisen: А что будет с вами? После того, как мы уйдём.
 	emeehsin: Со мной?
@@ -401,7 +401,7 @@ emeehsin: Вы понимаете, что обратной дороги може
 		aisen: Нет. Всё равно не могу.
 		emeehsin: Я понимаю.
 		narrator: Айсен и Кюннэй уходят.
-		jump ending_bad_early
+		[end_timeline]
 
 # ────────────── ЧАСТЬ 3: ЛЕДЯНАЯ ЛЕСТНИЦА ──────────────
 
@@ -534,4 +534,4 @@ narrator: КОНЕЦ СЦЕНЫ 3.
 if {accepted_initiation} == true:
 	[end_timeline]
 else:
-	jump ending_bad_early
+	[end_timeline]

@@ -1,7 +1,7 @@
 # БАРГЫЙ: ПУТЬ СКВОЗЬ ЛЁД — ПЛОХАЯ КОНЦОВКА: РАННИЙ ОТКАЗ
-# Вызывается через jump из scene3_timeline при отказе от инициаций
+# Запускается из main.gd после отказа от инициаций в scene3_timeline
 
-[background arg="res://assets/art/backgrounds/scene3/ice_pillars.png" fade="1.0"]
+[background arg="res://assets/art/backgrounds/scene3/ice_pillars.png"]
 
 narrator: Айсен и Кюннэй вернулись домой. Прошёл год.
 
