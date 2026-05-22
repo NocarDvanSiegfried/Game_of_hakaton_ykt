@@ -14,9 +14,9 @@ narrator: Глава X: Сердце Тьмы.
 # ---------- ЧАСТЬ 1: ПОРОГ ГЛУБИННОГО МИРА ----------
 # TODO background: res://assets/art/backgrounds/scene10/bg_scene10_deep_world_threshold.png
 
-join aisen (focused) pos=x0.35 y0.95 size=x0.18 y0.60 [z_index="2"]
-join kunney (neutral) pos=x0.62 y0.95 size=x0.16 y0.56 [z_index="3"]
-join bargyy (default) pos=x0.18 y0.97 size=x0.13 y0.34 [z_index="1"]
+join aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
+join kunney (neutral) pos=x0.62 y0.72 size=x0.16 y0.56 [z_index="3"]
+join bargyy (default) pos=x0.18 y0.78 size=x0.13 y0.34 [z_index="1"]
 
 narrator: Перед героями дверь из чёрного льда. На ней барельеф трёх фигур: высокий тонкий силуэт, широкий тяжёлый силуэт и бесформенная тень.
 
@@ -40,7 +40,7 @@ dyuluskhan: Там древняя природа холода. Она не не�
 # ---------- ЧАСТЬ 2: ЧЕРТОГИ ПЕРВЫХ ----------
 # TODO background: res://assets/art/backgrounds/scene10/bg_scene10_first_halls.png
 
-join first_abaasy pos=x0.72 y0.94 size=x0.30 y0.74 [z_index="2"]
+join first_abaasy pos=x0.72 y0.60 size=x0.30 y0.74 [z_index="2"]
 
 narrator: Появляются Первые Абаасы. Они не кричат и не угрожают. Их тишина старше страха.
 
@@ -85,7 +85,7 @@ narrator: Три Первых Абаасы окружают героев. Каж
 # TODO background: res://assets/art/backgrounds/scene10/bg_scene10_heart_of_darkness.png
 
 leave first_abaasy
-join heart_of_darkness pos=x0.72 y0.94 size=x0.32 y0.76 [z_index="2"]
+join heart_of_darkness pos=x0.72 y0.58 size=x0.32 y0.76 [z_index="2"]
 
 narrator: Сердце Тьмы не похоже на существо. Это огромный пульсирующий источник холода.
 
