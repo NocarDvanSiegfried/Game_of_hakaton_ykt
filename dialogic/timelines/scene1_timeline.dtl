@@ -15,9 +15,9 @@ narrator: Но не бойся. Потому что там, где кончае�
 
 [background arg="res://assets/art/backgrounds/scene_01/grandmother_house_interior.png" fade="0.5"]
 
-join ebe (default) pos=x0.22 y0.94 size=x0.20 y0.65 [z_index="1"]
+join ebe (default) pos=x0.25 y0.94 size=x0.20 y0.65 [z_index="1"]
 join aisen (neutral) pos=x0.50 y0.95 size=x0.18 y0.60 [z_index="2"]
-join kunney (neutral) pos=x0.76 y0.95 size=x0.16 y0.56 [z_index="3"]
+join kunney (neutral) pos=x0.75 y0.95 size=x0.16 y0.56 [z_index="3"]
 
 narrator: Якутская изба. Огонь в печи пляшет. За окном беснуется пурга. У ног бабушки лежит Баргый — крупный серый пёс с белой звездой на груди.
 
@@ -59,6 +59,10 @@ ebe: Их можно запутать. Их можно обмануть. Их м
 
 ebe: Спите сейчас. Завтра будет трудный день.
 
+leave ebe
+leave aisen
+leave kunney
+
 narrator: Экран темнеет.
 
 narrator: Глава I: Пурга
@@ -66,6 +70,9 @@ narrator: Глава I: Пурга
 # ---------- ЧАСТЬ 2: УТРО В ДОМЕ ----------
 
 narrator: Утро. Печь почти погасла, только угли тлеют. Свет серый, пасмурный. Бабушка сидит в углу неподвижно. Баргыя нет.
+
+join aisen (neutral) pos=x0.50 y0.95 size=x0.18 y0.60 [z_index="2"]
+join kunney (neutral) pos=x0.75 y0.95 size=x0.16 y0.56 [z_index="3"]
 
 aisen: Кюннэй! Уже утро?
 
@@ -85,13 +92,14 @@ kunney: Холодно же. Может, он сам придёт?
 
 aisen: Я быстро.
 
+leave kunney
+
 # ---------- ЧАСТЬ 3: ДВОР И ПЕРВЫЙ ВЫБОР ----------
 
 [background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_door_exit.png" fade="0.5"]
 
 leave ebe
-update aisen (protect) pos=x0.46 y0.95 size=x0.19 y0.63 [z_index="3"]
-update kunney (neutral) pos=x0.78 y0.95 size=x0.16 y0.56 [z_index="2"]
+update aisen (protect) pos=x0.50 y0.95 size=x0.18 y0.60 [z_index="2"]
 join bargyy (default) pos=x0.20 y0.97 size=x0.13 y0.34 [z_index="1"]
 
 narrator: Айсен открывает дверь. Звук мгновенно меняется — рёв ветра. Микрофон захлёбывается. Мир сжимается до размера крыльца.
@@ -104,7 +112,7 @@ narrator: Где-то слева — отчаянный лай, с подвыв�
 
 narrator: В белой пелене на мгновение вспыхивает что-то — тёплый, жёлтый огонёк. Он дрожит, манит.
 
-update aisen (shocked) pos=x0.46 y0.95 size=x0.19 y0.63 [z_index="3"]
+update aisen (shocked) pos=x0.50 y0.95 size=x0.18 y0.60 [z_index="2"]
 
 aisen: Что это?..
 
@@ -128,7 +136,7 @@ aisen: Бабушка говорила: «Не ходи на свет в пур�
 
 [background arg="res://assets/art/backgrounds/scene_01/snowy_forest_path.png" fade="0.5"]
 
-update aisen (run) pos=x0.46 y0.95 size=x0.19 y0.63 [z_index="3"]
+update aisen (run) pos=x0.50 y0.95 size=x0.18 y0.60 [z_index="2"]
 
 narrator: Айсен бежит сквозь пургу. Снег хлещет в лицо. Видимость — три-четыре метра.
 
@@ -148,8 +156,8 @@ narrator: Айсен резко сворачивает. Лай Баргыя — 
 
 leave kunney
 leave bargyy
-update aisen (reach) pos=x0.34 y0.95 size=x0.19 y0.63 [z_index="3"]
-join tongus (default) pos=x0.72 y0.94 size=x0.32 y0.86 [z_index="2"]
+update aisen (reach) pos=x0.25 y0.95 size=x0.18 y0.60 [z_index="2"]
+join tongus (default) pos=x0.75 y0.94 size=x0.32 y0.86 [z_index="3"]
 
 narrator: Замёрзшая река. Идеально круглая прорубь. Вокруг — ледяные столбы. Баргый запутался поводком в ледяном торосе. Он лает, глядя не на Айсена, а в прорубь.
 
@@ -188,12 +196,12 @@ aisen: Он слепой. Реагирует на тепло, но не отли
 - Бросить в него горящий шарф
 	aisen: Я отдам тебе тепло моей одежды. Она грела меня — теперь в ней частица моего тепла.
 	set boss_tactic = "scarf"
-	update aisen (attack_fire) pos=x0.34 y0.95 size=x0.19 y0.63 [z_index="3"]
+	update aisen (attack_fire) pos=x0.25 y0.95 size=x0.18 y0.60 [z_index="2"]
 	narrator: Айсен поджигает шарф огнивом и бросает демону. Тонгус хватает горящий клочок, пытается впитать — пламя жжёт ледяные пальцы. Демон в панике. Безопасный исход.
 - Разжечь костёр из мха в трещине
 	aisen: Смотри! Вот огонь. Он живой, слышишь, как трещит? Я отдаю его тебе. Забирай.
 	set boss_tactic = "fire"
-	update aisen (attack_fire) pos=x0.34 y0.95 size=x0.19 y0.63 [z_index="3"]
+	update aisen (attack_fire) pos=x0.25 y0.95 size=x0.18 y0.60 [z_index="2"]
 	narrator: Айсен быстро разводит костёр из сухого мха. Демон, осязая тепло, бросается в огонь, пытаясь слиться с ним. Лёд трескается, идёт пар. Айсен теряет немного здоровья от близости пламени.
 - Рассказать ему о горячем сердце
 	aisen: Ты хочешь тепло? Но самое горячее — это сердце, которое любит. Скажи: что ты любишь больше всего? Тогда я отдам тебе его тепло.
@@ -219,7 +227,7 @@ aisen: Готов. Что мне теперь сделать?
 
 leave tongus
 join bargyy (default) pos=x0.18 y0.97 size=x0.13 y0.34 [z_index="1"]
-update aisen (kneel) pos=x0.46 y0.95 size=x0.19 y0.63 [z_index="3"]
+update aisen (kneel) pos=x0.25 y0.95 size=x0.18 y0.60 [z_index="2"]
 
 narrator: Прорубь начинает затягиваться новым, чистым льдом. Баргый освобождается и бросается к Айсену, лижет лицо.
 
@@ -232,11 +240,12 @@ aisen: Нам надо домой. Пурга стихает. Вон, уже н�
 narrator: Сквозь тучи пробивается луна — бледная, холодная. И вдруг — тишина. Резкая. Ветер стих. Лай Баргыя оборвался. Свет луны стал неестественно-ярким, залив всё вокруг серебром.
 
 leave bargyy
-join kunney (enchanted) pos=x0.76 y0.95 size=x0.16 y0.56 [z_index="2"]
+update aisen (neutral) pos=x0.50 y0.95 size=x0.18 y0.60 [z_index="2"]
+join kunney (enchanted) pos=x0.90 y0.95 size=x0.16 y0.56 [z_index="3"]
 
 kunney: Айсен! Айсен, смотри! Смотри, какая красивая кукла!
 
-update aisen (shocked) pos=x0.46 y0.95 size=x0.19 y0.63 [z_index="3"]
+update aisen (shocked) pos=x0.50 y0.95 size=x0.18 y0.60 [z_index="2"]
 
 aisen: Кюннэй! Нет!
 
@@ -244,7 +253,7 @@ narrator: Но поздно. На берегу, у кромки леса, сто
 
 narrator: Баргый воет — долго, тоскливо.
 
-update aisen (sorrowful) pos=x0.46 y0.95 size=x0.19 y0.63 [z_index="3"]
+update aisen (sorrowful) pos=x0.50 y0.95 size=x0.18 y0.60 [z_index="2"]
 
 aisen: Нет... нет, нет, нет! Я только спас тебя, Баргый, а теперь... Кюннэй...
 
