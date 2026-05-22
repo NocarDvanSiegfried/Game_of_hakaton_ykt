@@ -32,6 +32,12 @@ func _on_timeline_ended() -> void:
 			await get_tree().process_frame
 			_start_timeline("scene3_timeline")
 		"scene3_timeline":
+			# accepted_initiation=false означает, что игрок отказался от инициаций в Сцене 3
+			# и Dialogic сделал jump ending_bad_early. Плохая концовка уже показана —
+			# не переходить в Сцену 4.
+			if not Dialogic.VAR.accepted_initiation:
+				print("Концовка достигнута: ранний отказ от инициаций")
+				return
 			await get_tree().process_frame
 			_start_timeline("scene4_timeline")
 		"scene4_timeline":
