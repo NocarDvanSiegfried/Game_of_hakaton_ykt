@@ -10,20 +10,12 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "default",
+&"default_portrait": "",
 &"description": "Голоса застывших путников",
 &"display_name": "Голос столба",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {
-"default": {
-"export_overrides": {
-"image": "res://assets/art/backgrounds/scene3/ice_pillars.png"
-},
-"offset": Vector2(0, 0),
-"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
-}
-},
+&"portraits": {},
 &"scale": 1.0
 }
