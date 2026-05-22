@@ -24,6 +24,7 @@ func _start_timeline(timeline_name: String) -> void:
 
 
 func _on_timeline_ended() -> void:
+	print("Завершён таймлайн: ", current_timeline)
 	match current_timeline:
 		"scene1_timeline":
 			await get_tree().process_frame
@@ -32,11 +33,11 @@ func _on_timeline_ended() -> void:
 			await get_tree().process_frame
 			_start_timeline("scene3_timeline")
 		"scene3_timeline":
-			# accepted_initiation=false означает, что игрок отказался от инициаций в Сцене 3
-			# и Dialogic сделал jump ending_bad_early. Плохая концовка уже показана —
-			# не переходить в Сцену 4.
-			if not Dialogic.VAR.accepted_initiation:
+			print("accepted_initiation = ", Dialogic.VAR.accepted_initiation)
+			if Dialogic.VAR.accepted_initiation == false:
 				print("Концовка достигнута: ранний отказ от инициаций")
+				await get_tree().process_frame
+				_start_timeline("ending_bad_early")
 				return
 			await get_tree().process_frame
 			_start_timeline("scene4_timeline")
@@ -60,5 +61,7 @@ func _on_timeline_ended() -> void:
 			_start_timeline("scene10_timeline")
 		"scene10_timeline":
 			print("Игра завершена. Финальный каркас пройден.")
+		"ending_bad_early":
+			print("Игра завершена. Ранняя плохая концовка пройдена.")
 		_:
 			print("Таймлайн завершён: %s" % current_timeline)
