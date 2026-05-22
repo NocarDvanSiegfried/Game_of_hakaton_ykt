@@ -154,7 +154,6 @@ narrator: Айсен резко сворачивает. Лай Баргыя — 
 
 [background arg="res://assets/art/backgrounds/scene_01/ice_tunnel.png" fade="0.5"]
 
-leave kunney
 leave bargyy
 update aisen (reach) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
 join tongus (default) pos=x0.75 y0.66 size=x0.30 y0.76 [z_index="3"]
