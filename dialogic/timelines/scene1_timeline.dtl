@@ -26,6 +26,7 @@ narrator: Но не бойся. Потому что там, где кончае�
 
 # ---------- ЧАСТЬ 1: ДОМ БАБУШКИ — ПРОЛОГ ----------
 # Озвучка бабушки: канал ebe_voice (отдельно от narrator_voice).
+# Озвучка Кюннэй: канал kunney_voice.
 # SFX без канала = One-Shot — параллельно с голосом и ambient.
 
 [signal arg="show_scene1_grandmother_house_layered"]
