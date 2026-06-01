@@ -302,12 +302,15 @@ aisen: Готов. Что мне теперь сделать?
 audio "res://assets/audio/scene_01/ice_hole_freeze_1.wav" [volume="-4" loop="false"]
 narrator: Прорубь начинает затягиваться новым, чистым льдом.
 
-audio "res://assets/audio/scene_01/bargyy_whine_happy_2.wav" [volume="-4" loop="false"]
-narrator: Баргый освобождается и бросается к Айсену, лижет лицо.
+audio "res://assets/audio/scene_01/bargyy_affection_1.wav" [volume="-4" loop="false"]
+narrator: Баргый освобождается и бросается к Айсену,
+
+audio "res://assets/audio/scene_01/bargyy_affection_2.wav" [volume="-4" loop="false"]
+narrator: лижет лицо.
 
 aisen: Тише, тише, Баргый. Я в порядке. Ты как?
 
-audio "res://assets/audio/scene_01/bargyy_whine_happy_3.wav" [volume="-6" loop="false"]
+audio "res://assets/audio/scene_01/bargyy_affection_3.wav" [volume="-6" loop="false"]
 narrator: Баргый виляет хвостом.
 
 aisen: Нам надо домой. Пурга стихает. Вон, уже небо видно.
