@@ -95,6 +95,7 @@ leave kunney
 leave ebe
 update aisen (protect) pos=x0.50 y0.71 size=x0.13 y0.45 [z_index="2"]
 join bargyy (default) pos=x0.20 y0.73 size=x0.10 y0.28 [z_index="1"]
+audio blizzard "res://scene 1/Пурга за окном/Extreme_arctic_blizz_#1-1780274846522.wav" [loop="true" fade="0.2" volume="-10"]
 
 narrator: Айсен открывает дверь. Звук мгновенно меняется — рёв ветра. Микрофон захлёбывается. Мир сжимается до размера крыльца.
 
@@ -145,6 +146,8 @@ aisen: Опять ты. Не обманешь.
 narrator: Айсен резко сворачивает. Лай Баргыя — совсем близко.
 
 # ---------- ЧАСТЬ 5: У ПРОРУБИ ----------
+
+audio blizzard -
 
 [background arg="res://assets/art/backgrounds/scene_01/ice_tunnel.png" fade="0.5"]
 
@@ -263,5 +266,7 @@ narrator: Прыжок в прорубь. Экран темнеет.
 narrator: КОНЕЦ ГЛАВЫ I
 
 narrator: Айсен поднимается. В груди — твёрдый узел решимости. Он шагает в темноту.
+
+audio blizzard -
 
 [end_timeline]
