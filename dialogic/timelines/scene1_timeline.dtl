@@ -107,9 +107,11 @@ narrator: Глава I: Пурга
 
 # ---------- ЧАСТЬ 2: УТРО В ДОМЕ ----------
 # Озвучка автора: narrator_voice. morning_part2_01 — одна запись на три строки утра.
+# Озвучка Айсена: канал aisen_voice (отдельно от narrator_voice и ebe_voice).
 
 audio narrator_voice -
 audio ebe_voice -
+audio aisen_voice -
 audio fireplace -
 
 audio house_morning "res://assets/audio/scene_01/house_after_night_1.wav" [loop="true" fade="0.8" volume="-14"]
@@ -133,6 +135,7 @@ narrator: Баргыя нет.
 
 audio "res://assets/audio/scene_01/cloth_rustle_wake_1.wav" [volume="-12" loop="false"]
 audio "res://assets/audio/scene_01/children_awakening_1.wav" [volume="-10" loop="false"]
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_01_morning.mp3" [volume="0" loop="false"]
 aisen: Кюннэй! Уже утро?
 
 audio "res://assets/audio/scene_01/bargyy_missing_2.wav" [volume="-12" loop="false"]
@@ -141,6 +144,7 @@ kunney: Уже утро? Баргый не лаял. Значит, всё хор
 
 audio "res://assets/audio/scene_01/cloth_rustle_wake_2.wav" [volume="-12" loop="false"]
 audio "res://assets/audio/scene_01/children_awakening_3.wav" [volume="-10" loop="false"]
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_02_wake.mp3" [volume="0" loop="false"]
 aisen: Правда. Вставай, соня.
 
 audio "res://assets/audio/scene_01/cloth_rustle_wake_3.wav" [volume="-12" loop="false"]
@@ -154,6 +158,7 @@ audio stove_embers "res://assets/audio/scene_01/stove_embers_2.wav" [loop="true"
 audio house_morning "res://assets/audio/scene_01/house_after_night_2.wav" [loop="true" fade="1.0" volume="-14"]
 
 audio "res://assets/audio/scene_01/talisman_pickup_1.wav" [volume="-10" loop="false"]
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_03_take_amulet.mp3" [volume="0" loop="false"]
 aisen: Возьму с собой. Бабушка не зря оставила.
 
 audio narrator_voice "res://assets/audio/scene_01/voice/morning_part2_02_amulets.mp3" [volume="0" loop="false"]
@@ -163,6 +168,7 @@ audio "res://assets/audio/scene_01/talisman_pickup_4.wav" [volume="-10" loop="fa
 narrator: Получены обереги: Медвежий Коготь, Берестяная Коробочка, Зеркальце.
 
 audio "res://assets/audio/scene_01/bargyy_missing_3.wav" [volume="-12" loop="false"]
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_04_go_bargyy.mp3" [volume="0" loop="false"]
 aisen: Кюннэй, я за Баргыем. Жди здесь.
 
 audio "res://assets/audio/scene_01/children_awakening_4.wav" [volume="-12" loop="false"]
@@ -171,6 +177,7 @@ kunney: Холодно же. Может, он сам придёт?
 audio "res://assets/audio/scene_01/stove_embers_3.wav" [volume="-14" loop="false"]
 
 audio "res://assets/audio/scene_01/cloth_rustle_wake_4.wav" [volume="-12" loop="false"]
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_05_quick.mp3" [volume="0" loop="false"]
 aisen: Я быстро.
 
 audio "res://assets/audio/scene_01/stove_embers_4.wav" [volume="-14" loop="false"]
@@ -181,6 +188,7 @@ audio "res://assets/audio/scene_01/stove_embers_4.wav" [volume="-14" loop="false
 # Озвучка автора: канал narrator_voice. SFX без канала = One-Shot.
 
 audio narrator_voice -
+audio aisen_voice -
 audio stove_embers -
 audio house_morning -
 
@@ -203,6 +211,7 @@ audio blizzard "res://assets/audio/scene_01/blizzard_outside.wav" [loop="true" f
 [background arg="res://assets/art/backgrounds/scene_01/bg_scene1_dog_tracks_yard.jpg" fade="0.5"]
 
 audio "res://assets/audio/scene_01/bargyy_missing_4.wav" [volume="-10" loop="false"]
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_06_call_bargyy.mp3" [volume="0" loop="false"]
 aisen: Баргый! Баргый, ко мне!
 
 audio "res://assets/audio/scene_01/bargyy_bark_whine_1.wav" [volume="-4"]
@@ -220,15 +229,18 @@ narrator: В белой пелене на мгновение вспыхивае�
 # TODO portrait: update aisen (shocked) pos=x0.50 y0.71 size=x0.13 y0.45 [z_index="2"]
 
 audio "res://assets/audio/scene_01/anxious_silence_3.wav" [volume="-8" loop="false"]
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_07_what.mp3" [volume="0" loop="false"]
 aisen: Что это?..
 
 audio "res://assets/audio/scene_01/bargyy_bark_whine_2.wav" [volume="-4"]
 audio narrator_voice "res://assets/audio/scene_01/voice/yard_part3_06_bark_repeat.mp3" [volume="0" loop="false"]
 narrator: Лай Баргыя повторяется — теперь дальше, в стороне огонька. Пёс зовёт.
 
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_08_trap_light.mp3" [volume="0" loop="false"]
 aisen: Бабушка говорила: «Не ходи на свет в пурге». Это может быть ловушка. Но Баргый лает там...
 
 - Пойти прямо на свет
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_09_run_light.mp3" [volume="0" loop="false"]
 	aisen: Баргый там. Нужно спешить, пока не замёрз.
 	set scene1_choice = "light"
 	audio "res://assets/audio/scene_01/light_trap_1.wav" [volume="-8" loop="false"]
@@ -241,9 +253,11 @@ aisen: Бабушка говорила: «Не ходи на свет в пур�
 	audio "res://assets/audio/scene_01/light_trap_3.wav" [volume="-4" loop="false"]
 	audio "res://assets/audio/scene_01/light_trap_4.wav" [volume="-6" loop="false"]
 - Игнорировать свет, идти на лай (каноничный путь)
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_10_avoid_light.mp3" [volume="0" loop="false"]
 	aisen: Бабушка предупреждала. Обойду огонёк стороной, пойду туда, откуда слышен Баргый.
 	set scene1_choice = "bark"
 - Вернуться в дом за Кюннэй
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_11_get_kunney.mp3" [volume="0" loop="false"]
 	aisen: Одному страшно. Возьму сестру — вдвоём справимся.
 	set scene1_choice = "kunney"
 	audio "res://assets/audio/scene_01/ice_crystal_laugh_3.wav" [volume="-8" loop="false"]
@@ -254,6 +268,7 @@ aisen: Бабушка говорила: «Не ходи на свет в пур�
 # Озвучка автора: канал narrator_voice. Ambient snow_run — отдельный канал.
 
 audio narrator_voice -
+audio aisen_voice -
 
 [background arg="res://assets/art/backgrounds/scene_01/snowy_forest_path.png" fade="0.5"]
 
@@ -278,6 +293,7 @@ narrator: Кое-как выбирается.
 audio narrator_voice "res://assets/audio/scene_01/voice/chase_part4_05_light_again.mp3" [volume="0" loop="false"]
 narrator: Огонёк появляется снова — прямо по курсу.
 
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_12_not_fooled.mp3" [volume="0" loop="false"]
 aisen: Опять ты. Не обманешь.
 
 audio snow_run "res://assets/audio/scene_01/snow_run_2.wav" [loop="true" fade="0.4" volume="-8"]
@@ -289,6 +305,7 @@ narrator: Айсен резко сворачивает. Лай Баргыя — 
 # Озвучка автора: канал narrator_voice. SFX = One-Shot.
 
 audio narrator_voice -
+audio aisen_voice -
 
 audio snow_run -
 audio blizzard -
@@ -310,6 +327,7 @@ audio "res://assets/audio/scene_01/bargyy_bark_ice_hole_1.wav" [volume="-4" loop
 audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_03_bark_hole.mp3" [volume="0" loop="false"]
 narrator: Он лает, глядя не на Айсена, а в прорубь.
 
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_13_bargyy_short.mp3" [volume="0" loop="false"]
 aisen: Баргый!
 
 audio "res://assets/audio/scene_01/bargyy_whine_happy_1.wav" [volume="-4" loop="false"]
@@ -320,6 +338,7 @@ audio "res://assets/audio/scene_01/leash_ice_untie_2.wav" [volume="-4" loop="fal
 audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_05_untie_leash.mp3" [volume="0" loop="false"]
 narrator: Айсен пытается отвязать поводок — руки не слушаются.
 
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_14_hold_on.mp3" [volume="0" loop="false"]
 aisen: Сейчас, сейчас... Потерпи.
 
 audio "res://assets/audio/scene_01/leash_ice_untie_3.wav" [volume="-6" loop="false"]
@@ -346,6 +365,7 @@ audio "res://assets/audio/scene_01/ice_breath_frost_1.wav" [volume="-4" loop="fa
 audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_09_frost_breath.mp3" [volume="0" loop="false"]
 narrator: От его дыхания на лице Айсена выступает иней.
 
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_15_tongus.mp3" [volume="0" loop="false"]
 aisen: Бабушка говорила о тебе. Ты Тонгус Харах. Ты не греешь. Ты крадёшь.
 
 audio "res://assets/audio/scene_01/tongus_voice_3.wav" [volume="-4" loop="false"]
@@ -356,6 +376,7 @@ tongus: Но ваше т-т-тепло... оно может жить во мне
 audio "res://assets/audio/scene_01/tongus_voice_4.wav" [volume="-4" loop="false"]
 tongus: От-т-тдай. И я от-т-тпущу собаку.
 
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_16_wont_release.mp3" [volume="0" loop="false"]
 aisen: ...ты не отпустишь. Ты слепой. Ты не отличаешь живое от мёртвого. Как ты поймёшь, что я отдал?
 
 audio "res://assets/audio/scene_01/tongus_voice_3.wav" [volume="-8" loop="false"]
@@ -368,10 +389,13 @@ narrator: Он не знает. Он повторяет то, что слыша�
 # Озвучка автора только в ветках выбора (narrator_voice).
 
 audio narrator_voice -
+audio aisen_voice -
 
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_17_tactic_choice.mp3" [volume="0" loop="false"]
 aisen: Он слепой. Реагирует на тепло, но не отличает настоящее. Можно подсунуть что-то горячее, но неживое. Что выбрать?
 
 - Бросить в него горящий шарф
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_18_scarf.mp3" [volume="0" loop="false"]
 	aisen: Я отдам тебе тепло моей одежды. Она грела меня — теперь в ней частица моего тепла.
 	set boss_tactic = "scarf"
 	update aisen (attack_fire) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
@@ -388,6 +412,7 @@ aisen: Он слепой. Реагирует на тепло, но не отли
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_scarf_04_panic.mp3" [volume="0" loop="false"]
 	narrator: Демон в панике. Безопасный исход.
 - Разжечь костёр из мха в трещине
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_19_fire.mp3" [volume="0" loop="false"]
 	aisen: Смотри! Вот огонь. Он живой, слышишь, как трещит? Я отдаю его тебе. Забирай.
 	set boss_tactic = "fire"
 	update aisen (attack_fire) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
@@ -407,6 +432,7 @@ aisen: Он слепой. Реагирует на тепло, но не отли
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_fire_05_health.mp3" [volume="0" loop="false"]
 	narrator: Айсен теряет немного здоровья от близости пламени.
 - Рассказать ему о горячем сердце
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_20_heart.mp3" [volume="0" loop="false"]
 	aisen: Ты хочешь тепло? Но самое горячее — это сердце, которое любит. Скажи: что ты любишь больше всего? Тогда я отдам тебе его тепло.
 	set boss_tactic = "heart_story"
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_heart_01_freeze.mp3" [volume="0" loop="false"]
@@ -419,6 +445,7 @@ aisen: Он слепой. Реагирует на тепло, но не отли
 # Озвучка автора: narrator_voice.
 
 audio narrator_voice -
+audio aisen_voice -
 
 audio "res://assets/audio/scene_01/demon_crack_1.wav" [volume="-4" loop="false"]
 audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_01_weakened.mp3" [volume="0" loop="false"]
@@ -432,9 +459,11 @@ audio "res://assets/audio/scene_01/demon_crack_4.wav" [volume="-8" loop="false"]
 audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_03_cant_attack.mp3" [volume="0" loop="false"]
 narrator: Он не может больше атаковать.
 
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_21_ready.mp3" [volume="0" loop="false"]
 aisen: Готов. Что мне теперь сделать?
 
 - Атаковать ледяным осколком
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_22_finish.mp3" [volume="0" loop="false"]
 	aisen: Хватит. Это за Баргыя.
 	set boss_end = "finish"
 	audio "res://assets/audio/scene_01/ice_shard_strike_1.wav" [volume="-4" loop="false"]
@@ -450,6 +479,7 @@ aisen: Готов. Что мне теперь сделать?
 	audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_finish_04_collapse.mp3" [volume="0" loop="false"]
 	narrator: разваливается на куски.
 - Пощадить
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_23_spare.mp3" [volume="0" loop="false"]
 	aisen: Уходи. Скажи своим братьям, что люди не так просты.
 	set boss_end = "spare"
 	audio "res://assets/audio/scene_01/ice_crack_steam_4.wav" [volume="-6" loop="false"]
@@ -460,6 +490,7 @@ aisen: Готов. Что мне теперь сделать?
 # Озвучка автора: narrator_voice.
 
 audio narrator_voice -
+audio aisen_voice -
 
 # TODO portrait: leave tongus
 # TODO portrait: join bargyy (default) pos=x0.18 y0.73 size=x0.10 y0.28 [z_index="1"]
@@ -477,6 +508,7 @@ audio "res://assets/audio/scene_01/bargyy_affection_2.wav" [volume="-4" loop="fa
 audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_03_lick_face.mp3" [volume="0" loop="false"]
 narrator: лижет лицо.
 
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_24_calm_bargyy.mp3" [volume="0" loop="false"]
 aisen: Тише, тише, Баргый. Я в порядке. Ты как?
 
 audio "res://assets/audio/scene_01/bargyy_affection_3.wav" [volume="-6" loop="false"]
@@ -484,6 +516,7 @@ audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_04_tail_wag.
 narrator: Баргый виляет хвостом.
 
 audio "res://assets/audio/scene_01/blizzard_fade_1.wav" [volume="-6" loop="false"]
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_25_go_home.mp3" [volume="0" loop="false"]
 aisen: Нам надо домой. Пурга стихает. Вон, уже небо видно.
 
 audio "res://assets/audio/scene_01/blizzard_fade_2.wav" [volume="-8" loop="false"]
@@ -517,6 +550,7 @@ kunney: Айсен! Айсен, смотри! Смотри, какая крас�
 
 # TODO portrait: update aisen (shocked) pos=x0.50 y0.71 size=x0.13 y0.45 [z_index="2"]
 
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_26_kunney_no.mp3" [volume="0" loop="false"]
 aisen: Кюннэй! Нет!
 
 audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_10_too_late.mp3" [volume="0" loop="false"]
@@ -544,6 +578,7 @@ narrator: Баргый воет — долго, тоскливо.
 
 # TODO portrait: update aisen (sorrowful) pos=x0.50 y0.72 size=x0.13 y0.45 [z_index="2"]
 
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_27_despair.mp3" [volume="0" loop="false"]
 aisen: Нет... нет, нет, нет! Я только спас тебя, Баргый, а теперь... Кюннэй...
 
 audio "res://assets/audio/scene_01/ice_hole_glow_1.wav" [volume="-4" loop="false"]
@@ -554,11 +589,13 @@ audio "res://assets/audio/scene_01/ice_hole_glow_2.wav" [volume="-6" loop="false
 audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_17_tunnel.mp3" [volume="0" loop="false"]
 narrator: Под водой виден туннель — извивающийся, уходящий вниз.
 
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_28_tunnel.mp3" [volume="0" loop="false"]
 aisen: ...это вход. В Нижний Мир. Настоящий вход.
 
 audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_18_claw.mp3" [volume="0" loop="false"]
 narrator: Айсен встаёт. Достаёт из кармана медвежий коготь, сжимает в кулаке.
 
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_29_go_kunney.mp3" [volume="0" loop="false"]
 aisen: Бабушка говорила: «Не вступай в прямой бой. Победи хитростью». Я понял. Я иду, Кюннэй. Я иду.
 
 audio "res://assets/audio/scene_01/ice_dive_1.wav" [volume="-4" loop="false"]
@@ -577,6 +614,8 @@ audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_22_into_dark
 narrator: Айсен поднимается. В груди — твёрдый узел решимости. Он шагает в темноту.
 
 audio narrator_voice -
+audio aisen_voice -
+audio ebe_voice -
 audio snow_run -
 audio yakut_night -
 audio blizzard -

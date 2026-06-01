@@ -3,15 +3,17 @@ extends Node
 ## Slow advance through split narrator lines keeps one voice clip playing.
 ## Rapid clicks (skip) stop the voice immediately.
 
-const VOICE_CHANNELS: Array[String] = ["narrator_voice", "ebe_voice"]
+const VOICE_CHANNELS: Array[String] = ["narrator_voice", "ebe_voice", "aisen_voice"]
 const EBE_SPEAKER_ID := "ebe"
 const NARRATOR_SPEAKER_ID := "narrator"
+const AISEN_SPEAKER_ID := "aisen"
 ## Two advances faster than this are treated as skip (ms).
 const RAPID_ADVANCE_MS := 450
 
 const CHANNEL_TO_SPEAKER := {
 	"narrator_voice": NARRATOR_SPEAKER_ID,
 	"ebe_voice": EBE_SPEAKER_ID,
+	"aisen_voice": AISEN_SPEAKER_ID,
 }
 
 const INTRO_COLD_SFX := [
@@ -70,9 +72,11 @@ func _on_about_to_show_text(info: Dictionary) -> void:
 	var speaker_id := _speaker_id_from_info(info)
 	match speaker_id:
 		EBE_SPEAKER_ID:
-			stop_channels(["narrator_voice"])
+			stop_channels(["narrator_voice", "aisen_voice"])
 		NARRATOR_SPEAKER_ID:
-			stop_channels(["ebe_voice"])
+			stop_channels(["ebe_voice", "aisen_voice"])
+		AISEN_SPEAKER_ID:
+			stop_channels(["narrator_voice", "ebe_voice"])
 		_:
 			stop_voice_channels()
 
