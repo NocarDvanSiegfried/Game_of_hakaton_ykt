@@ -260,12 +260,19 @@ aisen: Он слепой. Реагирует на тепло, но не отли
 	aisen: Ты хочешь тепло? Но самое горячее — это сердце, которое любит. Скажи: что ты любишь больше всего? Тогда я отдам тебе его тепло.
 	set boss_tactic = "heart_story"
 	narrator: Демон зависает. Он никогда не любил. Пытается найти ответ внутри своей пустоты. Глаз начинает бешено вращаться.
-	audio "res://assets/audio/scene_01/ice_crack_steam_3.wav" [volume="-6" loop="false"]
+	audio "res://assets/audio/scene_01/demon_crack_3.wav" [volume="-6" loop="false"]
 	narrator: Внутри ледяной формы бегают трещины. Самый умный, но непредсказуемый вариант.
 
 # ---------- ЧАСТЬ 7: ДОБИТЬ ИЛИ ПОЩАДИТЬ ----------
 
-narrator: Стабильность Тонгуса резко падает. Демон ослаблен, его форма дрожит. Он не может больше атаковать.
+audio "res://assets/audio/scene_01/demon_crack_1.wav" [volume="-4" loop="false"]
+narrator: Стабильность Тонгуса резко падает. Демон ослаблен,
+
+audio "res://assets/audio/scene_01/demon_crack_2.wav" [volume="-6" loop="false"]
+narrator: его форма дрожит.
+
+audio "res://assets/audio/scene_01/demon_crack_4.wav" [volume="-8" loop="false"]
+narrator: Он не может больше атаковать.
 
 aisen: Готов. Что мне теперь сделать?
 
