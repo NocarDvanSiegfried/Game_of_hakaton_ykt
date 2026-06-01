@@ -204,7 +204,10 @@ audio "res://assets/audio/scene_01/tongus_voice_2.wav" [volume="-4" loop="false"
 tongus: Иди с-с-сюда. Я согрею.
 
 audio "res://assets/audio/scene_01/tongus_rise_4.wav" [volume="-8" loop="false"]
-narrator: Тонгус протягивает руку. Пальцы — длинные ледяные иглы. От его дыхания на лице Айсена выступает иней.
+narrator: Тонгус протягивает руку. Пальцы — длинные ледяные иглы.
+
+audio "res://assets/audio/scene_01/ice_breath_frost_1.wav" [volume="-4" loop="false"]
+narrator: От его дыхания на лице Айсена выступает иней.
 
 aisen: Бабушка говорила о тебе. Ты Тонгус Харах. Ты не греешь. Ты крадёшь.
 
@@ -230,13 +233,27 @@ aisen: Он слепой. Реагирует на тепло, но не отли
 - Бросить в него горящий шарф
 	aisen: Я отдам тебе тепло моей одежды. Она грела меня — теперь в ней частица моего тепла.
 	set boss_tactic = "scarf"
-	# TODO portrait: update aisen (attack_fire) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
-	narrator: Айсен поджигает шарф огнивом и бросает демону. Тонгус хватает горящий клочок, пытается впитать — пламя жжёт ледяные пальцы. Демон в панике. Безопасный исход.
+	update aisen (attack_fire) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
+	audio "res://assets/audio/scene_01/scarf_fire_1.wav" [volume="-4" loop="false"]
+	narrator: Айсен поджигает шарф огнивом и бросает демону.
+	audio "res://assets/audio/scene_01/scarf_fire_2.wav" [volume="-4" loop="false"]
+	narrator: Тонгус хватает горящий клочок, пытается впитать —
+	audio "res://assets/audio/scene_01/scarf_fire_3.wav" [volume="-6" loop="false"]
+	narrator: пламя жжёт ледяные пальцы.
+	audio "res://assets/audio/scene_01/scarf_fire_4.wav" [volume="-6" loop="false"]
+	narrator: Демон в панике. Безопасный исход.
 - Разжечь костёр из мха в трещине
 	aisen: Смотри! Вот огонь. Он живой, слышишь, как трещит? Я отдаю его тебе. Забирай.
 	set boss_tactic = "fire"
-	# TODO portrait: update aisen (attack_fire) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
-	narrator: Айсен быстро разводит костёр из сухого мха. Демон, осязая тепло, бросается в огонь, пытаясь слиться с ним. Лёд трескается, идёт пар. Айсен теряет немного здоровья от близости пламени.
+	update aisen (attack_fire) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
+	audio "res://assets/audio/scene_01/moss_fire_1.wav" [volume="-4" loop="false"]
+	narrator: Айсен быстро разводит костёр из сухого мха.
+	audio "res://assets/audio/scene_01/moss_fire_2.wav" [volume="-4" loop="false"]
+	narrator: Демон, осязая тепло, бросается в огонь, пытаясь слиться с ним.
+	audio "res://assets/audio/scene_01/moss_fire_3.wav" [volume="-6" loop="false"]
+	narrator: Лёд трескается, идёт пар.
+	audio "res://assets/audio/scene_01/moss_fire_4.wav" [volume="-8" loop="false"]
+	narrator: Айсен теряет немного здоровья от близости пламени.
 - Рассказать ему о горячем сердце
 	aisen: Ты хочешь тепло? Но самое горячее — это сердце, которое любит. Скажи: что ты любишь больше всего? Тогда я отдам тебе его тепло.
 	set boss_tactic = "heart_story"
