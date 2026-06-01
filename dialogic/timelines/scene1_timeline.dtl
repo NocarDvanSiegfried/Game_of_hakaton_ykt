@@ -38,8 +38,6 @@ audio fireplace "res://assets/audio/scene_01/fireplace.wav" [loop="true" fade="0
 
 narrator: Якутская изба. Огонь в печи пляшет. За окном беснуется пурга. У ног бабушки лежит Баргый — крупный серый пёс с белой звездой на груди.
 
-[background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_fireplace_close.png" fade="0.5"]
-
 ebe: Завтра ударит Тымныы Олус. Я чувствую. Кости ноют не от старости — от холода, который ещё не пришёл, но уже дышит в затылок.
 
 [background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_window_blizzard.png" fade="0.5"]
@@ -65,6 +63,7 @@ ebe: Глупый, как прошлогодний сугроб. Он прима
 ebe: Идите сюда. Оба.
 
 audio "res://assets/audio/scene_01/table_items_magic_1.wav" [volume="-12" loop="false"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_fireplace_close.png" fade="0.5"]
 narrator: Бабушка высыпает на стол три предмета: медвежий коготь на шнурке, берестяную коробочку с выжженной спиралью, и маленькое зеркальце в оправе из оленьего рога.
 
 audio "res://assets/audio/scene_01/table_items_magic_2.wav" [volume="-14" loop="false"]
