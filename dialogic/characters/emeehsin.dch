@@ -16,26 +16,6 @@
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 0),
-&"portraits": {
-"drumming": {
-"export_overrides": {
-"image": "res://assets/art/portraits/emeehsin_drumming.png"
-},
-"offset": Vector2(0, 0),
-"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
-},
-"neutral": {
-"export_overrides": {
-"image": "res://assets/art/portraits/emeehsin_neutral.png"
-},
-"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
-},
-"sorrowful": {
-"export_overrides": {
-"image": "res://assets/art/portraits/emeehsin_sorrowful.png"
-},
-"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
-}
-},
+&"portraits": {},
 &"scale": 1.0
 }
