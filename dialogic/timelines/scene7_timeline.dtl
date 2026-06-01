@@ -16,13 +16,13 @@ narrator: Глава VII: Мясник.
 # ---------- ЧАСТЬ 1: ВОЗВРАЩЕНИЕ К ЮРТЕ / ПЕРЕХОД ----------
 # TODO background: res://assets/art/backgrounds/scene7/bg_scene7_shaman_yurt_return.png
 
-join aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
-join kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
-join bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: join aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: join kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: join bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
 
 narrator: После суда герои становятся тяжелее, но честнее. Каждый шаг звучит так, будто под ногами лежит не лёд, а память.
 
-join emeehsin (neutral) pos=x0.25 y0.70 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: join emeehsin (neutral) pos=x0.25 y0.70 size=x0.18 y0.60 [z_index="2"]
 
 emeehsin: Следующая инициация не про врага.
 
@@ -41,14 +41,14 @@ emeehsin: Она про то, что внутри. Про то, что ты на
 	aisen: Мне нужно немного времени.
 	kunney: Я подожду рядом.
 
-leave emeehsin
+# TODO portrait: leave emeehsin
 
 # ---------- ЧАСТЬ 2: ТУННЕЛЬ РАССЕЧЕНИЯ ----------
 # TODO background: res://assets/art/backgrounds/scene7/bg_scene7_cutting_tunnel.png
 
-update aisen (focused) pos=x0.38 y0.72 size=x0.18 y0.60 [z_index="2"]
-update kunney (neutral) pos=x0.62 y0.72 size=x0.16 y0.56 [z_index="3"]
-update bargyy (default) pos=x0.18 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.38 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: update kunney (neutral) pos=x0.62 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: update bargyy (default) pos=x0.18 y0.78 size=x0.13 y0.34 [z_index="1"]
 # TODO: butcher_memory TODO: x0.80 y0.70 z_index=2. butcher_memory.dch has no portraits yet.
 
 narrator: Стены туннеля похожи на слои бересты, кожи, льда и памяти. Здесь всё хранит отпечаток прикосновения.
@@ -71,9 +71,9 @@ narrator: Сююлюккэ ещё не виден, но его инструме�
 # ---------- ЧАСТЬ 3: ПЕЩЕРА КОСТЕЙ ----------
 # TODO background: res://assets/art/backgrounds/scene7/bg_scene7_bone_cave.png
 
-update aisen (focused) pos=x0.28 y0.72 size=x0.18 y0.60 [z_index="2"]
-update kunney (neutral) pos=x0.48 y0.72 size=x0.16 y0.56 [z_index="3"]
-update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.28 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: update kunney (neutral) pos=x0.48 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
 # TODO: syuyulukke TODO: x0.75 y0.66 z_index=4 / ritual center x0.50 y0.66 z_index=5. syuyulukke.dch has no portraits yet.
 
 syuyulukke: Что из этого ты всё ещё называешь собой?
@@ -100,9 +100,9 @@ narrator: Перед Айсеном поднимаются три символи
 # ---------- ЧАСТЬ 4: ОПЕРАЦИОННЫЙ ЗАЛ ДУШИ ----------
 # TODO background: res://assets/art/backgrounds/scene7/bg_scene7_soul_operating_room.png
 
-update aisen (focused) pos=x0.25 y0.72 size=x0.18 y0.60 [z_index="2"]
-update kunney (neutral) pos=x0.75 y0.72 size=x0.16 y0.56 [z_index="3"]
-update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.25 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: update kunney (neutral) pos=x0.75 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
 # TODO: syuyulukke.dch has no portraits yet. Ritual center: x0.50 y0.66 z_index=5.
 
 narrator: Пространство меняется. Нет крови, нет тела, нет угрозы. Только светящиеся нити памяти, натянутые между тем, что было, и тем, кем можно стать.
@@ -139,21 +139,21 @@ else:
 - Попросить Кюннэй назвать хорошее воспоминание
 	if {self_acceptance} >= 2:
 		set butcher_outcome = "held_by_family"
-		update kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
+		# TODO portrait: update kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
 		kunney: Помнишь, как Баргый украл рукавицу, а ты смеялся так, что Эбэ тоже засмеялась?
 		narrator: Хорошее воспоминание держит Айсена крепче страха.
 	else:
 		set butcher_outcome = "fragile"
-		update kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
+		# TODO portrait: update kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
 		kunney: Я помню хорошее. Просто сейчас трудно.
 		narrator: Воспоминание есть, но нить дрожит.
 
 # ---------- ЧАСТЬ 5: ВЫБОР — ЧТО ОСТАВИТЬ ----------
 # TODO background: res://assets/art/backgrounds/scene7/bg_scene7_memory_threads.png
 
-update aisen (focused) pos=x0.50 y0.72 size=x0.18 y0.60 [z_index="3"]
-update kunney (neutral) pos=x0.65 y0.72 size=x0.16 y0.56 [z_index="2"]
-update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.50 y0.72 size=x0.18 y0.60 [z_index="3"]
+# TODO portrait: update kunney (neutral) pos=x0.65 y0.72 size=x0.16 y0.56 [z_index="2"]
+# TODO portrait: update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
 # TODO: syuyulukke.dch has no portraits yet. Choice phase: x0.75 y0.66 z_index=4.
 
 narrator: Нельзя выбросить всё прошлое. Нужно выбрать, что останется не цепью, а силой.
@@ -173,9 +173,9 @@ narrator: Нельзя выбросить всё прошлое. Нужно вы
 
 # ---------- ЧАСТЬ 6: ИТОГ ----------
 
-update aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
-update kunney (neutral) pos=x0.58 y0.72 size=x0.16 y0.56 [z_index="3"]
-update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: update kunney (neutral) pos=x0.58 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
 
 if {butcher_outcome} == "accepted":
 	narrator: Ритуал проходит тихо. Айсен становится легче, но честнее.
@@ -194,8 +194,8 @@ narrator: Туннель за ним открывается в простран�
 
 narrator: КОНЕЦ СЦЕНЫ 7. Переход к Сцене 8.
 
-leave aisen
-leave kunney
-leave bargyy
+# TODO portrait: leave aisen
+# TODO portrait: leave kunney
+# TODO portrait: leave bargyy
 
 [end_timeline]

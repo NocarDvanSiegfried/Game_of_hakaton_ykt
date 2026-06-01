@@ -14,9 +14,9 @@ narrator: Глава IV: Плачущая Вода.
 # ---------- ЧАСТЬ 1: ПОРОГ СРЕДНЕГО МИРА ----------
 # TODO background: res://assets/art/backgrounds/scene4/bg_scene4_middle_world_threshold.png
 
-join aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
-join kunney (neutral) pos=x0.62 y0.72 size=x0.16 y0.56 [z_index="3"]
-join bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: join aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: join kunney (neutral) pos=x0.62 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: join bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
 
 narrator: Герои входят в пещеру. Камень под ногами мокрый, но вода тёплая, будто где-то рядом бьётся живое сердце.
 
@@ -42,9 +42,9 @@ narrator: Баргый тревожно водит носом по воздух�
 # ---------- ЧАСТЬ 2: ПЕЩЕРА СЛЁЗ ----------
 # TODO background: res://assets/art/backgrounds/scene4/bg_scene4_tears_cave.png
 
-update aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
-update kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
-update bargyy (default) pos=x0.18 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: update kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: update bargyy (default) pos=x0.18 y0.78 size=x0.13 y0.34 [z_index="1"]
 # TODO: memory_shadow.dch has no portraits yet. Add one memory shadow portrait, then show it at pos=x0.80 y0.70 size=x0.18 y0.50 [z_index="2"].
 
 narrator: Тени-воспоминания поднимаются из воды. Они не похожи на врагов. Скорее на то, что слишком долго не называли вслух.
@@ -70,9 +70,9 @@ memory_shadow: Лицо в воде. Имя под водой.
 # ---------- ЧАСТЬ 3: ОЗЕРО ЗАБЫТЫХ ЛИЦ ----------
 # TODO background: res://assets/art/backgrounds/scene4/bg_scene4_forgotten_faces_lake.png
 
-update aisen (focused) pos=x0.30 y0.72 size=x0.18 y0.60 [z_index="2"]
-update kunney (neutral) pos=x0.48 y0.72 size=x0.16 y0.56 [z_index="3"]
-update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.30 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: update kunney (neutral) pos=x0.48 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
 # TODO: ytyyr_uu.dch has no portraits yet. Add one Ytyyr Uu portrait, then reveal her at pos=x0.78 y0.66 size=x0.24 y0.68 [z_index="4"].
 
 narrator: Озеро лежит в центре пещеры ровным кругом. На поверхности всплывают лица, но ни одно не задерживается.
@@ -99,9 +99,9 @@ ytyyr_uu: Тогда вы пришли отнять последнее.
 # ---------- ЧАСТЬ 4: ЛУННЫЙ ГРОТ — БОСС-ИСЦЕЛЕНИЕ ----------
 # TODO background: res://assets/art/backgrounds/scene4/bg_scene4_lunar_grotto.png
 
-update aisen (focused) pos=x0.25 y0.72 size=x0.18 y0.60 [z_index="2"]
-update kunney (neutral) pos=x0.75 y0.72 size=x0.16 y0.56 [z_index="3"]
-update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.25 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: update kunney (neutral) pos=x0.75 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
 # TODO: ytyyr_uu.dch has no portraits yet. Once added, move her to pos=x0.50 y0.66 size=x0.24 y0.68 [z_index="4"].
 
 narrator: Лунный грот открывается под озером. Здесь нельзя победить ударом. Здесь можно только понять, куда направлена боль.
@@ -113,12 +113,12 @@ narrator: Лунный грот открывается под озером. Зд
 - Попросить Кюннэй спеть колыбельную
 	if {empathy_score} >= 2:
 		set ytyyr_outcome = "comforted"
-		update kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
+		# TODO portrait: update kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
 		kunney: Я спою не против тебя. Я спою рядом.
 		narrator: Колыбельная ложится на воду, и плач впервые сбивается с вечного круга.
 	else:
 		set ytyyr_outcome = "unstable"
-		update kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
+		# TODO portrait: update kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
 		kunney: Я попробую...
 		narrator: Песня дрожит. Плач слышит её, но ещё не верит.
 - Показать Зеркало Сути
@@ -133,9 +133,9 @@ narrator: Лунный грот открывается под озером. Зд
 
 # ---------- ЧАСТЬ 5: ВЫБОР — МЕСТЬ ИЛИ ПРОЩЕНИЕ ----------
 
-update aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
-update kunney (neutral) pos=x0.52 y0.72 size=x0.16 y0.56 [z_index="3"]
-update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: update kunney (neutral) pos=x0.52 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
 # TODO: ytyyr_uu.dch has no portraits yet. If she softens, place her at pos=x0.65 y0.70 size=x0.24 y0.68 [z_index="4"].
 
 ytyyr_uu: Он отвернулся. Скажите, что он виноват. Скажите, что боль должна вернуться к нему.
@@ -175,16 +175,16 @@ else:
 narrator: Вода затихает.
 
 # TODO: leave ytyyr_uu here after ytyyr_uu.dch gets a real portrait and join above.
-update aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
-update kunney (neutral) pos=x0.58 y0.72 size=x0.16 y0.56 [z_index="3"]
-update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: update kunney (neutral) pos=x0.58 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
 
 narrator: Лунный грот открывает багровый туннель. Из глубины доносится удар молота.
 
 narrator: КОНЕЦ СЦЕНЫ 4. Переход к Сцене 5.
 
-leave aisen
-leave kunney
-leave bargyy
+# TODO portrait: leave aisen
+# TODO portrait: leave kunney
+# TODO portrait: leave bargyy
 
 [end_timeline]

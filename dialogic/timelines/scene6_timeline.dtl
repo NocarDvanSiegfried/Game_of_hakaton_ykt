@@ -14,9 +14,9 @@ narrator: Глава VI: Чёрный Трон.
 # ---------- ЧАСТЬ 1: КОРИДОР ПРИГОВОРОВ ----------
 # TODO background: res://assets/art/backgrounds/scene6/bg_scene6_verdict_corridor.png
 
-join aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
-join kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
-join bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: join aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: join kunney (neutral) pos=x0.60 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: join bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
 # TODO: accused_shadow TODO: x0.12/x0.88 y0.70 z_index=2. accused_shadow.dch has no portraits yet.
 
 narrator: Герои входят в длинный серый коридор. По обеим сторонам сидят тени, сложив руки на коленях.
@@ -48,9 +48,9 @@ kunney: Здесь правда без тепла.
 # ---------- ЧАСТЬ 2: ЗАЛ ТЫСЯЧИ ЛИЦ ----------
 # TODO background: res://assets/art/backgrounds/scene6/bg_scene6_thousand_faces_hall.png
 
-update aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
-update kunney (neutral) pos=x0.62 y0.72 size=x0.16 y0.56 [z_index="3"]
-update bargyy (default) pos=x0.18 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: update kunney (neutral) pos=x0.62 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: update bargyy (default) pos=x0.18 y0.78 size=x0.13 y0.34 [z_index="1"]
 # TODO: accused_shadow.dch has no portraits yet. Reflected faces phase: x0.50 y0.70 z_index=1.
 
 narrator: Стены зала покрыты лицами. Они не кричат. Они повторяют ошибки так спокойно, что от этого страшнее.
@@ -75,9 +75,9 @@ narrator: Айсен видит момент, где не смог защити�
 # ---------- ЧАСТЬ 3: ТРОННЫЙ ЗАЛ ----------
 # TODO background: res://assets/art/backgrounds/scene6/bg_scene6_black_throne_hall.png
 
-update aisen (focused) pos=x0.25 y0.72 size=x0.18 y0.60 [z_index="2"]
-update kunney (neutral) pos=x0.42 y0.72 size=x0.16 y0.56 [z_index="3"]
-update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.25 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: update kunney (neutral) pos=x0.42 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
 # TODO: khara_sandal TODO: x0.75 y0.64 z_index=5 / center phase x0.58 y0.64 z_index=5. khara_sandal.dch has no portraits yet.
 
 khara_sandal: Айсен. Я вижу страх. Вину. Ложь.
@@ -106,46 +106,46 @@ kunney: Но ты показываешь не всё.
 
 # ---------- ЧАСТЬ 4: СУДЕБНЫЙ ПОЕДИНОК ----------
 
-update aisen (focused) pos=x0.25 y0.72 size=x0.18 y0.60 [z_index="2"]
-update kunney (neutral) pos=x0.40 y0.72 size=x0.16 y0.56 [z_index="3"]
-update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.25 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: update kunney (neutral) pos=x0.40 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: update bargyy (default) pos=x0.15 y0.78 size=x0.13 y0.34 [z_index="1"]
 # TODO: khara_sandal.dch has no portraits yet. Center phase: x0.58 y0.64 z_index=5.
 
 narrator: Судебный поединок начинается без оружия. Каждое слово становится доказательством.
 
 - Показать Судье только свои ошибки
 	set khara_outcome = "condemned"
-	update aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
+	# TODO portrait: update aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
 	aisen: Вот мои ошибки. Судите.
 	narrator: Тени принимают это слишком быстро, будто давно ждали признания без защиты.
 - Показать Судье добро, которое тоже было
 	if {truth_seen} >= 2:
 		set khara_outcome = "balanced"
-		update aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
+		# TODO portrait: update aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
 		aisen: Была вина. Но была и рука, которую я протянул. Был страх. Но была и дорога назад.
 		narrator: Весы впервые показывают не одну чашу, а две.
 	else:
 		set khara_outcome = "partial_truth"
-		update aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
+		# TODO portrait: update aisen (focused) pos=x0.35 y0.72 size=x0.18 y0.60 [z_index="2"]
 		aisen: Было и добро.
 		narrator: Слова верные, но доказательств мало. Тьма удерживает зал.
 - Попросить Кюннэй стать свидетелем
 	if {mercy_score} >= 2:
 		set khara_outcome = "witnessed"
-		update kunney (neutral) pos=x0.50 y0.72 size=x0.16 y0.56 [z_index="3"]
+		# TODO portrait: update kunney (neutral) pos=x0.50 y0.72 size=x0.16 y0.56 [z_index="3"]
 		kunney: Я была там. Айсен боялся, но шёл. Он ошибался, но возвращался.
 		narrator: Свидетельство звучит теплее приговора.
 	else:
 		set khara_outcome = "weak_witness"
-		update kunney (neutral) pos=x0.50 y0.72 size=x0.16 y0.56 [z_index="3"]
+		# TODO portrait: update kunney (neutral) pos=x0.50 y0.72 size=x0.16 y0.56 [z_index="3"]
 		kunney: Я... я знаю, что он хороший.
 		narrator: Кюннэй говорит правду, но зал требует больше, чем сердце может сразу дать.
 
 # ---------- ЧАСТЬ 5: ВЫБОР — ОСУДИТЬ ИЛИ ПРОСТИТЬ СЕБЯ ----------
 
-update aisen (focused) pos=x0.50 y0.72 size=x0.18 y0.60 [z_index="3"]
-update kunney (neutral) pos=x0.35 y0.72 size=x0.16 y0.56 [z_index="2"]
-update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.50 y0.72 size=x0.18 y0.60 [z_index="3"]
+# TODO portrait: update kunney (neutral) pos=x0.35 y0.72 size=x0.16 y0.56 [z_index="2"]
+# TODO portrait: update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
 # TODO: khara_sandal.dch has no portraits yet. For the self-judgment choice, place him at pos=x0.78 y0.64 size=x0.28 y0.72 [z_index="5"].
 
 khara_sandal: Приговор должен быть принят.
@@ -191,13 +191,13 @@ else:
 			set memory_weight += 1
 			narrator: Герои проходят, но приговор остаётся тяжёлым следом в памяти.
 
-update aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
-update kunney (neutral) pos=x0.58 y0.72 size=x0.16 y0.56 [z_index="3"]
-update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
+# TODO portrait: update aisen (focused) pos=x0.42 y0.72 size=x0.18 y0.60 [z_index="2"]
+# TODO portrait: update kunney (neutral) pos=x0.58 y0.72 size=x0.16 y0.56 [z_index="3"]
+# TODO portrait: update bargyy (default) pos=x0.20 y0.78 size=x0.13 y0.34 [z_index="1"]
 
 narrator: За троном открывается узкий проход в Туннель Рассечения.
 
-join emeehsin (neutral) pos=x0.78 y0.70 size=x0.18 y0.62 [z_index="4"]
+# TODO portrait: join emeehsin (neutral) pos=x0.78 y0.70 size=x0.18 y0.62 [z_index="4"]
 
 emeehsin: Впереди — инициации. Три испытания. Их можно пройти по-разному. Что ближе твоему сердцу?
 
@@ -214,12 +214,12 @@ emeehsin: Впереди — инициации. Три испытания. Их
 	aisen: Я не отдам свою боль. Она — часть меня. Я сохраню её для финала.
 	emeehsin: Если твоя цель — защита, а не месть, ты пройдёшь. Но будь осторожен.
 
-leave emeehsin
+# TODO portrait: leave emeehsin
 
 narrator: КОНЕЦ СЦЕНЫ 6. Переход к Сцене 7.
 
-leave aisen
-leave kunney
-leave bargyy
+# TODO portrait: leave aisen
+# TODO portrait: leave kunney
+# TODO portrait: leave bargyy
 
 [end_timeline]
