@@ -66,6 +66,8 @@ ebe: Идите сюда. Оба.
 
 audio "res://assets/audio/scene_01/table_items_magic_1.wav" [volume="-10" loop="false"]
 
+[signal arg="hide_scene1_grandmother_house_layered"]
+
 [background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_fireplace_close.png" fade="0.5"]
 
 audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_03_amulets.mp3" [volume="0" loop="false"]
@@ -92,13 +94,13 @@ narrator: Экран темнеет.
 audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_04_chapter.mp3" [volume="0" loop="false"]
 narrator: Глава I: Пурга
 
-[signal arg="hide_scene1_grandmother_house_layered"]
-
 # ---------- ЧАСТЬ 2: УТРО В ДОМЕ ----------
 
 audio fireplace -
 
 audio house_morning "res://assets/audio/scene_01/house_after_night_1.wav" [loop="true" fade="0.8" volume="-14"]
+
+[background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_window_blizzard.png" fade="0.5"]
 
 audio "res://assets/audio/scene_01/morning_stove_desc_1.wav" [volume="-12" loop="false"]
 narrator: Утро. Печь почти погасла, только угли тлеют.
@@ -129,6 +131,7 @@ aisen: Правда. Вставай, соня.
 audio "res://assets/audio/scene_01/cloth_rustle_wake_3.wav" [volume="-12" loop="false"]
 audio "res://assets/audio/scene_01/table_items_magic_1.wav" [volume="-14" loop="false"]
 audio "res://assets/audio/scene_01/morning_stove_desc_3.wav" [volume="-12" loop="false"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_window_blizzard2.jpg" fade="0.5"]
 narrator: Айсен подходит к столу. Три оберега лежат на месте.
 
 audio stove_embers "res://assets/audio/scene_01/stove_embers_2.wav" [loop="true" fade="0.8" volume="-16"]
@@ -178,7 +181,7 @@ narrator: Айсен открывает дверь. Звук мгновенно 
 
 audio blizzard "res://assets/audio/scene_01/blizzard_outside.wav" [loop="true" fade="0.2" volume="-10"]
 
-[background arg="res://assets/art/backgrounds/scene_01/village_blizzard.png" fade="0.5"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_scene1_dog_tracks_yard.jpg" fade="0.5"]
 
 audio "res://assets/audio/scene_01/bargyy_missing_4.wav" [volume="-10" loop="false"]
 aisen: Баргый! Баргый, ко мне!
