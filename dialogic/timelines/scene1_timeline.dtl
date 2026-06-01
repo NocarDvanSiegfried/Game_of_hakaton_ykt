@@ -115,6 +115,7 @@ audio narrator_voice -
 audio ebe_voice -
 audio aisen_voice -
 audio kunney_voice -
+audio tongus_voice -
 audio fireplace -
 
 audio house_morning "res://assets/audio/scene_01/house_after_night_1.wav" [loop="true" fade="0.8" volume="-14"]
@@ -195,6 +196,7 @@ audio "res://assets/audio/scene_01/stove_embers_4.wav" [volume="-14" loop="false
 audio narrator_voice -
 audio aisen_voice -
 audio kunney_voice -
+audio tongus_voice -
 audio stove_embers -
 audio house_morning -
 
@@ -276,6 +278,7 @@ audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_11_get_kunney.m
 audio narrator_voice -
 audio aisen_voice -
 audio kunney_voice -
+audio tongus_voice -
 
 [background arg="res://assets/art/backgrounds/scene_01/snowy_forest_path.png" fade="0.5"]
 
@@ -309,11 +312,12 @@ audio narrator_voice "res://assets/audio/scene_01/voice/chase_part4_06_turn_bark
 narrator: Айсен резко сворачивает. Лай Баргыя — совсем близко.
 
 # ---------- ЧАСТЬ 5: У ПРОРУБИ ----------
-# Озвучка автора: канал narrator_voice. SFX = One-Shot.
+# Озвучка автора: канал narrator_voice. Тонгус: канал tongus_voice. SFX = One-Shot.
 
 audio narrator_voice -
 audio aisen_voice -
 audio kunney_voice -
+audio tongus_voice -
 
 audio snow_run -
 audio blizzard -
@@ -360,9 +364,11 @@ audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_07_tongus_for
 narrator: Огромный — метра три высотой, из мутного пузырчатого льда. Внутри плавают замёрзшие листья и рыбы. Один глаз во лоб — огромный, подёрнутый бельмом. Он смотрит сквозь Айсена. Он слеп.
 
 audio "res://assets/audio/scene_01/tongus_voice_1.wav" [volume="-4" loop="false"]
+audio tongus_voice "res://assets/audio/scene_01/voice/tongus_voice_01_warmth.mp3" [volume="0" loop="false"]
 tongus: Т-т-те... п-п-ло... Т-т-тепло. Я чув-с-ствую т-т-тепло. Маленькое. Ж-ж-живое.
 
 audio "res://assets/audio/scene_01/tongus_voice_2.wav" [volume="-4" loop="false"]
+audio tongus_voice "res://assets/audio/scene_01/voice/tongus_voice_02_come.mp3" [volume="0" loop="false"]
 tongus: Иди с-с-сюда. Я согрею.
 
 audio "res://assets/audio/scene_01/tongus_rise_4.wav" [volume="-8" loop="false"]
@@ -377,17 +383,21 @@ audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_15_tongus.mp3" 
 aisen: Бабушка говорила о тебе. Ты Тонгус Харах. Ты не греешь. Ты крадёшь.
 
 audio "res://assets/audio/scene_01/tongus_voice_3.wav" [volume="-4" loop="false"]
+audio tongus_voice "res://assets/audio/scene_01/voice/tongus_voice_03_steal.mp3" [volume="0" loop="false"]
 tongus: К-к-раду? Н-н-нет. Я беру то, что всё р-р-равно умрёт. Ты умрёшь. Он умрёт. Все у-у-умрут.
 
+audio tongus_voice "res://assets/audio/scene_01/voice/tongus_voice_04_eternal.mp3" [volume="0" loop="false"]
 tongus: Но ваше т-т-тепло... оно может жить во мне. Веч-ч-чно. Разве это не к-к-расиво?
 
 audio "res://assets/audio/scene_01/tongus_voice_4.wav" [volume="-4" loop="false"]
+audio tongus_voice "res://assets/audio/scene_01/voice/tongus_voice_05_give_dog.mp3" [volume="0" loop="false"]
 tongus: От-т-тдай. И я от-т-тпущу собаку.
 
 audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_16_wont_release.mp3" [volume="0" loop="false"]
 aisen: ...ты не отпустишь. Ты слепой. Ты не отличаешь живое от мёртвого. Как ты поймёшь, что я отдал?
 
 audio "res://assets/audio/scene_01/tongus_voice_3.wav" [volume="-8" loop="false"]
+audio tongus_voice "res://assets/audio/scene_01/voice/tongus_voice_06_feel_heat.mp3" [volume="0" loop="false"]
 tongus: Я... ч-ч-увствую. Тепло — это когда... когда горит. Когда внутри... щиплет. Я знаю т-т-тепло.
 
 audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_10_victims_words.mp3" [volume="0" loop="false"]
@@ -399,6 +409,7 @@ narrator: Он не знает. Он повторяет то, что слыша�
 audio narrator_voice -
 audio aisen_voice -
 audio kunney_voice -
+audio tongus_voice -
 
 audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_17_tactic_choice.mp3" [volume="0" loop="false"]
 aisen: Он слепой. Реагирует на тепло, но не отличает настоящее. Можно подсунуть что-то горячее, но неживое. Что выбрать?
@@ -456,6 +467,7 @@ audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_20_heart.mp3" [
 audio narrator_voice -
 audio aisen_voice -
 audio kunney_voice -
+audio tongus_voice -
 
 audio "res://assets/audio/scene_01/demon_crack_1.wav" [volume="-4" loop="false"]
 audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_01_weakened.mp3" [volume="0" loop="false"]
@@ -502,6 +514,7 @@ audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_23_spare.mp3" [
 audio narrator_voice -
 audio aisen_voice -
 audio kunney_voice -
+audio tongus_voice -
 
 # TODO portrait: leave tongus
 # TODO portrait: join bargyy (default) pos=x0.18 y0.73 size=x0.10 y0.28 [z_index="1"]
@@ -629,6 +642,7 @@ audio narrator_voice -
 audio aisen_voice -
 audio ebe_voice -
 audio kunney_voice -
+audio tongus_voice -
 audio snow_run -
 audio yakut_night -
 audio blizzard -
