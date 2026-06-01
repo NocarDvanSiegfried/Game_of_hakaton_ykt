@@ -106,6 +106,7 @@ audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_04_chapter.m
 narrator: Глава I: Пурга
 
 # ---------- ЧАСТЬ 2: УТРО В ДОМЕ ----------
+# Озвучка автора: narrator_voice. morning_part2_01 — одна запись на три строки утра.
 
 audio narrator_voice -
 audio ebe_voice -
@@ -116,6 +117,7 @@ audio house_morning "res://assets/audio/scene_01/house_after_night_1.wav" [loop=
 [background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_window_blizzard.png" fade="0.5"]
 
 audio "res://assets/audio/scene_01/morning_stove_desc_1.wav" [volume="-12" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/morning_part2_01_morning.mp3" [volume="0" loop="false"]
 narrator: Утро. Печь почти погасла, только угли тлеют.
 
 audio stove_embers "res://assets/audio/scene_01/stove_embers_1.wav" [loop="true" fade="0.5" volume="-14"]
@@ -145,6 +147,7 @@ audio "res://assets/audio/scene_01/cloth_rustle_wake_3.wav" [volume="-12" loop="
 audio "res://assets/audio/scene_01/table_items_magic_1.wav" [volume="-14" loop="false"]
 audio "res://assets/audio/scene_01/morning_stove_desc_3.wav" [volume="-12" loop="false"]
 [background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_window_blizzard2.jpg" fade="0.5"]
+audio narrator_voice "res://assets/audio/scene_01/voice/morning_part2_03_table.mp3" [volume="0" loop="false"]
 narrator: Айсен подходит к столу. Три оберега лежат на месте.
 
 audio stove_embers "res://assets/audio/scene_01/stove_embers_2.wav" [loop="true" fade="0.8" volume="-14"]
