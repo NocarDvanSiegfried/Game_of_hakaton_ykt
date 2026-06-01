@@ -23,6 +23,13 @@
 },
 "offset": Vector2(0, 0),
 "scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
+},
+"with_bargyy": {
+"export_overrides": {
+"image": "res://assets/art/characters/ebe/ebe_with_bargyy.png"
+},
+"offset": Vector2(0, 0),
+"scene": "res://addons/dialogic/Modules/Character/default_portrait.tscn"
 }
 },
 &"scale": 1.0

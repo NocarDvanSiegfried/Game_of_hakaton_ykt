@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cl0703ofsu5eh"]
 
 [ext_resource type="Script" uid="uid://bi7xcbt4tqdfa" path="res://scripts/ui/main_menu.gd" id="1_menu"]
-[ext_resource type="Texture2D" uid="uid://clnlnddw6osmm" path="res://assets/art/backgrounds/scene_01/village_blizzard.png" id="2_bg"]
+[ext_resource type="Texture2D" path="res://assets/art/backgrounds/menu/main_menu_background_neutral.png" id="2_bg"]
 [ext_resource type="FontFile" uid="uid://c6vdxxc8uyx21" path="res://assets/fonts/NotoSerif-Regular.ttf" id="3_font"]
 [ext_resource type="AudioStream" uid="uid://djv1227pq6or" path="res://assets/audio/menu/menu.wav" id="4_menu_music"]
 
@@ -10,12 +10,44 @@ content_margin_left = 24.0
 content_margin_top = 10.0
 content_margin_right = 24.0
 content_margin_bottom = 10.0
-bg_color = Color(0.08, 0.14, 0.22, 0.85)
+bg_color = Color(0.121569, 0.137255, 0.14902, 0.82)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.72, 0.83, 0.89, 0.9)
+border_color = Color(0.682353, 0.721569, 0.752941, 0.9)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_hover"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+bg_color = Color(0.203922, 0.227451, 0.247059, 0.86)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.752941, 0.784314, 0.811765, 0.95)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button_pressed"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+bg_color = Color(0.082353, 0.094118, 0.105882, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.682353, 0.721569, 0.752941, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -92,10 +124,24 @@ theme_override_colors/font_hover_color = Color(0.91, 0.66, 0.36, 1)
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_button")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_button")
-theme_override_styles/hover = SubResource("StyleBoxFlat_button")
-theme_override_styles/focus = SubResource("StyleBoxFlat_button")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_button_hover")
 text = "Новая игра"
+
+[node name="DebugSceneSelectButton" type="Button" parent="Center/VBox/Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 48)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_colors/font_color = Color(0.94, 0.92, 0.85, 1)
+theme_override_colors/font_hover_color = Color(0.91, 0.66, 0.36, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_button_hover")
+text = "Выбор сцены"
 
 [node name="QuitButton" type="Button" parent="Center/VBox/Buttons" unique_id=459330080]
 unique_name_in_owner = true
@@ -106,7 +152,7 @@ theme_override_colors/font_hover_color = Color(0.91, 0.66, 0.36, 1)
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_button")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_button")
-theme_override_styles/hover = SubResource("StyleBoxFlat_button")
-theme_override_styles/focus = SubResource("StyleBoxFlat_button")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_button_hover")
 text = "Выход"

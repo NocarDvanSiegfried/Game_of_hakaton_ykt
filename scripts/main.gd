@@ -11,10 +11,17 @@ func _ready() -> void:
 	if not Dialogic.timeline_ended.is_connected(timeline_ended_callback):
 		Dialogic.timeline_ended.connect(timeline_ended_callback)
 
-	# Запускаем таймлайн Сцены 1
-	# Имя 'scene1_timeline' — это имя файла без расширения (.dtl)
+	# Имя timeline — это имя файла без расширения (.dtl).
 	# Dialogic ищет таймлайны по всему проекту автоматически.
-	_start_timeline("scene1_timeline")
+	var debug_state: Variant = get_node_or_null("/root/DebugState")
+	var start_timeline := ""
+	if debug_state != null:
+		start_timeline = debug_state.consume_start_timeline_override()
+	if start_timeline.is_empty():
+		start_timeline = "scene1_timeline"
+	else:
+		debug_state.prepare_debug_vars_for_timeline(start_timeline)
+	_start_timeline(start_timeline)
 
 
 func _start_timeline(timeline_name: String) -> void:

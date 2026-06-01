@@ -3,6 +3,8 @@
 
 # ---------- ЧАСТЬ 0: ВСТУПИТЕЛЬНЫЙ ТЕКСТ ----------
 
+[background arg="res://assets/art/backgrounds/scene_01/bg_scene1_intro_frozen_wasteland.png" fade="0.5"]
+
 narrator: Слушай, путник. Слушай так, как слушали мои предки тысячу зим назад.
 
 narrator: Когда термометр падает ниже минус пятидесяти, когда деревья стреляют от мороза, а птицы замерзают на лету — знай: это не просто холод. Это Тымныы Олус — Лютый Холод.
@@ -13,12 +15,7 @@ narrator: Но не бойся. Потому что там, где кончае�
 
 # ---------- ЧАСТЬ 1: ДОМ БАБУШКИ — ПРОЛОГ ----------
 
-[background arg="res://assets/art/backgrounds/scene_01/grandmother_house_interior.png" fade="0.5"]
-
-join ebe (default) pos=x0.25 y0.73 size=x0.18 y0.50 [z_index="1"]
-join aisen (neutral) pos=x0.50 y0.72 size=x0.13 y0.45 [z_index="2"]
-join kunney (neutral) pos=x0.75 y0.73 size=x0.13 y0.45 [z_index="3"]
-join bargyy (default) pos=x0.32 y0.74 size=x0.12 y0.32 [z_index="2"]
+[background arg="res://assets/art/backgrounds/scene_01/grandmother_house_full_scene.png" fade="0.5"]
 
 narrator: Якутская изба. Огонь в печи пляшет. За окном беснуется пурга. У ног бабушки лежит Баргый — крупный серый пёс с белой звездой на груди.
 
@@ -59,11 +56,6 @@ ebe: Запомните главное, дети. С Абаасы нельзя �
 ebe: Их можно запутать. Их можно обмануть. Их можно заставить победить самих себя.
 
 ebe: Спите сейчас. Завтра будет трудный день.
-
-leave ebe
-leave aisen
-leave kunney
-leave bargyy
 
 narrator: Экран темнеет.
 
