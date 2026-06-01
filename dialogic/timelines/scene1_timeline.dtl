@@ -95,7 +95,7 @@ leave kunney
 leave ebe
 update aisen (protect) pos=x0.50 y0.71 size=x0.13 y0.45 [z_index="2"]
 join bargyy (default) pos=x0.20 y0.73 size=x0.10 y0.28 [z_index="1"]
-audio blizzard "res://scene 1/Пурга за окном/Extreme_arctic_blizz_#1-1780274846522.wav" [loop="true" fade="0.2" volume="-10"]
+audio blizzard "res://assets/audio/scene_01/blizzard_outside.wav" [loop="true" fade="0.2" volume="-10"]
 
 narrator: Айсен открывает дверь. Звук мгновенно меняется — рёв ветра. Микрофон захлёбывается. Мир сжимается до размера крыльца.
 
