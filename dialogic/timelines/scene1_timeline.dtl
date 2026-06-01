@@ -244,7 +244,7 @@ audio blizzard -
 audio "res://assets/audio/scene_01/leash_ice_untie_1.wav" [volume="-4" loop="false"]
 narrator: Замёрзшая река. Идеально круглая прорубь. Вокруг — ледяные столбы. Баргый запутался поводком в ледяном торосе.
 
-audio "res://assets/audio/scene_01/bargyy_bark_ice_hole_1.wav" [volume="0" loop="false"]
+audio "res://assets/audio/scene_01/bargyy_bark_ice_hole_1.wav" [volume="-4" loop="false"]
 narrator: Он лает, глядя не на Айсена, а в прорубь.
 
 aisen: Баргый!
@@ -453,9 +453,10 @@ narrator: Экран темнеет.
 
 narrator: КОНЕЦ ГЛАВЫ I
 
-audio "res://assets/audio/scene_01/ice_dive_3.wav" [volume="-10" loop="false"]
+audio snow_run "res://assets/audio/scene_01/snow_run_3.wav" [loop="true" fade="0.6" volume="-10"]
 narrator: Айсен поднимается. В груди — твёрдый узел решимости. Он шагает в темноту.
 
+audio snow_run -
 audio yakut_night -
 audio blizzard -
 
