@@ -313,9 +313,23 @@ aisen: Тише, тише, Баргый. Я в порядке. Ты как?
 audio "res://assets/audio/scene_01/bargyy_affection_3.wav" [volume="-6" loop="false"]
 narrator: Баргый виляет хвостом.
 
+audio "res://assets/audio/scene_01/blizzard_fade_1.wav" [volume="-6" loop="false"]
 aisen: Нам надо домой. Пурга стихает. Вон, уже небо видно.
 
-narrator: Сквозь тучи пробивается луна — бледная, холодная. И вдруг — тишина. Резкая. Ветер стих. Лай Баргыя оборвался. Свет луны стал неестественно-ярким, залив всё вокруг серебром.
+audio "res://assets/audio/scene_01/blizzard_fade_2.wav" [volume="-8" loop="false"]
+narrator: Сквозь тучи пробивается луна — бледная, холодная.
+
+audio "res://assets/audio/scene_01/sharp_silence_1.wav" [volume="-6" loop="false"]
+narrator: И вдруг — тишина. Резкая.
+
+audio "res://assets/audio/scene_01/blizzard_fade_3.wav" [volume="-10" loop="false"]
+narrator: Ветер стих.
+
+audio "res://assets/audio/scene_01/bargyy_bark_cut_1.wav" [volume="-4" loop="false"]
+narrator: Лай Баргыя оборвался.
+
+audio "res://assets/audio/scene_01/bargyy_bark_cut_2.wav" [volume="-8" loop="false"]
+narrator: Свет луны стал неестественно-ярким, залив всё вокруг серебром.
 
 # TODO portrait: leave bargyy
 # TODO portrait: update aisen (neutral) pos=x0.50 y0.72 size=x0.13 y0.45 [z_index="2"]
@@ -327,18 +341,28 @@ kunney: Айсен! Айсен, смотри! Смотри, какая крас�
 
 aisen: Кюннэй! Нет!
 
-narrator: Но поздно. На берегу, у кромки леса, стоит Кюннэй. Она протягивает руку к ледяной фигуре, похожей на маленькую девочку в платье. Это Теневой Бегун, второй Абааса, уже принял форму. Кюннэй касается её — и обе исчезают. Только снег кружится на том месте.
+narrator: Но поздно. На берегу, у кромки леса, стоит Кюннэй. Она протягивает руку к ледяной фигуре, похожей на маленькую девочку в платье. Это Теневой Бегун, второй Абааса, уже принял форму.
 
+audio "res://assets/audio/scene_01/kunney_vanish_1.wav" [volume="-4" loop="false"]
+narrator: Кюннэй касается её —
+
+audio "res://assets/audio/scene_01/kunney_vanish_2.wav" [volume="-4" loop="false"]
+narrator: и обе исчезают.
+
+audio "res://assets/audio/scene_01/kunney_vanish_3.wav" [volume="-6" loop="false"]
+narrator: Только снег кружится на том месте.
+
+audio "res://assets/audio/scene_01/bargyy_howl_mourn_1.wav" [volume="-4" loop="false"]
 narrator: Баргый воет — долго, тоскливо.
 
 # TODO portrait: update aisen (sorrowful) pos=x0.50 y0.72 size=x0.13 y0.45 [z_index="2"]
 
 aisen: Нет... нет, нет, нет! Я только спас тебя, Баргый, а теперь... Кюннэй...
 
-audio "res://assets/audio/scene_01/ice_hole_freeze_2.wav" [volume="-8" loop="false"]
+audio "res://assets/audio/scene_01/ice_hole_glow_1.wav" [volume="-4" loop="false"]
 narrator: Лёд проруби, которым она затянулась, начинает светиться.
 
-audio "res://assets/audio/scene_01/ice_chime.wav" [volume="-10"]
+audio "res://assets/audio/scene_01/ice_hole_glow_2.wav" [volume="-6" loop="false"]
 narrator: Под водой виден туннель — извивающийся, уходящий вниз.
 
 aisen: ...это вход. В Нижний Мир. Настоящий вход.
@@ -347,11 +371,15 @@ narrator: Айсен встаёт. Достаёт из кармана медве
 
 aisen: Бабушка говорила: «Не вступай в прямой бой. Победи хитростью». Я понял. Я иду, Кюннэй. Я иду.
 
-narrator: Прыжок в прорубь. Экран темнеет.
+audio "res://assets/audio/scene_01/ice_dive_1.wav" [volume="-4" loop="false"]
+narrator: Прыжок в прорубь.
+
+audio "res://assets/audio/scene_01/ice_dive_2.wav" [volume="-6" loop="false"]
+narrator: Экран темнеет.
 
 narrator: КОНЕЦ ГЛАВЫ I
 
-audio "res://assets/audio/scene_01/snow_run_3.wav" [volume="-10"]
+audio "res://assets/audio/scene_01/ice_dive_3.wav" [volume="-10" loop="false"]
 narrator: Айсен поднимается. В груди — твёрдый узел решимости. Он шагает в темноту.
 
 audio blizzard -
