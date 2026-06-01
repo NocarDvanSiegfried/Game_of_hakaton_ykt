@@ -15,7 +15,7 @@ narrator: Но не бойся. Потому что там, где кончае�
 
 # ---------- ЧАСТЬ 1: ДОМ БАБУШКИ — ПРОЛОГ ----------
 
-[background arg="res://assets/art/backgrounds/scene_01/grandmother_house_full_scene.png" fade="0.5"]
+[signal arg="show_scene1_grandmother_house_layered"]
 audio fireplace "res://assets/audio/scene_01/fireplace.wav" [loop="true" fade="0.5" volume="-12"]
 
 narrator: Якутская изба. Огонь в печи пляшет. За окном беснуется пурга. У ног бабушки лежит Баргый — крупный серый пёс с белой звездой на груди.
@@ -62,6 +62,8 @@ ebe: Спите сейчас. Завтра будет трудный день.
 narrator: Экран темнеет.
 
 narrator: Глава I: Пурга
+
+[signal arg="hide_scene1_grandmother_house_layered"]
 
 # ---------- ЧАСТЬ 2: УТРО В ДОМЕ ----------
 

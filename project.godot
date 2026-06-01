@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Dialogic="*uid://ds2q0uclmolvu"
 DebugState="*res://scripts/core/debug_state.gd"
+Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
@@ -129,7 +129,7 @@ variables={
 "ytyyr_outcome": ""
 }
 layout/default_style="res://dialogic/styles/bargyy_vn_style.tres"
-layout/style_list=PackedStringArray("res://dialogic/styles/bargyy_vn_style.tres")
+layout/style_list=["res://dialogic/styles/bargyy_vn_style.tres"]
 
 [display]
 
