@@ -145,14 +145,20 @@ aisen: Бабушка говорила: «Не ходи на свет в пур�
 audio snow_run "res://assets/audio/scene_01/snow_run.wav" [loop="true" fade="0.3" volume="-8"]
 narrator: Айсен бежит сквозь пургу. Снег хлещет в лицо. Видимость — три-четыре метра.
 
+audio "res://assets/audio/scene_01/tree_branch_snap.wav" [volume="-4"]
 narrator: Ветка дерева обламывается и летит — Айсен ныряет под неё в последний момент.
 
-narrator: Дальше — проваливается по пояс в снег. Кое-как выбирается.
+audio "res://assets/audio/scene_01/snow_collapse_1.wav" [volume="-4"]
+narrator: Дальше — проваливается по пояс в снег.
+
+audio "res://assets/audio/scene_01/snow_collapse_2.wav" [volume="-6"]
+narrator: Кое-как выбирается.
 
 narrator: Огонёк появляется снова — прямо по курсу.
 
 aisen: Опять ты. Не обманешь.
 
+audio snow_run "res://assets/audio/scene_01/snow_run_2.wav" [loop="true" fade="0.4" volume="-8"]
 audio "res://assets/audio/scene_01/bargyy_bark_whine_3.wav" [volume="-4"]
 narrator: Айсен резко сворачивает. Лай Баргыя — совсем близко.
 
@@ -167,33 +173,52 @@ audio blizzard -
 # TODO portrait: update aisen (reach) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
 # TODO portrait: join tongus (default) pos=x0.75 y0.66 size=x0.30 y0.76 [z_index="3"]
 
-narrator: Замёрзшая река. Идеально круглая прорубь. Вокруг — ледяные столбы. Баргый запутался поводком в ледяном торосе. Он лает, глядя не на Айсена, а в прорубь.
+audio "res://assets/audio/scene_01/leash_ice_untie_1.wav" [volume="-4" loop="false"]
+narrator: Замёрзшая река. Идеально круглая прорубь. Вокруг — ледяные столбы. Баргый запутался поводком в ледяном торосе.
+
+audio "res://assets/audio/scene_01/bargyy_bark_ice_hole_1.wav" [volume="0" loop="false"]
+narrator: Он лает, глядя не на Айсена, а в прорубь.
 
 aisen: Баргый!
 
-narrator: Пёс поворачивается, радостно скулит, но продолжает рваться к проруби, а не от неё. Айсен пытается отвязать поводок — руки не слушаются.
+audio "res://assets/audio/scene_01/bargyy_whine_happy_1.wav" [volume="-4" loop="false"]
+narrator: Пёс поворачивается, радостно скулит, но продолжает рваться к проруби, а не от неё.
+
+audio "res://assets/audio/scene_01/leash_ice_untie_2.wav" [volume="-4" loop="false"]
+narrator: Айсен пытается отвязать поводок — руки не слушаются.
 
 aisen: Сейчас, сейчас... Потерпи.
 
-audio "res://assets/audio/scene_01/ice_chime.wav" [volume="-4"]
-narrator: Из проруби медленно поднимается фигура. Без всплеска. Огромный — метра три высотой, из мутного пузырчатого льда. Внутри плавают замёрзшие листья и рыбы. Один глаз во лоб — огромный, подёрнутый бельмом. Он смотрит сквозь Айсена. Он слеп.
+audio "res://assets/audio/scene_01/leash_ice_untie_3.wav" [volume="-6" loop="false"]
 
+audio "res://assets/audio/scene_01/tongus_rise_1.wav" [volume="-4" loop="false"]
+narrator: Из проруби медленно поднимается фигура. Без всплеска.
+
+audio "res://assets/audio/scene_01/tongus_rise_2.wav" [volume="-6" loop="false"]
+narrator: Огромный — метра три высотой, из мутного пузырчатого льда. Внутри плавают замёрзшие листья и рыбы. Один глаз во лоб — огромный, подёрнутый бельмом. Он смотрит сквозь Айсена. Он слеп.
+
+audio "res://assets/audio/scene_01/tongus_voice_1.wav" [volume="-4" loop="false"]
 tongus: Т-т-те... п-п-ло... Т-т-тепло. Я чув-с-ствую т-т-тепло. Маленькое. Ж-ж-живое.
 
+audio "res://assets/audio/scene_01/tongus_voice_2.wav" [volume="-4" loop="false"]
 tongus: Иди с-с-сюда. Я согрею.
 
+audio "res://assets/audio/scene_01/tongus_rise_4.wav" [volume="-8" loop="false"]
 narrator: Тонгус протягивает руку. Пальцы — длинные ледяные иглы. От его дыхания на лице Айсена выступает иней.
 
 aisen: Бабушка говорила о тебе. Ты Тонгус Харах. Ты не греешь. Ты крадёшь.
 
+audio "res://assets/audio/scene_01/tongus_voice_3.wav" [volume="-4" loop="false"]
 tongus: К-к-раду? Н-н-нет. Я беру то, что всё р-р-равно умрёт. Ты умрёшь. Он умрёт. Все у-у-умрут.
 
 tongus: Но ваше т-т-тепло... оно может жить во мне. Веч-ч-чно. Разве это не к-к-расиво?
 
+audio "res://assets/audio/scene_01/tongus_voice_4.wav" [volume="-4" loop="false"]
 tongus: От-т-тдай. И я от-т-тпущу собаку.
 
 aisen: ...ты не отпустишь. Ты слепой. Ты не отличаешь живое от мёртвого. Как ты поймёшь, что я отдал?
 
+audio "res://assets/audio/scene_01/tongus_voice_3.wav" [volume="-8" loop="false"]
 tongus: Я... ч-ч-увствую. Тепло — это когда... когда горит. Когда внутри... щиплет. Я знаю т-т-тепло.
 
 narrator: Он не знает. Он повторяет то, что слышал от жертв.
@@ -238,10 +263,12 @@ aisen: Готов. Что мне теперь сделать?
 # TODO portrait: join bargyy (default) pos=x0.18 y0.73 size=x0.10 y0.28 [z_index="1"]
 # TODO portrait: update aisen (kneel) pos=x0.25 y0.74 size=x0.13 y0.45 [z_index="2"]
 
+audio "res://assets/audio/scene_01/bargyy_whine_happy_2.wav" [volume="-4" loop="false"]
 narrator: Прорубь начинает затягиваться новым, чистым льдом. Баргый освобождается и бросается к Айсену, лижет лицо.
 
 aisen: Тише, тише, Баргый. Я в порядке. Ты как?
 
+audio "res://assets/audio/scene_01/bargyy_whine_happy_3.wav" [volume="-6" loop="false"]
 narrator: Баргый виляет хвостом.
 
 aisen: Нам надо домой. Пурга стихает. Вон, уже небо видно.
@@ -279,9 +306,9 @@ narrator: Прыжок в прорубь. Экран темнеет.
 
 narrator: КОНЕЦ ГЛАВЫ I
 
+audio "res://assets/audio/scene_01/snow_run_3.wav" [volume="-10"]
 narrator: Айсен поднимается. В груди — твёрдый узел решимости. Он шагает в темноту.
 
-audio snow_run -
 audio blizzard -
 
 [end_timeline]
