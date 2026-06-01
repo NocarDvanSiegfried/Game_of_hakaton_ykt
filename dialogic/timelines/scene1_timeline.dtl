@@ -283,7 +283,10 @@ aisen: Готов. Что мне теперь сделать?
 	narrator: Айсен хватает осколок
 	audio "res://assets/audio/scene_01/ice_shard_strike_2.wav" [volume="-4" loop="false"]
 	narrator: и вонзает в грудь демона.
-	narrator: Тонгус с хрустом разваливается на куски.
+	audio "res://assets/audio/scene_01/tongus_collapse_1.wav" [volume="-4" loop="false"]
+	narrator: Тонгус с хрустом
+	audio "res://assets/audio/scene_01/tongus_collapse_2.wav" [volume="-6" loop="false"]
+	narrator: разваливается на куски.
 - Пощадить
 	aisen: Уходи. Скажи своим братьям, что люди не так просты.
 	set boss_end = "spare"
