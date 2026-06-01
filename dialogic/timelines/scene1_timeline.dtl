@@ -36,6 +36,7 @@ audio narrator_voice -
 audio yakut_night -
 audio fireplace "res://assets/audio/scene_01/fireplace.wav" [loop="true" fade="0.5" volume="-12"]
 
+audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_01_izba.mp3" [volume="0" loop="false"]
 narrator: Якутская изба. Огонь в печи пляшет. За окном беснуется пурга. У ног бабушки лежит Баргый — крупный серый пёс с белой звездой на груди.
 
 ebe: Завтра ударит Тымныы Олус. Я чувствую. Кости ноют не от старости — от холода, который ещё не пришёл, но уже дышит в затылок.
@@ -44,7 +45,8 @@ ebe: Завтра ударит Тымныы Олус. Я чувствую. Ко�
 
 ebe: В такую ночь, как завтрашняя, мой дед говорил: «Не ходи на свет в пурге. И никогда — слышите? — никогда не отпускай собаку с поводка».
 
-audio "res://assets/audio/scene_01/bargyy_anxious_growl.wav" [volume="-6"]
+audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_02_bargyy_growl.mp3" [volume="0" loop="false"]
+audio "res://assets/audio/scene_01/bargyy_anxious_growl.wav" [volume="-8" loop="false"]
 narrator: Баргый поднимает голову и тихо рычит — не агрессивно, тревожно. Бабушка кладёт руку ему на голову.
 
 ebe: Знаю, Баргый. Знаю. Ты тоже чуешь.
@@ -55,24 +57,27 @@ ebe: Абаасы... Это те, кто был, но не стал. Те, кт�
 
 ebe: Они не злые в том смысле, как мы понимаем зло. Они... голодные. У них внутри — дыра. И они пытаются заполнить её чужим теплом. Чужим дыханием. Чужой жизнью.
 
-audio "res://assets/audio/scene_01/abaasy_presence_2.wav" [volume="-10" loop="false"]
+audio "res://assets/audio/scene_01/abaasy_presence_2.wav" [volume="-8" loop="false"]
 ebe: Есть три брата-Абаасы, что живут в Поверхностном Нижнем Мире. Первый — Тонгус Харах, Мерзлый Глаз.
 
 ebe: Глупый, как прошлогодний сугроб. Он приманивает путников теплом. Показывает огонёк в пурге — а на самом деле это его глаз, которым он смотрит на тебя и ждёт, когда ты шагнёшь в пустоту.
 
 ebe: Идите сюда. Оба.
 
-audio "res://assets/audio/scene_01/table_items_magic_1.wav" [volume="-12" loop="false"]
+audio "res://assets/audio/scene_01/table_items_magic_1.wav" [volume="-10" loop="false"]
+
 [background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_fireplace_close.png" fade="0.5"]
+
+audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_03_amulets.mp3" [volume="0" loop="false"]
 narrator: Бабушка высыпает на стол три предмета: медвежий коготь на шнурке, берестяную коробочку с выжженной спиралью, и маленькое зеркальце в оправе из оленьего рога.
 
-audio "res://assets/audio/scene_01/table_items_magic_2.wav" [volume="-14" loop="false"]
+audio "res://assets/audio/scene_01/table_items_magic_2.wav" [volume="-10" loop="false"]
 ebe: Это обереги. Медвежий коготь — чтобы помнить, кто ты, когда мир начнёт кружиться.
 
-audio "res://assets/audio/scene_01/table_items_magic_3.wav" [volume="-14" loop="false"]
+audio "res://assets/audio/scene_01/table_items_magic_3.wav" [volume="-10" loop="false"]
 ebe: Коробочка с родной землёй — чтобы найти дорогу домой, когда все пути станут одинаковыми.
 
-audio "res://assets/audio/scene_01/table_items_magic_4.wav" [volume="-14" loop="false"]
+audio "res://assets/audio/scene_01/table_items_magic_4.wav" [volume="-10" loop="false"]
 ebe: Зеркальце — для того, у кого нет лица.
 
 ebe: Запомните главное, дети. С Абаасы нельзя биться силой. Только хитростью. Только умом.
@@ -81,8 +86,10 @@ ebe: Их можно запутать. Их можно обмануть. Их м
 
 ebe: Спите сейчас. Завтра будет трудный день.
 
+audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_05_fade.mp3" [volume="0" loop="false"]
 narrator: Экран темнеет.
 
+audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_04_chapter.mp3" [volume="0" loop="false"]
 narrator: Глава I: Пурга
 
 [signal arg="hide_scene1_grandmother_house_layered"]
