@@ -12,14 +12,9 @@ audio yakut_night "res://assets/audio/scene_01/yakut_night_wind.wav" [loop="true
 audio narrator_voice "res://assets/audio/scene_01/voice/intro_part0_01.mp3" [volume="0" loop="false"]
 narrator: Слушай, путник. Слушай так, как слушали мои предки тысячу зим назад.
 
+# Одна озвучка intro_part0_02 + [n]: медленный клик — голос идёт; быстрый клик — скип голоса (DialogicVoiceStop).
 audio narrator_voice "res://assets/audio/scene_01/voice/intro_part0_02.mp3" [volume="0" loop="false"]
-narrator: Когда термометр падает ниже минус пятидесяти,
-
-audio "res://assets/audio/scene_01/frost_trees_crack_1.wav" [volume="-8" loop="false"]
-narrator: когда деревья стреляют от мороза,
-
-audio "res://assets/audio/scene_01/frost_trees_crack_2.wav" [volume="-10" loop="false"]
-narrator: а птицы замерзают на лету — знай: это не просто холод. Это Тымныы Олус — Лютый Холод.
+narrator: Когда термометр падает ниже минус пятидесяти,[n]когда деревья стреляют от мороза,[n]а птицы замерзают на лету — знай: это не просто холод. Это Тымныы Олус — Лютый Холод.
 
 audio narrator_voice "res://assets/audio/scene_01/voice/intro_part0_03.mp3" [volume="0" loop="false"]
 narrator: И он не один. С ним приходят они. Абаасы.
