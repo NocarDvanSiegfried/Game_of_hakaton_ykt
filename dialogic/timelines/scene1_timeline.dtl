@@ -175,6 +175,7 @@ audio "res://assets/audio/scene_01/stove_embers_4.wav" [volume="-14" loop="false
 # TODO portrait: leave kunney
 
 # ---------- ЧАСТЬ 3: ДВОР И ПЕРВЫЙ ВЫБОР ----------
+# Озвучка автора: канал narrator_voice. SFX без канала = One-Shot.
 
 audio narrator_voice -
 audio stove_embers -
@@ -188,7 +189,11 @@ audio house_morning -
 audio "res://assets/audio/scene_01/door_open.wav" [volume="-4"]
 audio "res://assets/audio/scene_01/wind_roar.wav" [volume="-6"]
 
-narrator: Айсен открывает дверь. Звук мгновенно меняется — рёв ветра. Микрофон захлёбывается. Мир сжимается до размера крыльца.
+audio narrator_voice "res://assets/audio/scene_01/voice/yard_part3_01_door.mp3" [volume="0" loop="false"]
+narrator: Айсен открывает дверь.
+
+audio narrator_voice "res://assets/audio/scene_01/voice/yard_part3_02_porch.mp3" [volume="0" loop="false"]
+narrator: Звук мгновенно меняется — рёв ветра. Микрофон захлёбывается. Мир сжимается до размера крыльца.
 
 audio blizzard "res://assets/audio/scene_01/blizzard_outside.wav" [loop="true" fade="0.2" volume="-10"]
 
@@ -198,10 +203,15 @@ audio "res://assets/audio/scene_01/bargyy_missing_4.wav" [volume="-10" loop="fal
 aisen: Баргый! Баргый, ко мне!
 
 audio "res://assets/audio/scene_01/bargyy_bark_whine_1.wav" [volume="-4"]
-narrator: Где-то слева — отчаянный лай, с подвыванием, почти волчий. И тут же — мелодичный звон, как будто ледяные кристаллы трутся друг о друга.
+audio narrator_voice "res://assets/audio/scene_01/voice/yard_part3_03_bark_left.mp3" [volume="0" loop="false"]
+narrator: Где-то слева — отчаянный лай, с подвыванием, почти волчий.
+
+audio narrator_voice "res://assets/audio/scene_01/voice/yard_part3_04_crystal_ring.mp3" [volume="0" loop="false"]
+narrator: И тут же — мелодичный звон, как будто ледяные кристаллы трутся друг о друга.
 
 audio "res://assets/audio/scene_01/anxious_silence_2.wav" [volume="-8" loop="false"]
 audio "res://assets/audio/scene_01/abaasy_presence_3.wav" [volume="-8" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/yard_part3_05_warm_light.mp3" [volume="0" loop="false"]
 narrator: В белой пелене на мгновение вспыхивает что-то — тёплый, жёлтый огонёк. Он дрожит, манит.
 
 # TODO portrait: update aisen (shocked) pos=x0.50 y0.71 size=x0.13 y0.45 [z_index="2"]
@@ -210,6 +220,7 @@ audio "res://assets/audio/scene_01/anxious_silence_3.wav" [volume="-8" loop="fal
 aisen: Что это?..
 
 audio "res://assets/audio/scene_01/bargyy_bark_whine_2.wav" [volume="-4"]
+audio narrator_voice "res://assets/audio/scene_01/voice/yard_part3_06_bark_repeat.mp3" [volume="0" loop="false"]
 narrator: Лай Баргыя повторяется — теперь дальше, в стороне огонька. Пёс зовёт.
 
 aisen: Бабушка говорила: «Не ходи на свет в пурге». Это может быть ловушка. Но Баргый лает там...
@@ -219,6 +230,7 @@ aisen: Бабушка говорила: «Не ходи на свет в пур�
 	set scene1_choice = "light"
 	audio "res://assets/audio/scene_01/light_trap_1.wav" [volume="-8" loop="false"]
 	audio "res://assets/audio/scene_01/ice_crystal_laugh_1.wav" [volume="-6" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/yard_part3_07_run_to_light.mp3" [volume="0" loop="false"]
 	narrator: Айсен бежит на огонёк.
 	audio "res://assets/audio/scene_01/light_trap_2.wav" [volume="-6" loop="false"]
 	audio "res://assets/audio/scene_01/ice_crystal_laugh_2.wav" [volume="-4" loop="false"]
@@ -232,35 +244,48 @@ aisen: Бабушка говорила: «Не ходи на свет в пур�
 	aisen: Одному страшно. Возьму сестру — вдвоём справимся.
 	set scene1_choice = "kunney"
 	audio "res://assets/audio/scene_01/ice_crystal_laugh_3.wav" [volume="-8" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/yard_part3_08_run_back.mp3" [volume="0" loop="false"]
 	narrator: Айсен бежит обратно. Но время упущено — Баргый получит лёгкое обморожение.
 
 # ---------- ЧАСТЬ 4: ПОГОНЯ В ПУРГЕ ----------
+# Озвучка автора: канал narrator_voice. Ambient snow_run — отдельный канал.
+
+audio narrator_voice -
 
 [background arg="res://assets/art/backgrounds/scene_01/snowy_forest_path.png" fade="0.5"]
 
 # TODO portrait: update aisen (run) pos=x0.50 y0.73 size=x0.13 y0.45 [z_index="2"]
 
 audio snow_run "res://assets/audio/scene_01/snow_run.wav" [loop="true" fade="0.3" volume="-8"]
+audio narrator_voice "res://assets/audio/scene_01/voice/chase_part4_01_run.mp3" [volume="0" loop="false"]
 narrator: Айсен бежит сквозь пургу. Снег хлещет в лицо. Видимость — три-четыре метра.
 
 audio "res://assets/audio/scene_01/tree_branch_snap.wav" [volume="-4"]
+audio narrator_voice "res://assets/audio/scene_01/voice/chase_part4_02_branch.mp3" [volume="0" loop="false"]
 narrator: Ветка дерева обламывается и летит — Айсен ныряет под неё в последний момент.
 
 audio "res://assets/audio/scene_01/snow_collapse_1.wav" [volume="-4"]
+audio narrator_voice "res://assets/audio/scene_01/voice/chase_part4_03_snow_sink.mp3" [volume="0" loop="false"]
 narrator: Дальше — проваливается по пояс в снег.
 
 audio "res://assets/audio/scene_01/snow_collapse_2.wav" [volume="-6"]
+audio narrator_voice "res://assets/audio/scene_01/voice/chase_part4_04_climb_out.mp3" [volume="0" loop="false"]
 narrator: Кое-как выбирается.
 
+audio narrator_voice "res://assets/audio/scene_01/voice/chase_part4_05_light_again.mp3" [volume="0" loop="false"]
 narrator: Огонёк появляется снова — прямо по курсу.
 
 aisen: Опять ты. Не обманешь.
 
 audio snow_run "res://assets/audio/scene_01/snow_run_2.wav" [loop="true" fade="0.4" volume="-8"]
 audio "res://assets/audio/scene_01/bargyy_bark_whine_3.wav" [volume="-4"]
+audio narrator_voice "res://assets/audio/scene_01/voice/chase_part4_06_turn_bark.mp3" [volume="0" loop="false"]
 narrator: Айсен резко сворачивает. Лай Баргыя — совсем близко.
 
 # ---------- ЧАСТЬ 5: У ПРОРУБИ ----------
+# Озвучка автора: канал narrator_voice. SFX = One-Shot.
+
+audio narrator_voice -
 
 audio snow_run -
 audio blizzard -
@@ -272,17 +297,24 @@ audio blizzard -
 # TODO portrait: join tongus (default) pos=x0.75 y0.66 size=x0.30 y0.76 [z_index="3"]
 
 audio "res://assets/audio/scene_01/leash_ice_untie_1.wav" [volume="-4" loop="false"]
-narrator: Замёрзшая река. Идеально круглая прорубь. Вокруг — ледяные столбы. Баргый запутался поводком в ледяном торосе.
+audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_01_river.mp3" [volume="0" loop="false"]
+narrator: Замёрзшая река. Идеально круглая прорубь.
+
+audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_02_bargyy_tangled.mp3" [volume="0" loop="false"]
+narrator: Вокруг — ледяные столбы. Баргый запутался поводком в ледяном торосе.
 
 audio "res://assets/audio/scene_01/bargyy_bark_ice_hole_1.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_03_bark_hole.mp3" [volume="0" loop="false"]
 narrator: Он лает, глядя не на Айсена, а в прорубь.
 
 aisen: Баргый!
 
 audio "res://assets/audio/scene_01/bargyy_whine_happy_1.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_04_dog_turn.mp3" [volume="0" loop="false"]
 narrator: Пёс поворачивается, радостно скулит, но продолжает рваться к проруби, а не от неё.
 
 audio "res://assets/audio/scene_01/leash_ice_untie_2.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_05_untie_leash.mp3" [volume="0" loop="false"]
 narrator: Айсен пытается отвязать поводок — руки не слушаются.
 
 aisen: Сейчас, сейчас... Потерпи.
@@ -290,9 +322,11 @@ aisen: Сейчас, сейчас... Потерпи.
 audio "res://assets/audio/scene_01/leash_ice_untie_3.wav" [volume="-6" loop="false"]
 
 audio "res://assets/audio/scene_01/tongus_rise_1.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_06_tongus_rise.mp3" [volume="0" loop="false"]
 narrator: Из проруби медленно поднимается фигура. Без всплеска.
 
 audio "res://assets/audio/scene_01/tongus_rise_2.wav" [volume="-6" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_07_tongus_form.mp3" [volume="0" loop="false"]
 narrator: Огромный — метра три высотой, из мутного пузырчатого льда. Внутри плавают замёрзшие листья и рыбы. Один глаз во лоб — огромный, подёрнутый бельмом. Он смотрит сквозь Айсена. Он слеп.
 
 audio "res://assets/audio/scene_01/tongus_voice_1.wav" [volume="-4" loop="false"]
@@ -302,9 +336,11 @@ audio "res://assets/audio/scene_01/tongus_voice_2.wav" [volume="-4" loop="false"
 tongus: Иди с-с-сюда. Я согрею.
 
 audio "res://assets/audio/scene_01/tongus_rise_4.wav" [volume="-8" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_08_tongus_hand.mp3" [volume="0" loop="false"]
 narrator: Тонгус протягивает руку. Пальцы — длинные ледяные иглы.
 
 audio "res://assets/audio/scene_01/ice_breath_frost_1.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_09_frost_breath.mp3" [volume="0" loop="false"]
 narrator: От его дыхания на лице Айсена выступает иней.
 
 aisen: Бабушка говорила о тебе. Ты Тонгус Харах. Ты не греешь. Ты крадёшь.
@@ -322,9 +358,13 @@ aisen: ...ты не отпустишь. Ты слепой. Ты не отлич�
 audio "res://assets/audio/scene_01/tongus_voice_3.wav" [volume="-8" loop="false"]
 tongus: Я... ч-ч-увствую. Тепло — это когда... когда горит. Когда внутри... щиплет. Я знаю т-т-тепло.
 
+audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_10_victims_words.mp3" [volume="0" loop="false"]
 narrator: Он не знает. Он повторяет то, что слышал от жертв.
 
 # ---------- ЧАСТЬ 6: ВЫБОР ТАКТИКИ ПРОТИВ ТОНГУСА ----------
+# Озвучка автора только в ветках выбора (narrator_voice).
+
+audio narrator_voice -
 
 aisen: Он слепой. Реагирует на тепло, но не отличает настоящее. Можно подсунуть что-то горячее, но неживое. Что выбрать?
 
@@ -333,43 +373,60 @@ aisen: Он слепой. Реагирует на тепло, но не отли
 	set boss_tactic = "scarf"
 	update aisen (attack_fire) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
 	audio "res://assets/audio/scene_01/scarf_fire_1.wav" [volume="-4" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_scarf_01_throw.mp3" [volume="0" loop="false"]
 	narrator: Айсен поджигает шарф огнивом и бросает демону.
 	audio "res://assets/audio/scene_01/scarf_fire_2.wav" [volume="-4" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_scarf_02_grab.mp3" [volume="0" loop="false"]
 	narrator: Тонгус хватает горящий клочок, пытается впитать —
 	audio "res://assets/audio/scene_01/scarf_fire_3.wav" [volume="-6" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_scarf_03_burn_fingers.mp3" [volume="0" loop="false"]
 	narrator: пламя жжёт ледяные пальцы.
 	audio "res://assets/audio/scene_01/scarf_fire_4.wav" [volume="-6" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_scarf_04_panic.mp3" [volume="0" loop="false"]
 	narrator: Демон в панике. Безопасный исход.
 - Разжечь костёр из мха в трещине
 	aisen: Смотри! Вот огонь. Он живой, слышишь, как трещит? Я отдаю его тебе. Забирай.
 	set boss_tactic = "fire"
 	update aisen (attack_fire) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
 	audio "res://assets/audio/scene_01/moss_fire_1.wav" [volume="-4" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_fire_01_moss.mp3" [volume="0" loop="false"]
 	narrator: Айсен быстро разводит костёр из сухого мха.
 	audio "res://assets/audio/scene_01/moss_fire_2.wav" [volume="-4" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_fire_02_jump_fire.mp3" [volume="0" loop="false"]
 	narrator: Демон, осязая тепло, бросается в огонь, пытаясь слиться с ним.
 	audio "res://assets/audio/scene_01/ice_crack_steam_1.wav" [volume="-4" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_fire_03_ice_crack.mp3" [volume="0" loop="false"]
 	narrator: Лёд трескается,
 	audio "res://assets/audio/scene_01/ice_crack_steam_2.wav" [volume="-6" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_fire_04_steam.mp3" [volume="0" loop="false"]
 	narrator: идёт пар.
 	audio "res://assets/audio/scene_01/moss_fire_4.wav" [volume="-8" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_fire_05_health.mp3" [volume="0" loop="false"]
 	narrator: Айсен теряет немного здоровья от близости пламени.
 - Рассказать ему о горячем сердце
 	aisen: Ты хочешь тепло? Но самое горячее — это сердце, которое любит. Скажи: что ты любишь больше всего? Тогда я отдам тебе его тепло.
 	set boss_tactic = "heart_story"
+	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_heart_01_freeze.mp3" [volume="0" loop="false"]
 	narrator: Демон зависает. Он никогда не любил. Пытается найти ответ внутри своей пустоты. Глаз начинает бешено вращаться.
 	audio "res://assets/audio/scene_01/demon_crack_3.wav" [volume="-6" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_heart_02_cracks.mp3" [volume="0" loop="false"]
 	narrator: Внутри ледяной формы бегают трещины. Самый умный, но непредсказуемый вариант.
 
 # ---------- ЧАСТЬ 7: ДОБИТЬ ИЛИ ПОЩАДИТЬ ----------
+# Озвучка автора: narrator_voice.
+
+audio narrator_voice -
 
 audio "res://assets/audio/scene_01/demon_crack_1.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_01_weakened.mp3" [volume="0" loop="false"]
 narrator: Стабильность Тонгуса резко падает. Демон ослаблен,
 
 audio "res://assets/audio/scene_01/demon_crack_2.wav" [volume="-6" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_02_shaking.mp3" [volume="0" loop="false"]
 narrator: его форма дрожит.
 
 audio "res://assets/audio/scene_01/demon_crack_4.wav" [volume="-8" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_03_cant_attack.mp3" [volume="0" loop="false"]
 narrator: Он не может больше атаковать.
 
 aisen: Готов. Что мне теперь сделать?
@@ -378,58 +435,75 @@ aisen: Готов. Что мне теперь сделать?
 	aisen: Хватит. Это за Баргыя.
 	set boss_end = "finish"
 	audio "res://assets/audio/scene_01/ice_shard_strike_1.wav" [volume="-4" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_finish_01_grab_shard.mp3" [volume="0" loop="false"]
 	narrator: Айсен хватает осколок
 	audio "res://assets/audio/scene_01/ice_shard_strike_2.wav" [volume="-4" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_finish_02_stab.mp3" [volume="0" loop="false"]
 	narrator: и вонзает в грудь демона.
 	audio "res://assets/audio/scene_01/tongus_collapse_1.wav" [volume="-4" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_finish_03_crunch.mp3" [volume="0" loop="false"]
 	narrator: Тонгус с хрустом
 	audio "res://assets/audio/scene_01/tongus_collapse_2.wav" [volume="-6" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_finish_04_collapse.mp3" [volume="0" loop="false"]
 	narrator: разваливается на куски.
 - Пощадить
 	aisen: Уходи. Скажи своим братьям, что люди не так просты.
 	set boss_end = "spare"
 	audio "res://assets/audio/scene_01/ice_crack_steam_4.wav" [volume="-6" loop="false"]
+	audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_spare_01_melt.mp3" [volume="0" loop="false"]
 	narrator: Тонгус, потеряв форму, оплывает в лужу ледяной воды. Возможно, ещё встретится позже — союзником или врагом.
 
 # ---------- ЧАСТЬ 8: ПОСЛЕ БИТВЫ И ПОХИЩЕНИЕ КЮННЭЙ ----------
+# Озвучка автора: narrator_voice.
+
+audio narrator_voice -
 
 # TODO portrait: leave tongus
 # TODO portrait: join bargyy (default) pos=x0.18 y0.73 size=x0.10 y0.28 [z_index="1"]
 # TODO portrait: update aisen (kneel) pos=x0.25 y0.74 size=x0.13 y0.45 [z_index="2"]
 
 audio "res://assets/audio/scene_01/ice_hole_freeze_1.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_01_ice_freeze.mp3" [volume="0" loop="false"]
 narrator: Прорубь начинает затягиваться новым, чистым льдом.
 
 audio "res://assets/audio/scene_01/bargyy_affection_1.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_02_bargyy_run.mp3" [volume="0" loop="false"]
 narrator: Баргый освобождается и бросается к Айсену,
 
 audio "res://assets/audio/scene_01/bargyy_affection_2.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_03_lick_face.mp3" [volume="0" loop="false"]
 narrator: лижет лицо.
 
 aisen: Тише, тише, Баргый. Я в порядке. Ты как?
 
 audio "res://assets/audio/scene_01/bargyy_affection_3.wav" [volume="-6" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_04_tail_wag.mp3" [volume="0" loop="false"]
 narrator: Баргый виляет хвостом.
 
 audio "res://assets/audio/scene_01/blizzard_fade_1.wav" [volume="-6" loop="false"]
 aisen: Нам надо домой. Пурга стихает. Вон, уже небо видно.
 
 audio "res://assets/audio/scene_01/blizzard_fade_2.wav" [volume="-8" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_05_moon.mp3" [volume="0" loop="false"]
 narrator: Сквозь тучи пробивается луна — бледная, холодная.
 
 audio "res://assets/audio/scene_01/anxious_silence_4.wav" [volume="-6" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_06_silence.mp3" [volume="0" loop="false"]
 narrator: И вдруг — тишина. Резкая.
 
 audio "res://assets/audio/scene_01/blizzard_fade_3.wav" [volume="-10" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_07_wind_stops.mp3" [volume="0" loop="false"]
 narrator: Ветер стих.
 
 audio "res://assets/audio/scene_01/yakut_night_empty_2.wav" [volume="-10" loop="false"]
 audio yakut_night "res://assets/audio/scene_01/yakut_night_wind.wav" [loop="true" fade="0.6" volume="-14"]
 
 audio "res://assets/audio/scene_01/bargyy_bark_cut_1.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_08_bark_cut.mp3" [volume="0" loop="false"]
 narrator: Лай Баргыя оборвался.
 
 audio "res://assets/audio/scene_01/bargyy_bark_cut_2.wav" [volume="-8" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_09_silver_moon.mp3" [volume="0" loop="false"]
 narrator: Свет луны стал неестественно-ярким, залив всё вокруг серебром.
 
 # TODO portrait: leave bargyy
@@ -442,21 +516,27 @@ kunney: Айсен! Айсен, смотри! Смотри, какая крас�
 
 aisen: Кюннэй! Нет!
 
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_10_too_late.mp3" [volume="0" loop="false"]
 narrator: Но поздно. На берегу, у кромки леса, стоит Кюннэй. Она протягивает руку к ледяной фигуре, похожей на маленькую девочку в платье.
 
 audio "res://assets/audio/scene_01/abaasy_presence_4.wav" [volume="-8" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_11_shadow_runner.mp3" [volume="0" loop="false"]
 narrator: Это Теневой Бегун, второй Абааса, уже принял форму.
 
 audio "res://assets/audio/scene_01/kunney_vanish_1.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_12_kunney_touch.mp3" [volume="0" loop="false"]
 narrator: Кюннэй касается её —
 
 audio "res://assets/audio/scene_01/kunney_vanish_2.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_13_vanish.mp3" [volume="0" loop="false"]
 narrator: и обе исчезают.
 
 audio "res://assets/audio/scene_01/kunney_vanish_3.wav" [volume="-6" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_14_snow_swirl.mp3" [volume="0" loop="false"]
 narrator: Только снег кружится на том месте.
 
 audio "res://assets/audio/scene_01/bargyy_howl_mourn_1.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_15_howl.mp3" [volume="0" loop="false"]
 narrator: Баргый воет — долго, тоскливо.
 
 # TODO portrait: update aisen (sorrowful) pos=x0.50 y0.72 size=x0.13 y0.45 [z_index="2"]
@@ -464,28 +544,36 @@ narrator: Баргый воет — долго, тоскливо.
 aisen: Нет... нет, нет, нет! Я только спас тебя, Баргый, а теперь... Кюннэй...
 
 audio "res://assets/audio/scene_01/ice_hole_glow_1.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_16_ice_glow.mp3" [volume="0" loop="false"]
 narrator: Лёд проруби, которым она затянулась, начинает светиться.
 
 audio "res://assets/audio/scene_01/ice_hole_glow_2.wav" [volume="-6" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_17_tunnel.mp3" [volume="0" loop="false"]
 narrator: Под водой виден туннель — извивающийся, уходящий вниз.
 
 aisen: ...это вход. В Нижний Мир. Настоящий вход.
 
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_18_claw.mp3" [volume="0" loop="false"]
 narrator: Айсен встаёт. Достаёт из кармана медвежий коготь, сжимает в кулаке.
 
 aisen: Бабушка говорила: «Не вступай в прямой бой. Победи хитростью». Я понял. Я иду, Кюннэй. Я иду.
 
 audio "res://assets/audio/scene_01/ice_dive_1.wav" [volume="-4" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_19_dive.mp3" [volume="0" loop="false"]
 narrator: Прыжок в прорубь.
 
 audio "res://assets/audio/scene_01/ice_dive_2.wav" [volume="-6" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_20_fade_black.mp3" [volume="0" loop="false"]
 narrator: Экран темнеет.
 
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_21_chapter_end.mp3" [volume="0" loop="false"]
 narrator: КОНЕЦ ГЛАВЫ I
 
 audio snow_run "res://assets/audio/scene_01/snow_run_3.wav" [loop="true" fade="0.6" volume="-10"]
+audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_22_into_darkness.mp3" [volume="0" loop="false"]
 narrator: Айсен поднимается. В груди — твёрдый узел решимости. Он шагает в темноту.
 
+audio narrator_voice -
 audio snow_run -
 audio yakut_night -
 audio blizzard -
