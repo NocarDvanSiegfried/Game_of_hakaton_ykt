@@ -72,7 +72,10 @@ layout/style_directory={
 variables={
 "accepted_initiation": false,
 "aisen_fear": 0,
+"aisen_warmth_lost": false,
+"aisen_warmth_status": "",
 "ancestral_guilt": 0,
+"ancestor_status": "",
 "bargyy_bond": 0,
 "boss_end": "",
 "boss_tactic": "",
