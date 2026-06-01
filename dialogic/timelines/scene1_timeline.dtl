@@ -145,6 +145,7 @@ update aisen (run) pos=x0.50 y0.73 size=x0.13 y0.45 [z_index="2"]
 audio snow_run "res://assets/audio/scene_01/snow_run.wav" [loop="true" fade="0.3" volume="-8"]
 narrator: Айсен бежит сквозь пургу. Снег хлещет в лицо. Видимость — три-четыре метра.
 
+audio "res://assets/audio/scene_01/tree_branch_snap.wav" [volume="-4"]
 narrator: Ветка дерева обламывается и летит — Айсен ныряет под неё в последний момент.
 
 narrator: Дальше — проваливается по пояс в снег. Кое-как выбирается.
@@ -153,6 +154,7 @@ narrator: Огонёк появляется снова — прямо по ку�
 
 aisen: Опять ты. Не обманешь.
 
+audio snow_run "res://assets/audio/scene_01/snow_run_2.wav" [loop="true" fade="0.4" volume="-8"]
 audio "res://assets/audio/scene_01/bargyy_bark_whine_3.wav" [volume="-4"]
 narrator: Айсен резко сворачивает. Лай Баргыя — совсем близко.
 
@@ -279,9 +281,9 @@ narrator: Прыжок в прорубь. Экран темнеет.
 
 narrator: КОНЕЦ ГЛАВЫ I
 
+audio "res://assets/audio/scene_01/snow_run_3.wav" [volume="-10"]
 narrator: Айсен поднимается. В груди — твёрдый узел решимости. Он шагает в темноту.
 
-audio snow_run -
 audio blizzard -
 
 [end_timeline]
