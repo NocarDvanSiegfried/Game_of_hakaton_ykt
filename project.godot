@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+DebugState="*res://scripts/core/debug_state.gd"
 Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
@@ -79,6 +80,7 @@ variables={
 "chaos_acceptance": 0,
 "door_state": "",
 "empathy_score": 0,
+"ending_id": 0,
 "false_life_released": 0,
 "father_truth": 0,
 "final_outcome": "",
@@ -93,6 +95,8 @@ variables={
 "knows_judge": false,
 "knows_lunar_maiden": false,
 "kunney_courage": 0,
+"lesson_act1": "",
+"lesson_act2": "",
 "memory_weight": 0,
 "mercy_score": 0,
 "met_emeehsin_full": false,
