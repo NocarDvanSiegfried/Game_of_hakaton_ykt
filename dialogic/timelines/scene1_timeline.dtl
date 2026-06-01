@@ -148,7 +148,11 @@ narrator: Айсен бежит сквозь пургу. Снег хлещет �
 audio "res://assets/audio/scene_01/tree_branch_snap.wav" [volume="-4"]
 narrator: Ветка дерева обламывается и летит — Айсен ныряет под неё в последний момент.
 
-narrator: Дальше — проваливается по пояс в снег. Кое-как выбирается.
+audio "res://assets/audio/scene_01/snow_collapse_1.wav" [volume="-4"]
+narrator: Дальше — проваливается по пояс в снег.
+
+audio "res://assets/audio/scene_01/snow_collapse_2.wav" [volume="-6"]
+narrator: Кое-как выбирается.
 
 narrator: Огонёк появляется снова — прямо по курсу.
 
