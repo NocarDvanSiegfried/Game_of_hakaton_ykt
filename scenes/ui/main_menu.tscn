@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bi7xcbt4tqdfa" path="res://scripts/ui/main_menu.gd" id="1_menu"]
 [ext_resource type="Texture2D" uid="uid://clnlnddw6osmm" path="res://assets/art/backgrounds/scene_01/village_blizzard.png" id="2_bg"]
 [ext_resource type="FontFile" uid="uid://c6vdxxc8uyx21" path="res://assets/fonts/NotoSerif-Regular.ttf" id="3_font"]
+[ext_resource type="AudioStream" uid="uid://djv1227pq6or" path="res://assets/audio/menu/menu.wav" id="4_menu_music"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_button"]
 content_margin_left = 24.0
@@ -28,6 +29,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_menu")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=2033954258]
+stream = ExtResource("4_menu_music")
+autoplay = true
 
 [node name="Background" type="TextureRect" parent="." unique_id=689901377]
 layout_mode = 1
@@ -64,11 +69,11 @@ alignment = 1
 
 [node name="Title" type="Label" parent="Center/VBox" unique_id=1425099099]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_font")
 theme_override_colors/font_color = Color(0.94, 0.92, 0.85, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.65)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 42
 text = "БАРГЫЙ: ПУТЬ СКВОЗЬ ЛЁД"
 horizontal_alignment = 1
@@ -82,9 +87,9 @@ alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(280, 48)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_font")
 theme_override_colors/font_color = Color(0.94, 0.92, 0.85, 1)
 theme_override_colors/font_hover_color = Color(0.91, 0.66, 0.36, 1)
+theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_button")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_button")
@@ -96,9 +101,9 @@ text = "Новая игра"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(280, 48)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_font")
 theme_override_colors/font_color = Color(0.94, 0.92, 0.85, 1)
 theme_override_colors/font_hover_color = Color(0.91, 0.66, 0.36, 1)
+theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_button")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_button")
