@@ -110,6 +110,7 @@ audio blizzard "res://assets/audio/scene_01/blizzard_outside.wav" [loop="true" f
 
 aisen: Баргый! Баргый, ко мне!
 
+audio "res://assets/audio/scene_01/bargyy_bark_whine_1.wav" [volume="-4"]
 narrator: Где-то слева — отчаянный лай, с подвыванием, почти волчий. И тут же — мелодичный звон, как будто ледяные кристаллы трутся друг о друга.
 
 narrator: В белой пелене на мгновение вспыхивает что-то — тёплый, жёлтый огонёк. Он дрожит, манит.
@@ -118,6 +119,7 @@ update aisen (shocked) pos=x0.50 y0.71 size=x0.13 y0.45 [z_index="2"]
 
 aisen: Что это?..
 
+audio "res://assets/audio/scene_01/bargyy_bark_whine_2.wav" [volume="-4"]
 narrator: Лай Баргыя повторяется — теперь дальше, в стороне огонька. Пёс зовёт.
 
 aisen: Бабушка говорила: «Не ходи на свет в пурге». Это может быть ловушка. Но Баргый лает там...
@@ -150,6 +152,7 @@ narrator: Огонёк появляется снова — прямо по ку�
 
 aisen: Опять ты. Не обманешь.
 
+audio "res://assets/audio/scene_01/bargyy_bark_whine_3.wav" [volume="-4"]
 narrator: Айсен резко сворачивает. Лай Баргыя — совсем близко.
 
 # ---------- ЧАСТЬ 5: У ПРОРУБИ ----------
