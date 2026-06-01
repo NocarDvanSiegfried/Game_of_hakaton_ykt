@@ -2,12 +2,17 @@
 # Полный таймлайн пролога и встречи с Тонгус Харахом
 
 # ---------- ЧАСТЬ 0: ВСТУПИТЕЛЬНЫЙ ТЕКСТ ----------
+# Озвучка: канал narrator_voice (заменяет предыдущую реплику на канале).
+# SFX без канала = One-Shot — играют параллельно с ambient (Dialogic Audio).
 
 [background arg="res://assets/art/backgrounds/scene_01/bg_scene1_intro_frozen_wasteland.png" fade="0.5"]
 
 audio yakut_night "res://assets/audio/scene_01/yakut_night_wind.wav" [loop="true" fade="0.8" volume="-14"]
+
+audio narrator_voice "res://assets/audio/scene_01/voice/intro_part0_01.mp3" [volume="0" loop="false"]
 narrator: Слушай, путник. Слушай так, как слушали мои предки тысячу зим назад.
 
+audio narrator_voice "res://assets/audio/scene_01/voice/intro_part0_02.mp3" [volume="0" loop="false"]
 narrator: Когда термометр падает ниже минус пятидесяти,
 
 audio "res://assets/audio/scene_01/frost_trees_crack_1.wav" [volume="-8" loop="false"]
@@ -16,13 +21,17 @@ narrator: когда деревья стреляют от мороза,
 audio "res://assets/audio/scene_01/frost_trees_crack_2.wav" [volume="-10" loop="false"]
 narrator: а птицы замерзают на лету — знай: это не просто холод. Это Тымныы Олус — Лютый Холод.
 
+audio narrator_voice "res://assets/audio/scene_01/voice/intro_part0_03.mp3" [volume="0" loop="false"]
 narrator: И он не один. С ним приходят они. Абаасы.
 
 audio "res://assets/audio/scene_01/abaasy_after_cold_1.wav" [volume="-10" loop="false"]
+
+audio narrator_voice "res://assets/audio/scene_01/voice/intro_part0_04.mp3" [volume="0" loop="false"]
 narrator: Но не бойся. Потому что там, где кончается след собаки, начинается путь героя.
 
 # ---------- ЧАСТЬ 1: ДОМ БАБУШКИ — ПРОЛОГ ----------
 
+audio narrator_voice -
 audio yakut_night -
 
 [background arg="res://assets/art/backgrounds/scene_01/grandmother_house_full_scene.png" fade="0.5"]
