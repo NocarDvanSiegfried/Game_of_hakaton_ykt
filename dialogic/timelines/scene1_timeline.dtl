@@ -5,15 +5,25 @@
 
 [background arg="res://assets/art/backgrounds/scene_01/bg_scene1_intro_frozen_wasteland.png" fade="0.5"]
 
+audio yakut_night "res://assets/audio/scene_01/yakut_night_wind.wav" [loop="true" fade="0.8" volume="-14"]
 narrator: Слушай, путник. Слушай так, как слушали мои предки тысячу зим назад.
 
-narrator: Когда термометр падает ниже минус пятидесяти, когда деревья стреляют от мороза, а птицы замерзают на лету — знай: это не просто холод. Это Тымныы Олус — Лютый Холод.
+narrator: Когда термометр падает ниже минус пятидесяти,
+
+audio "res://assets/audio/scene_01/frost_trees_crack_1.wav" [volume="-8" loop="false"]
+narrator: когда деревья стреляют от мороза,
+
+audio "res://assets/audio/scene_01/frost_trees_crack_2.wav" [volume="-10" loop="false"]
+narrator: а птицы замерзают на лету — знай: это не просто холод. Это Тымныы Олус — Лютый Холод.
 
 narrator: И он не один. С ним приходят они. Абаасы.
 
+audio "res://assets/audio/scene_01/abaasy_after_cold_1.wav" [volume="-10" loop="false"]
 narrator: Но не бойся. Потому что там, где кончается след собаки, начинается путь героя.
 
 # ---------- ЧАСТЬ 1: ДОМ БАБУШКИ — ПРОЛОГ ----------
+
+audio yakut_night -
 
 [background arg="res://assets/art/backgrounds/scene_01/grandmother_house_full_scene.png" fade="0.5"]
 audio fireplace "res://assets/audio/scene_01/fireplace.wav" [loop="true" fade="0.5" volume="-12"]
@@ -39,18 +49,23 @@ ebe: Абаасы... Это те, кто был, но не стал. Те, кт�
 
 ebe: Они не злые в том смысле, как мы понимаем зло. Они... голодные. У них внутри — дыра. И они пытаются заполнить её чужим теплом. Чужим дыханием. Чужой жизнью.
 
+audio "res://assets/audio/scene_01/abaasy_presence_2.wav" [volume="-10" loop="false"]
 ebe: Есть три брата-Абаасы, что живут в Поверхностном Нижнем Мире. Первый — Тонгус Харах, Мерзлый Глаз.
 
 ebe: Глупый, как прошлогодний сугроб. Он приманивает путников теплом. Показывает огонёк в пурге — а на самом деле это его глаз, которым он смотрит на тебя и ждёт, когда ты шагнёшь в пустоту.
 
 ebe: Идите сюда. Оба.
 
+audio "res://assets/audio/scene_01/table_items_magic_1.wav" [volume="-12" loop="false"]
 narrator: Бабушка высыпает на стол три предмета: медвежий коготь на шнурке, берестяную коробочку с выжженной спиралью, и маленькое зеркальце в оправе из оленьего рога.
 
+audio "res://assets/audio/scene_01/table_items_magic_2.wav" [volume="-14" loop="false"]
 ebe: Это обереги. Медвежий коготь — чтобы помнить, кто ты, когда мир начнёт кружиться.
 
+audio "res://assets/audio/scene_01/table_items_magic_3.wav" [volume="-14" loop="false"]
 ebe: Коробочка с родной землёй — чтобы найти дорогу домой, когда все пути станут одинаковыми.
 
+audio "res://assets/audio/scene_01/table_items_magic_4.wav" [volume="-14" loop="false"]
 ebe: Зеркальце — для того, у кого нет лица.
 
 ebe: Запомните главное, дети. С Абаасы нельзя биться силой. Только хитростью. Только умом.
@@ -67,32 +82,73 @@ narrator: Глава I: Пурга
 
 audio fireplace -
 
-narrator: Утро. Печь почти погасла, только угли тлеют. Свет серый, пасмурный. Бабушка сидит в углу неподвижно. Баргыя нет.
+audio house_morning "res://assets/audio/scene_01/house_after_night_1.wav" [loop="true" fade="0.8" volume="-14"]
+
+audio "res://assets/audio/scene_01/morning_stove_desc_1.wav" [volume="-12" loop="false"]
+narrator: Утро. Печь почти погасла, только угли тлеют.
+
+audio stove_embers "res://assets/audio/scene_01/stove_embers_1.wav" [loop="true" fade="0.5" volume="-16"]
+
+audio "res://assets/audio/scene_01/morning_stove_desc_2.wav" [volume="-12" loop="false"]
+narrator: Свет серый, пасмурный. Бабушка сидит в углу неподвижно.
+
+audio "res://assets/audio/scene_01/anxious_silence_1.wav" [volume="-8" loop="false"]
+narrator: Баргыя нет.
 
 # TODO portrait: join aisen (neutral) pos=x0.50 y0.72 size=x0.13 y0.45 [z_index="2"]
 # TODO portrait: join kunney (neutral) pos=x0.75 y0.73 size=x0.13 y0.45 [z_index="3"]
 
+audio "res://assets/audio/scene_01/cloth_rustle_wake_1.wav" [volume="-12" loop="false"]
+audio "res://assets/audio/scene_01/children_awakening_1.wav" [volume="-10" loop="false"]
 aisen: Кюннэй! Уже утро?
 
+audio "res://assets/audio/scene_01/bargyy_missing_2.wav" [volume="-12" loop="false"]
+audio "res://assets/audio/scene_01/children_awakening_2.wav" [volume="-10" loop="false"]
 kunney: Уже утро? Баргый не лаял. Значит, всё хорошо. Правда?
 
+audio "res://assets/audio/scene_01/cloth_rustle_wake_2.wav" [volume="-12" loop="false"]
+audio "res://assets/audio/scene_01/children_awakening_3.wav" [volume="-10" loop="false"]
 aisen: Правда. Вставай, соня.
 
+audio "res://assets/audio/scene_01/cloth_rustle_wake_3.wav" [volume="-12" loop="false"]
+audio "res://assets/audio/scene_01/table_items_magic_1.wav" [volume="-14" loop="false"]
+audio "res://assets/audio/scene_01/morning_stove_desc_3.wav" [volume="-12" loop="false"]
 narrator: Айсен подходит к столу. Три оберега лежат на месте.
 
+audio stove_embers "res://assets/audio/scene_01/stove_embers_2.wav" [loop="true" fade="0.8" volume="-16"]
+audio house_morning "res://assets/audio/scene_01/house_after_night_2.wav" [loop="true" fade="1.0" volume="-14"]
+
+audio "res://assets/audio/scene_01/talisman_pickup_1.wav" [volume="-10" loop="false"]
 aisen: Возьму с собой. Бабушка не зря оставила.
 
-narrator: Получены обереги: Медвежий Коготь, Берестяная Коробочка, Зеркальце.
+audio "res://assets/audio/scene_01/talisman_pickup_2.wav" [volume="-10" loop="false"]
+narrator: Получен оберег: Медвежий Коготь.
 
+audio "res://assets/audio/scene_01/talisman_pickup_3.wav" [volume="-10" loop="false"]
+narrator: Получен оберег: Берестяная Коробочка.
+
+audio "res://assets/audio/scene_01/talisman_pickup_4.wav" [volume="-10" loop="false"]
+narrator: Получен оберег: Зеркальце.
+
+audio "res://assets/audio/scene_01/bargyy_missing_3.wav" [volume="-12" loop="false"]
 aisen: Кюннэй, я за Баргыем. Жди здесь.
 
+audio "res://assets/audio/scene_01/children_awakening_4.wav" [volume="-12" loop="false"]
 kunney: Холодно же. Может, он сам придёт?
 
+audio "res://assets/audio/scene_01/stove_embers_3.wav" [volume="-14" loop="false"]
+
+audio "res://assets/audio/scene_01/cloth_rustle_wake_4.wav" [volume="-12" loop="false"]
 aisen: Я быстро.
+
+audio "res://assets/audio/scene_01/stove_embers_4.wav" [volume="-16" loop="false"]
 
 # TODO portrait: leave kunney
 
 # ---------- ЧАСТЬ 3: ДВОР И ПЕРВЫЙ ВЫБОР ----------
+
+audio stove_embers -
+audio house_morning -
 
 [background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_door_exit.png" fade="0.5"]
 
@@ -108,15 +164,19 @@ audio blizzard "res://assets/audio/scene_01/blizzard_outside.wav" [loop="true" f
 
 [background arg="res://assets/art/backgrounds/scene_01/village_blizzard.png" fade="0.5"]
 
+audio "res://assets/audio/scene_01/bargyy_missing_4.wav" [volume="-10" loop="false"]
 aisen: Баргый! Баргый, ко мне!
 
 audio "res://assets/audio/scene_01/bargyy_bark_whine_1.wav" [volume="-4"]
 narrator: Где-то слева — отчаянный лай, с подвыванием, почти волчий. И тут же — мелодичный звон, как будто ледяные кристаллы трутся друг о друга.
 
+audio "res://assets/audio/scene_01/anxious_silence_2.wav" [volume="-8" loop="false"]
+audio "res://assets/audio/scene_01/abaasy_presence_3.wav" [volume="-8" loop="false"]
 narrator: В белой пелене на мгновение вспыхивает что-то — тёплый, жёлтый огонёк. Он дрожит, манит.
 
 # TODO portrait: update aisen (shocked) pos=x0.50 y0.71 size=x0.13 y0.45 [z_index="2"]
 
+audio "res://assets/audio/scene_01/anxious_silence_3.wav" [volume="-8" loop="false"]
 aisen: Что это?..
 
 audio "res://assets/audio/scene_01/bargyy_bark_whine_2.wav" [volume="-4"]
@@ -127,13 +187,21 @@ aisen: Бабушка говорила: «Не ходи на свет в пур�
 - Пойти прямо на свет
 	aisen: Баргый там. Нужно спешить, пока не замёрз.
 	set scene1_choice = "light"
-	narrator: Айсен бежит на огонёк. Слышит хохот ледяных кристаллов — слишком поздно.
+	audio "res://assets/audio/scene_01/light_trap_1.wav" [volume="-8" loop="false"]
+	audio "res://assets/audio/scene_01/ice_crystal_laugh_1.wav" [volume="-6" loop="false"]
+	narrator: Айсен бежит на огонёк.
+	audio "res://assets/audio/scene_01/light_trap_2.wav" [volume="-6" loop="false"]
+	audio "res://assets/audio/scene_01/ice_crystal_laugh_2.wav" [volume="-4" loop="false"]
+	narrator: Слышит хохот ледяных кристаллов — слишком поздно.
+	audio "res://assets/audio/scene_01/light_trap_3.wav" [volume="-4" loop="false"]
+	audio "res://assets/audio/scene_01/light_trap_4.wav" [volume="-6" loop="false"]
 - Игнорировать свет, идти на лай (каноничный путь)
 	aisen: Бабушка предупреждала. Обойду огонёк стороной, пойду туда, откуда слышен Баргый.
 	set scene1_choice = "bark"
 - Вернуться в дом за Кюннэй
 	aisen: Одному страшно. Возьму сестру — вдвоём справимся.
 	set scene1_choice = "kunney"
+	audio "res://assets/audio/scene_01/ice_crystal_laugh_3.wav" [volume="-8" loop="false"]
 	narrator: Айсен бежит обратно. Но время упущено — Баргый получит лёгкое обморожение.
 
 # ---------- ЧАСТЬ 4: ПОГОНЯ В ПУРГЕ ----------
@@ -319,11 +387,14 @@ aisen: Нам надо домой. Пурга стихает. Вон, уже н�
 audio "res://assets/audio/scene_01/blizzard_fade_2.wav" [volume="-8" loop="false"]
 narrator: Сквозь тучи пробивается луна — бледная, холодная.
 
-audio "res://assets/audio/scene_01/sharp_silence_1.wav" [volume="-6" loop="false"]
+audio "res://assets/audio/scene_01/anxious_silence_4.wav" [volume="-6" loop="false"]
 narrator: И вдруг — тишина. Резкая.
 
 audio "res://assets/audio/scene_01/blizzard_fade_3.wav" [volume="-10" loop="false"]
 narrator: Ветер стих.
+
+audio "res://assets/audio/scene_01/yakut_night_empty_2.wav" [volume="-10" loop="false"]
+audio yakut_night "res://assets/audio/scene_01/yakut_night_wind.wav" [loop="true" fade="0.6" volume="-14"]
 
 audio "res://assets/audio/scene_01/bargyy_bark_cut_1.wav" [volume="-4" loop="false"]
 narrator: Лай Баргыя оборвался.
@@ -341,7 +412,10 @@ kunney: Айсен! Айсен, смотри! Смотри, какая крас�
 
 aisen: Кюннэй! Нет!
 
-narrator: Но поздно. На берегу, у кромки леса, стоит Кюннэй. Она протягивает руку к ледяной фигуре, похожей на маленькую девочку в платье. Это Теневой Бегун, второй Абааса, уже принял форму.
+narrator: Но поздно. На берегу, у кромки леса, стоит Кюннэй. Она протягивает руку к ледяной фигуре, похожей на маленькую девочку в платье.
+
+audio "res://assets/audio/scene_01/abaasy_presence_4.wav" [volume="-8" loop="false"]
+narrator: Это Теневой Бегун, второй Абааса, уже принял форму.
 
 audio "res://assets/audio/scene_01/kunney_vanish_1.wav" [volume="-4" loop="false"]
 narrator: Кюннэй касается её —
@@ -382,6 +456,7 @@ narrator: КОНЕЦ ГЛАВЫ I
 audio "res://assets/audio/scene_01/ice_dive_3.wav" [volume="-10" loop="false"]
 narrator: Айсен поднимается. В груди — твёрдый узел решимости. Он шагает в темноту.
 
+audio yakut_night -
 audio blizzard -
 
 [end_timeline]
