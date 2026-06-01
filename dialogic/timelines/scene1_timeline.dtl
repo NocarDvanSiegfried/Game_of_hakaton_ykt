@@ -191,25 +191,34 @@ aisen: Сейчас, сейчас... Потерпи.
 
 audio "res://assets/audio/scene_01/leash_ice_untie_3.wav" [volume="-6" loop="false"]
 
-audio "res://assets/audio/scene_01/ice_chime.wav" [volume="-4"]
-narrator: Из проруби медленно поднимается фигура. Без всплеска. Огромный — метра три высотой, из мутного пузырчатого льда. Внутри плавают замёрзшие листья и рыбы. Один глаз во лоб — огромный, подёрнутый бельмом. Он смотрит сквозь Айсена. Он слеп.
+audio "res://assets/audio/scene_01/tongus_rise_1.wav" [volume="-4" loop="false"]
+narrator: Из проруби медленно поднимается фигура. Без всплеска.
 
+audio "res://assets/audio/scene_01/tongus_rise_2.wav" [volume="-6" loop="false"]
+narrator: Огромный — метра три высотой, из мутного пузырчатого льда. Внутри плавают замёрзшие листья и рыбы. Один глаз во лоб — огромный, подёрнутый бельмом. Он смотрит сквозь Айсена. Он слеп.
+
+audio "res://assets/audio/scene_01/tongus_voice_1.wav" [volume="-4" loop="false"]
 tongus: Т-т-те... п-п-ло... Т-т-тепло. Я чув-с-ствую т-т-тепло. Маленькое. Ж-ж-живое.
 
+audio "res://assets/audio/scene_01/tongus_voice_2.wav" [volume="-4" loop="false"]
 tongus: Иди с-с-сюда. Я согрею.
 
+audio "res://assets/audio/scene_01/tongus_rise_4.wav" [volume="-8" loop="false"]
 narrator: Тонгус протягивает руку. Пальцы — длинные ледяные иглы. От его дыхания на лице Айсена выступает иней.
 
 aisen: Бабушка говорила о тебе. Ты Тонгус Харах. Ты не греешь. Ты крадёшь.
 
+audio "res://assets/audio/scene_01/tongus_voice_3.wav" [volume="-4" loop="false"]
 tongus: К-к-раду? Н-н-нет. Я беру то, что всё р-р-равно умрёт. Ты умрёшь. Он умрёт. Все у-у-умрут.
 
 tongus: Но ваше т-т-тепло... оно может жить во мне. Веч-ч-чно. Разве это не к-к-расиво?
 
+audio "res://assets/audio/scene_01/tongus_voice_4.wav" [volume="-4" loop="false"]
 tongus: От-т-тдай. И я от-т-тпущу собаку.
 
 aisen: ...ты не отпустишь. Ты слепой. Ты не отличаешь живое от мёртвого. Как ты поймёшь, что я отдал?
 
+audio "res://assets/audio/scene_01/tongus_voice_3.wav" [volume="-8" loop="false"]
 tongus: Я... ч-ч-увствую. Тепло — это когда... когда горит. Когда внутри... щиплет. Я знаю т-т-тепло.
 
 narrator: Он не знает. Он повторяет то, что слышал от жертв.
