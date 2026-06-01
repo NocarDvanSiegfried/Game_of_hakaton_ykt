@@ -299,8 +299,11 @@ aisen: Готов. Что мне теперь сделать?
 # TODO portrait: join bargyy (default) pos=x0.18 y0.73 size=x0.10 y0.28 [z_index="1"]
 # TODO portrait: update aisen (kneel) pos=x0.25 y0.74 size=x0.13 y0.45 [z_index="2"]
 
+audio "res://assets/audio/scene_01/ice_hole_freeze_1.wav" [volume="-4" loop="false"]
+narrator: Прорубь начинает затягиваться новым, чистым льдом.
+
 audio "res://assets/audio/scene_01/bargyy_whine_happy_2.wav" [volume="-4" loop="false"]
-narrator: Прорубь начинает затягиваться новым, чистым льдом. Баргый освобождается и бросается к Айсену, лижет лицо.
+narrator: Баргый освобождается и бросается к Айсену, лижет лицо.
 
 aisen: Тише, тише, Баргый. Я в порядке. Ты как?
 
@@ -329,8 +332,11 @@ narrator: Баргый воет — долго, тоскливо.
 
 aisen: Нет... нет, нет, нет! Я только спас тебя, Баргый, а теперь... Кюннэй...
 
+audio "res://assets/audio/scene_01/ice_hole_freeze_2.wav" [volume="-8" loop="false"]
+narrator: Лёд проруби, которым она затянулась, начинает светиться.
+
 audio "res://assets/audio/scene_01/ice_chime.wav" [volume="-10"]
-narrator: Лёд проруби, которым она затянулась, начинает светиться. Под водой виден туннель — извивающийся, уходящий вниз.
+narrator: Под водой виден туннель — извивающийся, уходящий вниз.
 
 aisen: ...это вход. В Нижний Мир. Настоящий вход.
 
