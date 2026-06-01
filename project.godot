@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Dialogic="*uid://ds2q0uclmolvu"
 DebugState="*res://scripts/core/debug_state.gd"
+Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
@@ -74,8 +74,8 @@ variables={
 "aisen_fear": 0,
 "aisen_warmth_lost": false,
 "aisen_warmth_status": "",
-"ancestral_guilt": 0,
 "ancestor_status": "",
+"ancestral_guilt": 0,
 "bargyy_bond": 0,
 "boss_end": "",
 "boss_tactic": "",
