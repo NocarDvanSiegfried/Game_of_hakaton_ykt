@@ -63,6 +63,7 @@ grow_vertical = 2
 script = ExtResource("1_menu")
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=2033954258]
+bus = &"Music"
 stream = ExtResource("4_menu_music")
 autoplay = true
 
@@ -142,6 +143,20 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
 theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
 theme_override_styles/focus = SubResource("StyleBoxFlat_button_hover")
 text = "Выбор сцены"
+
+[node name="SettingsButton" type="Button" parent="Center/VBox/Buttons" unique_id=428307341]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.92, 0.85, 1)
+theme_override_colors/font_hover_color = Color(0.91, 0.66, 0.36, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_button_hover")
+text = "Настройки"
 
 [node name="QuitButton" type="Button" parent="Center/VBox/Buttons" unique_id=459330080]
 unique_name_in_owner = true

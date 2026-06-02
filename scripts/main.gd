@@ -9,9 +9,16 @@ const SCENE1_OVERLAY_SCENE: PackedScene = preload("res://scenes/overlays/scene1_
 
 var current_timeline := ""
 var scene1_overlay: Control
+var _settings_overlay: Control
+var _settings_layer: CanvasLayer
 
 
 func _ready() -> void:
+	AudioSettings.apply_all()
+	_settings_layer = CanvasLayer.new()
+	_settings_layer.layer = 128
+	add_child(_settings_layer)
+
 	var timeline_ended_callback := Callable(self, "_on_timeline_ended")
 	if not Dialogic.timeline_ended.is_connected(timeline_ended_callback):
 		Dialogic.timeline_ended.connect(timeline_ended_callback)
@@ -29,6 +36,23 @@ func _ready() -> void:
 	else:
 		debug_state.prepare_debug_vars_for_timeline(start_timeline)
 	_start_timeline(start_timeline)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not event.is_action_pressed("game_open_settings"):
+		return
+	if _settings_overlay != null:
+		return
+	_open_in_game_settings()
+
+
+func _open_in_game_settings() -> void:
+	_settings_overlay = SettingsOverlayHelper.open(_settings_layer, true)
+	_settings_overlay.closed.connect(_on_in_game_settings_closed)
+
+
+func _on_in_game_settings_closed() -> void:
+	_settings_overlay = null
 
 
 func _start_timeline(timeline_name: String) -> void:

@@ -141,7 +141,26 @@ res://
 
 ## Запуск игры
 
-Нажми **F5** — запустится `scenes/main.tscn`, которая стартует `scene1_timeline`.
+Нажми **F5** — запустится главное меню (`scenes/ui/main_menu.tscn`).
+
+- **Новая игра** → `scenes/main.tscn` → `scene1_timeline`
+- **Настройки** → громкость (Общая, Музыка, Голоса, Эффекты, Фон / атмосфера), сохраняется в `user://settings.cfg`
+- **O** во время игры — те же настройки поверх VN (Dialogic на паузе); **Esc** или **O** — закрыть
+- **Выбор сцены** — debug-переход к любой сцене (если включён в `main_menu.gd`)
+
+### Звук и громкость
+
+| Bus | Что управляет |
+|-----|----------------|
+| Master | Общая громкость |
+| Music | Музыка меню |
+| Voice | Озвучка Dialogic (`*_voice` каналы) |
+| SFX | One-Shot эффекты, звуки UI |
+| Ambient | Пурга, камин, ветер (`blizzard`, `fireplace`, …) |
+
+Подробнее: `docs/audio/day1_volume_architecture.md`  
+Новые Dialogic-каналы: `docs/audio/adding_dialogic_audio_channels.md`  
+Чеклист тестирования scene1: `docs/testing/volume_settings_scene1.md`
 
 Текущая цепочка в `scripts/main.gd`:
 
@@ -175,6 +194,7 @@ scene1_timeline
 - `docs/testing/run_scene6_7.md`
 - `docs/testing/run_scene8_9.md`
 - `docs/testing/run_scene10.md`
+- `docs/testing/volume_settings_scene1.md`
 
 Чеклисты недостающего арта:
 
@@ -197,6 +217,10 @@ scene1_timeline
 **Новые `.dch`/`.dtl` не видны** — правый клик на `res://` в файловой системе Godot → **«Обновить файловую систему»**. `.uid` файлы создадутся автоматически.
 
 **Переменные новых сцен не видны в Dialogic → Variables** — открой `project.godot` и проверь секцию `variables={}` в блоке `[dialogic]`.
+
+**Нет звука / только Master** — Project Settings → Audio → Default Bus Layout должен указывать на `assets/audio/default_bus_layout.tres`. Перезапусти редактор после смены bus layout.
+
+**Громкость не сохраняется** — проверь `user://settings.cfg` (ОС: `%APPDATA%/Godot/app_userdata/BargyyIcePath/` на Windows). Autoload `AudioSettings` должен быть в `project.godot`.
 
 ---
 
