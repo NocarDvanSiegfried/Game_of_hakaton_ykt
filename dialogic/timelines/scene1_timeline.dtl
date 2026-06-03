@@ -71,11 +71,9 @@ ebe: Глупый, как прошлогодний сугроб. Он прима
 audio ebe_voice "res://assets/audio/scene_01/voice/ebe_voice_08_come_here.mp3" [volume="0" loop="false"]
 ebe: Идите сюда. Оба.
 
+[signal arg="show_scene1_amulets_pose"]
+
 audio "res://assets/audio/scene_01/table_items_magic_1.wav" [volume="-10" loop="false"]
-
-[signal arg="hide_scene1_grandmother_house_layered"]
-
-[background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_fireplace_close.png" fade="0.5"]
 
 audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_03_amulets.mp3" [volume="0" loop="false"]
 narrator: Бабушка высыпает на стол три предмета: медвежий коготь на шнурке, берестяную коробочку с выжженной спиралью, и маленькое зеркальце в оправе из оленьего рога.
@@ -100,6 +98,8 @@ ebe: Их можно запутать. Их можно обмануть. Их м
 
 audio ebe_voice "res://assets/audio/scene_01/voice/ebe_voice_14_sleep.mp3" [volume="0" loop="false"]
 ebe: Спите сейчас. Завтра будет трудный день.
+
+[signal arg="hide_scene1_grandmother_house_layered"]
 
 audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_05_fade.mp3" [volume="0" loop="false"]
 narrator: Экран темнеет.
