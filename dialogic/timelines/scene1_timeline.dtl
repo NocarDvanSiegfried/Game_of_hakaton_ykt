@@ -118,6 +118,8 @@ narrator: Он закрывает глаза.
 
 [signal arg="hide_scene1_grandmother_house_layered"]
 
+[background arg="res://assets/art/черный.jpg" fade="0.5"]
+
 audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_05_fade.mp3" [volume="0" loop="false"]
 narrator: Экран темнеет.
 
