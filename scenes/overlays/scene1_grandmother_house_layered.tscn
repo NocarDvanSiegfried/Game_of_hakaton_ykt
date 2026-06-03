@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://scripts/overlays/scene1_layered_overlay.gd" id="1_overlay"]
 [ext_resource type="Texture2D" path="res://assets/art/backgrounds/scene_01/bg_scene1_house_empty_v2.jpg" id="2_bg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" path="res://assets/art/characters/scene_01/scene1_family_group_amulets.png" id="4_amulets"]
 [ext_resource type="Texture2D" path="res://assets/art/characters/scene_01/scene1_family_group_sleep.png" id="5_sleep"]
 [ext_resource type="Texture2D" path="res://assets/art/characters/scene_01/scene1_family_group_wakeup.png" id="6_wakeup"]
+[ext_resource type="Texture2D" path="res://assets/art/characters/scene_01/scene1_family_group_dressing.png" id="7_dressing"]
 
 [node name="Scene1GrandmotherHouseLayered" type="Control"]
 layout_mode = 3
@@ -80,6 +81,20 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("6_wakeup")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="FamilyGroupDressing" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_dressing")
 expand_mode = 1
 stretch_mode = 6
 

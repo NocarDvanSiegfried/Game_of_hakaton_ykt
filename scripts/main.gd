@@ -8,6 +8,7 @@ const SCENE1_OVERLAY_HIDE_SIGNAL := "hide_scene1_grandmother_house_layered"
 const SCENE1_OVERLAY_AMULETS_SIGNAL := "show_scene1_amulets_pose"
 const SCENE1_OVERLAY_SLEEP_SIGNAL := "show_scene1_sleep_pose"
 const SCENE1_OVERLAY_WAKEUP_SIGNAL := "show_scene1_wakeup_pose"
+const SCENE1_OVERLAY_DRESSING_SIGNAL := "show_scene1_dressing_pose"
 const SCENE1_OVERLAY_SCENE: PackedScene = preload("res://scenes/overlays/scene1_grandmother_house_layered.tscn")
 
 var current_timeline := ""
@@ -75,6 +76,8 @@ func _on_dialogic_signal(argument: Variant) -> void:
 		_show_scene1_sleep_pose()
 	elif argument == SCENE1_OVERLAY_WAKEUP_SIGNAL:
 		_show_scene1_wakeup_pose()
+	elif argument == SCENE1_OVERLAY_DRESSING_SIGNAL:
+		_show_scene1_dressing_pose()
 
 
 func _show_scene1_overlay() -> void:
@@ -104,6 +107,12 @@ func _show_scene1_wakeup_pose() -> void:
 	var overlay := _ensure_scene1_overlay()
 	if overlay != null and overlay.has_method("show_wakeup_pose"):
 		overlay.call("show_wakeup_pose")
+
+
+func _show_scene1_dressing_pose() -> void:
+	var overlay := _ensure_scene1_overlay()
+	if overlay != null and overlay.has_method("show_dressing_pose"):
+		overlay.call("show_dressing_pose")
 
 
 func _ensure_scene1_overlay() -> Control:
