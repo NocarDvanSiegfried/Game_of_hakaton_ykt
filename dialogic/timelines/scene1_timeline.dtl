@@ -141,35 +141,39 @@ audio house_morning "res://assets/audio/scene_01/house_after_night_1.wav" [loop=
 
 [background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_window_blizzard.png" fade="0.5"]
 
+[signal arg="show_scene1_grandmother_house_layered"]
+[signal arg="show_scene1_wakeup_pose"]
+
 audio "res://assets/audio/scene_01/morning_stove_desc_1.wav" [volume="-12" loop="false"]
-audio narrator_voice "res://assets/audio/scene_01/voice/morning_part2_01_morning.mp3" [volume="0" loop="false"]
-narrator: Утро. Печь почти погасла, только угли тлеют.
+narrator: Утро. Серый свет сочится сквозь ледяное окно. Печь почти погасла.
 
 audio stove_embers "res://assets/audio/scene_01/stove_embers_1.wav" [loop="true" fade="0.5" volume="-14"]
 
 audio "res://assets/audio/scene_01/morning_stove_desc_2.wav" [volume="-10" loop="false"]
-narrator: Свет серый, пасмурный. Бабушка сидит в углу неподвижно.
+narrator: Айсен садится. Оглядывает комнату.
 
-audio "res://assets/audio/scene_01/anxious_silence_1.wav" [volume="-8" loop="false"]
-narrator: Баргыя нет.
-
-# TODO portrait: join aisen (neutral) pos=x0.50 y0.72 size=x0.13 y0.45 [z_index="2"]
-# TODO portrait: join kunney (neutral) pos=x0.75 y0.73 size=x0.13 y0.45 [z_index="3"]
+# TODO portrait: join aisen (neutral) pos=x0.45 y0.72 size=x0.13 y0.45 [z_index="2"]
+# TODO portrait: join kunney (sleeping_under_fur) pos=x0.70 y0.76 size=x0.14 y0.24 [z_index="2"]
+# TODO portrait: join ebe (neutral) pos=x0.82 y0.70 size=x0.16 y0.52 [z_index="3"]
+# TODO portrait: leave bargyy
 
 audio "res://assets/audio/scene_01/cloth_rustle_wake_1.wav" [volume="-12" loop="false"]
-audio "res://assets/audio/scene_01/children_awakening_1.wav" [volume="-10" loop="false"]
-audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_01_morning.mp3" [volume="0" loop="false"]
-aisen: Кюннэй! Уже утро?
+aisen: Баргый?
 
-audio "res://assets/audio/scene_01/bargyy_missing_2.wav" [volume="-12" loop="false"]
-audio "res://assets/audio/scene_01/children_awakening_2.wav" [volume="-10" loop="false"]
-audio kunney_voice "res://assets/audio/scene_01/voice/kunney_voice_02_morning.mp3" [volume="0" loop="false"]
-kunney: Уже утро? Баргый не лаял. Значит, всё хорошо. Правда?
+audio house_morning -
+audio "res://assets/audio/scene_01/anxious_silence_1.wav" [volume="-8" loop="false"]
+narrator: Тишина.
 
 audio "res://assets/audio/scene_01/cloth_rustle_wake_2.wav" [volume="-12" loop="false"]
-audio "res://assets/audio/scene_01/children_awakening_3.wav" [volume="-10" loop="false"]
-audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_02_wake.mp3" [volume="0" loop="false"]
-aisen: Правда. Вставай, соня.
+aisen: (громче) Баргый!
+
+audio "res://assets/audio/scene_01/bargyy_missing_2.wav" [volume="-12" loop="false"]
+narrator: Нет ответа. Пёс исчез.
+
+audio "res://assets/audio/scene_01/sharp_silence_1.wav" [volume="-10" loop="false"]
+narrator: Тишина. Даже ветер стих. Только редкое потрескивание углей.
+
+narrator: Баргыя нигде нет. На улице — вой ветра. Нужно найти его.
 
 audio "res://assets/audio/scene_01/cloth_rustle_wake_3.wav" [volume="-12" loop="false"]
 audio "res://assets/audio/scene_01/table_items_magic_1.wav" [volume="-14" loop="false"]
