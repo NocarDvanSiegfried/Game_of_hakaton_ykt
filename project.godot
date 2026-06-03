@@ -23,8 +23,8 @@ buses/default_bus_layout="res://assets/audio/default_bus_layout.tres"
 
 DebugState="*res://scripts/core/debug_state.gd"
 DialogicVoiceStop="*res://scripts/core/dialogic_voice_stop.gd"
-Dialogic="*uid://ds2q0uclmolvu"
 AudioSettings="*res://scripts/core/audio_settings.gd"
+Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
