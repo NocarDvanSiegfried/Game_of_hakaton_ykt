@@ -60,6 +60,15 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "ending_bad_early": "res://dialogic/timelines/ending_bad_early.dtl",
+"scene10_ending_1": "res://dialogic/timelines/scene10_ending_1.dtl",
+"scene10_ending_2": "res://dialogic/timelines/scene10_ending_2.dtl",
+"scene10_ending_3": "res://dialogic/timelines/scene10_ending_3.dtl",
+"scene10_ending_4": "res://dialogic/timelines/scene10_ending_4.dtl",
+"scene10_ending_5": "res://dialogic/timelines/scene10_ending_5.dtl",
+"scene10_ending_6": "res://dialogic/timelines/scene10_ending_6.dtl",
+"scene10_ending_7": "res://dialogic/timelines/scene10_ending_7.dtl",
+"scene10_ending_8": "res://dialogic/timelines/scene10_ending_8.dtl",
+"scene10_ending_9": "res://dialogic/timelines/scene10_ending_9.dtl",
 "scene10_timeline": "res://dialogic/timelines/scene10_timeline.dtl",
 "scene1_timeline": "res://dialogic/timelines/scene1_timeline.dtl",
 "scene2_timeline": "res://dialogic/timelines/scene2_timeline.dtl",
