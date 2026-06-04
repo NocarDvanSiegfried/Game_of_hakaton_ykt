@@ -18,6 +18,9 @@ const CHAPTER_VIDEO_MAX_PLAYBACK_SEC := 15.0
 const CHAPTER_VIDEO_BUS := &"Music"
 const CHAPTER_VIDEO_VOLUME_DB := -14.0
 
+const MAIN_MENU_SCENE := "res://scenes/ui/main_menu.tscn"
+const PAUSE_MENU_SCENE := preload("res://scenes/ui/in_game_pause_menu.tscn")
+
 @onready var _chapter_video_layer: CanvasLayer = $ChapterVideoLayer
 @onready var _chapter_video_player: VideoStreamPlayer = %ChapterVideoPlayer
 @onready var _chapter_hint_label: Label = %ChapterHintLabel
@@ -26,6 +29,11 @@ var current_timeline := ""
 var scene1_overlay: Control
 var _settings_overlay: Control
 var _settings_layer: CanvasLayer
+var _pause_layer: CanvasLayer
+var _pause_menu: Control
+var _confirm_overlay: Control
+var _game_paused := false
+var _shutting_down := false
 
 var _chapter_video_active := false
 var _chapter_video_finishing := false
@@ -40,7 +48,13 @@ func _ready() -> void:
 	_setup_chapter_video_timers()
 	_settings_layer = CanvasLayer.new()
 	_settings_layer.layer = 128
+	_settings_layer.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(_settings_layer)
+
+	_pause_layer = CanvasLayer.new()
+	_pause_layer.layer = 140
+	_pause_layer.process_mode = Node.PROCESS_MODE_ALWAYS
+	add_child(_pause_layer)
 
 	var timeline_ended_callback := Callable(self, "_on_timeline_ended")
 	if not Dialogic.timeline_ended.is_connected(timeline_ended_callback):
@@ -73,25 +87,166 @@ func _setup_chapter_video_timers() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if _shutting_down:
+		return
+	if not event.is_pressed() or event.is_echo():
+		return
+
 	if _chapter_video_active and not _chapter_video_finishing:
 		if _is_chapter_skip_event(event):
 			get_viewport().set_input_as_handled()
 			_skip_chapter_video()
 		return
 
-	if not event.is_action_pressed("game_open_settings"):
+	if _confirm_overlay != null and is_instance_valid(_confirm_overlay):
 		return
-	if _settings_overlay != null:
+
+	if _settings_overlay != null and is_instance_valid(_settings_overlay):
 		return
-	_open_in_game_settings()
+
+	if _game_paused:
+		if event.is_action_pressed("game_pause"):
+			get_viewport().set_input_as_handled()
+			_close_pause_menu()
+		return
+
+	if event.is_action_pressed("game_pause"):
+		get_viewport().set_input_as_handled()
+		_open_pause_menu()
+		return
+
+	if event.is_action_pressed("game_open_settings"):
+		get_viewport().set_input_as_handled()
+		_open_in_game_settings()
+
+
+func _open_pause_menu() -> void:
+	if _game_paused or _shutting_down:
+		return
+
+	_game_paused = true
+	Dialogic.paused = true
+	get_tree().paused = true
+
+	_pause_menu = PAUSE_MENU_SCENE.instantiate() as Control
+	_pause_layer.add_child(_pause_menu)
+	_pause_menu.resume_requested.connect(_close_pause_menu)
+	_pause_menu.settings_requested.connect(_on_pause_settings_pressed)
+	_pause_menu.main_menu_requested.connect(_on_pause_main_menu_pressed)
+	_pause_menu.quit_requested.connect(_on_pause_quit_pressed)
+
+
+func _close_pause_menu() -> void:
+	if not _game_paused:
+		return
+
+	_game_paused = false
+	if _pause_menu != null and is_instance_valid(_pause_menu):
+		_pause_menu.queue_free()
+	_pause_menu = null
+
+	get_tree().paused = false
+	if not _chapter_video_pause_set:
+		Dialogic.paused = false
 
 
 func _open_in_game_settings() -> void:
+	if _settings_overlay != null:
+		return
 	_settings_overlay = SettingsOverlayHelper.open(_settings_layer, true)
 	_settings_overlay.closed.connect(_on_in_game_settings_closed)
 
 
+func _on_pause_settings_pressed() -> void:
+	if _settings_overlay != null:
+		return
+	_settings_overlay = SettingsOverlayHelper.open(
+		_pause_layer,
+		false,
+		false,
+		"Esc — назад · игра остаётся на паузе"
+	)
+	_settings_overlay.closed.connect(_on_in_game_settings_closed)
+
+
 func _on_in_game_settings_closed() -> void:
+	_settings_overlay = null
+
+
+func _on_pause_main_menu_pressed() -> void:
+	_show_confirm(
+		"Главное меню",
+		"Выйти в главное меню? Текущая сцена будет прервана.",
+		"Выйти",
+		_on_confirm_exit_to_main_menu
+	)
+
+
+func _on_pause_quit_pressed() -> void:
+	_show_confirm(
+		"Выход из игры",
+		"Закрыть игру?",
+		"Выйти",
+		_on_confirm_quit_game
+	)
+
+
+func _show_confirm(title: String, message: String, confirm_text: String, on_confirm: Callable) -> void:
+	if _confirm_overlay != null and is_instance_valid(_confirm_overlay):
+		return
+	_confirm_overlay = UiConfirmOverlay.open(_pause_layer, title, message, confirm_text, "Отмена")
+	_confirm_overlay.confirmed.connect(func() -> void:
+		_confirm_overlay = null
+		on_confirm.call()
+	)
+	_confirm_overlay.cancelled.connect(func() -> void:
+		_confirm_overlay = null
+	)
+
+
+func _on_confirm_exit_to_main_menu() -> void:
+	await _shutdown_dialogic_session()
+	if not is_inside_tree():
+		return
+	get_tree().change_scene_to_file(MAIN_MENU_SCENE)
+
+
+func _on_confirm_quit_game() -> void:
+	await _shutdown_dialogic_session()
+	get_tree().quit()
+
+
+func _shutdown_dialogic_session() -> void:
+	_shutting_down = true
+	_close_pause_menu()
+	_close_settings_overlay()
+
+	var timeline_ended_callback := Callable(self, "_on_timeline_ended")
+	if Dialogic.timeline_ended.is_connected(timeline_ended_callback):
+		Dialogic.timeline_ended.disconnect(timeline_ended_callback)
+
+	_chapter_video_active = false
+	_chapter_video_finishing = false
+	_chapter_video_pause_set = false
+	_stop_chapter_video_timers()
+	if _chapter_video_player != null and _chapter_video_player.is_playing():
+		_chapter_video_player.stop()
+	if _chapter_video_layer != null:
+		_chapter_video_layer.visible = false
+
+	get_tree().paused = false
+	Dialogic.paused = false
+
+	if Dialogic.current_timeline != null:
+		Dialogic.end_timeline(true)
+
+	await get_tree().process_frame
+	await get_tree().process_frame
+
+
+func _close_settings_overlay() -> void:
+	if _settings_overlay != null and is_instance_valid(_settings_overlay):
+		_settings_overlay.queue_free()
 	_settings_overlay = null
 
 
@@ -316,6 +471,8 @@ func _scene1_overlay_layer_index(dialogic_layout: Node) -> int:
 
 
 func _on_timeline_ended() -> void:
+	if _shutting_down:
+		return
 	print("Завершён таймлайн: ", current_timeline)
 	match current_timeline:
 		"scene1_timeline":

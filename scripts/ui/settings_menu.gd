@@ -15,6 +15,8 @@ var _percent_labels: Dictionary = {}
 var _sliders: Dictionary = {}
 var _syncing_sliders := false
 var _pause_dialogic := false
+var _resume_dialogic_on_close := true
+var _pending_hint_text := ""
 
 
 func set_dialogic_pause(enabled: bool) -> void:
@@ -23,11 +25,23 @@ func set_dialogic_pause(enabled: bool) -> void:
 		Dialogic.paused = true
 
 
+func set_resume_dialogic_on_close(enabled: bool) -> void:
+	_resume_dialogic_on_close = enabled
+
+
+func set_hint_text(text: String) -> void:
+	_pending_hint_text = text
+	if _hint_label != null:
+		_hint_label.text = text
+
+
 func _ready() -> void:
 	_build_volume_rows()
 	%ResetButton.pressed.connect(_on_reset_pressed)
 	%BackButton.pressed.connect(_on_back_pressed)
-	if _pause_dialogic:
+	if not _pending_hint_text.is_empty():
+		_hint_label.text = _pending_hint_text
+	elif _pause_dialogic:
 		_hint_label.text = "Esc — закрыть · O — настройки в игре"
 	call_deferred("_focus_first_slider")
 
@@ -125,7 +139,7 @@ func _focus_first_slider() -> void:
 
 
 func _close() -> void:
-	if _pause_dialogic:
+	if _pause_dialogic and _resume_dialogic_on_close:
 		Dialogic.paused = false
 	closed.emit()
 	queue_free()
