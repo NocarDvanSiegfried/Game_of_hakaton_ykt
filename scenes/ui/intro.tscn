@@ -29,6 +29,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+bus = &"Music"
+volume_db = -14.0
 expand = true
 
 [node name="HintLabel" type="Label" parent="."]

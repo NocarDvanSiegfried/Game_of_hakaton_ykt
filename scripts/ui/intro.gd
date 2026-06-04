@@ -8,6 +8,10 @@ const INTRO_VIDEO_PATH := "res://assets/video/intro.ogv"
 const STARTUP_FALLBACK_SEC := 4.0
 ## Запасной таймаут, если сигнал finished не сработал.
 const MAX_PLAYBACK_SEC := 180.0
+## Тот же bus, что и музыка меню; не Master — иначе intro громче настроек Music.
+const INTRO_VIDEO_BUS := &"Music"
+## Дополнительное приглушение поверх громкости bus Music (не трогаем AudioSettings).
+const INTRO_VIDEO_VOLUME_DB := -14.0
 
 @onready var _video_player: VideoStreamPlayer = %VideoPlayer
 @onready var _hint_label: Label = %HintLabel
@@ -20,6 +24,7 @@ var _max_duration_timer: Timer
 
 func _ready() -> void:
 	_setup_timers()
+	_configure_video_audio()
 	_video_player.finished.connect(_on_video_finished)
 
 	if not _try_start_video():
@@ -28,6 +33,14 @@ func _ready() -> void:
 
 	_startup_fallback_timer.start()
 	_show_skip_hint()
+
+
+func _configure_video_audio() -> void:
+	if AudioServer.get_bus_index(INTRO_VIDEO_BUS) >= 0:
+		_video_player.bus = INTRO_VIDEO_BUS
+	else:
+		push_warning("Intro: bus '%s' не найден, оставляем Master." % INTRO_VIDEO_BUS)
+	_video_player.volume_db = INTRO_VIDEO_VOLUME_DB
 
 
 func _setup_timers() -> void:
