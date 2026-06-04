@@ -85,7 +85,7 @@ scene3_timeline → ending_bad_early
 | ------ | -------- |
 | Исцелить | `lesson_act1 = "compassion"` |
 | Пощадить с границами | `lesson_act1 = "boundaries"` |
-| Запомнить и осудить | `lesson_act1 = "memory"` |
+| Запомнить и сохранить правду | `lesson_act1 = "memory"` |
 
 ### Ключевой выбор Scene 6
 
@@ -118,7 +118,7 @@ scene3_timeline → ending_bad_early
 1. Пройти Scene 2 и выбрать один из трёх вариантов:
    - `compassion`: «Исцелить»
    - `boundaries`: «Пощадить с границами»
-   - `memory`: «Запомнить и осудить»
+   - `memory`: «Запомнить и сохранить правду»
 2. Пройти Scene 6 и выбрать один из трёх вариантов:
    - `acceptance`: «Открыться и принять»
    - `humility`: «Бороться, но смириться»
