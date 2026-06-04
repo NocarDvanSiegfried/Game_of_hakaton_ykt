@@ -283,7 +283,7 @@ audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_08_trap_light.m
 aisen: Бабушка говорила: «Не ходи на свет в пурге». Это может быть ловушка. Но Баргый лает там...
 
 - Пойти прямо на свет
-audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_09_run_light.mp3" [volume="0" loop="false"]
+	audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_09_run_light.mp3" [volume="0" loop="false"]
 	aisen: Баргый там. Нужно спешить, пока не замёрз.
 	set scene1_choice = "light"
 	audio "res://assets/audio/scene_01/light_trap_1.wav" [volume="-8" loop="false"]
@@ -296,11 +296,11 @@ audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_09_run_light.mp
 	audio "res://assets/audio/scene_01/light_trap_3.wav" [volume="-4" loop="false"]
 	audio "res://assets/audio/scene_01/light_trap_4.wav" [volume="-6" loop="false"]
 - Игнорировать свет, идти на лай (каноничный путь)
-audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_10_avoid_light.mp3" [volume="0" loop="false"]
+	audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_10_avoid_light.mp3" [volume="0" loop="false"]
 	aisen: Бабушка предупреждала. Обойду огонёк стороной, пойду туда, откуда слышен Баргый.
 	set scene1_choice = "bark"
 - Вернуться в дом за Кюннэй
-audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_11_get_kunney.mp3" [volume="0" loop="false"]
+	audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_11_get_kunney.mp3" [volume="0" loop="false"]
 	aisen: Одному страшно. Возьму сестру — вдвоём справимся.
 	set scene1_choice = "kunney"
 	audio "res://assets/audio/scene_01/ice_crystal_laugh_3.wav" [volume="-8" loop="false"]
@@ -450,7 +450,7 @@ audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_17_tactic_choic
 aisen: Он слепой. Реагирует на тепло, но не отличает настоящее. Можно подсунуть что-то горячее, но неживое. Что выбрать?
 
 - Бросить в него горящий шарф
-audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_18_scarf.mp3" [volume="0" loop="false"]
+	audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_18_scarf.mp3" [volume="0" loop="false"]
 	aisen: Я отдам тебе тепло моей одежды. Она грела меня — теперь в ней частица моего тепла.
 	set boss_tactic = "scarf"
 	update aisen (attack_fire) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
@@ -467,7 +467,7 @@ audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_18_scarf.mp3" [
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_scarf_04_panic.mp3" [volume="0" loop="false"]
 	narrator: Демон в панике. Безопасный исход.
 - Разжечь костёр из мха в трещине
-audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_19_fire.mp3" [volume="0" loop="false"]
+	audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_19_fire.mp3" [volume="0" loop="false"]
 	aisen: Смотри! Вот огонь. Он живой, слышишь, как трещит? Я отдаю его тебе. Забирай.
 	set boss_tactic = "fire"
 	update aisen (attack_fire) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
@@ -487,7 +487,7 @@ audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_19_fire.mp3" [v
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_fire_05_health.mp3" [volume="0" loop="false"]
 	narrator: Айсен теряет немного здоровья от близости пламени.
 - Рассказать ему о горячем сердце
-audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_20_heart.mp3" [volume="0" loop="false"]
+	audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_20_heart.mp3" [volume="0" loop="false"]
 	aisen: Ты хочешь тепло? Но самое горячее — это сердце, которое любит. Скажи: что ты любишь больше всего? Тогда я отдам тебе его тепло.
 	set boss_tactic = "heart_story"
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_heart_01_freeze.mp3" [volume="0" loop="false"]
@@ -520,7 +520,7 @@ audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_21_ready.mp3" [
 aisen: Готов. Что мне теперь сделать?
 
 - Атаковать ледяным осколком
-audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_22_finish.mp3" [volume="0" loop="false"]
+	audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_22_finish.mp3" [volume="0" loop="false"]
 	aisen: Хватит. Это за Баргыя.
 	set boss_end = "finish"
 	audio "res://assets/audio/scene_01/ice_shard_strike_1.wav" [volume="-4" loop="false"]
@@ -536,7 +536,7 @@ audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_22_finish.mp3" 
 	audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_finish_04_collapse.mp3" [volume="0" loop="false"]
 	narrator: разваливается на куски.
 - Пощадить
-audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_23_spare.mp3" [volume="0" loop="false"]
+	audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_23_spare.mp3" [volume="0" loop="false"]
 	aisen: Уходи. Скажи своим братьям, что люди не так просты.
 	set boss_end = "spare"
 	audio "res://assets/audio/scene_01/ice_crack_steam_4.wav" [volume="-6" loop="false"]
