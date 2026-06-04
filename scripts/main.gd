@@ -175,7 +175,36 @@ func _on_timeline_ended() -> void:
 			await get_tree().process_frame
 			_start_timeline("scene10_timeline")
 		"scene10_timeline":
-			print("Игра завершена. Финальный каркас пройден.")
+			var ending_value: Variant = Dialogic.VAR.ending_id
+			var eid := 5
+			if typeof(ending_value) == TYPE_INT or typeof(ending_value) == TYPE_FLOAT:
+				eid = int(ending_value)
+			else:
+				var ending_text := str(ending_value)
+				if ending_text.is_valid_int():
+					eid = ending_text.to_int()
+			if eid < 1 or eid > 9:
+				eid = 5
+			await get_tree().process_frame
+			_start_timeline("scene10_ending_%d" % eid)
+		"scene10_ending_1":
+			print("Игра завершена. Концовка 1.")
+		"scene10_ending_2":
+			print("Игра завершена. Концовка 2.")
+		"scene10_ending_3":
+			print("Игра завершена. Концовка 3.")
+		"scene10_ending_4":
+			print("Игра завершена. Концовка 4.")
+		"scene10_ending_5":
+			print("Игра завершена. Концовка 5.")
+		"scene10_ending_6":
+			print("Игра завершена. Концовка 6.")
+		"scene10_ending_7":
+			print("Игра завершена. Концовка 7.")
+		"scene10_ending_8":
+			print("Игра завершена. Концовка 8.")
+		"scene10_ending_9":
+			print("Игра завершена. Концовка 9.")
 		"ending_bad_early":
 			print("Игра завершена. Ранняя плохая концовка пройдена.")
 		_:
