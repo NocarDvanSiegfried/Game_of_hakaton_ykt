@@ -123,8 +123,7 @@ narrator: Он закрывает глаза.
 audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_05_fade.mp3" [volume="0" loop="false"]
 narrator: Экран темнеет.
 
-audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_04_chapter.mp3" [volume="0" loop="false"]
-narrator: Глава I: Пурга
+[signal arg="play_chapter_video_01"]
 
 # ---------- ЧАСТЬ 2: УТРО В ДОМЕ ----------
 # Озвучка автора: narrator_voice. morning_part2_01 — одна запись на три строки утра.

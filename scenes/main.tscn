@@ -1,6 +1,64 @@
 [gd_scene format=3 uid="uid://pi1fohpeekpy"]
 
 [ext_resource type="Script" uid="uid://d2vfw3nqscrnn" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="FontFile" uid="uid://c6vdxxc8uyx21" path="res://assets/fonts/NotoSerif-Regular.ttf" id="2_font"]
 
 [node name="Main" type="Node" unique_id=1568047128]
 script = ExtResource("1_main")
+
+[node name="ChapterVideoLayer" type="CanvasLayer" parent="."]
+layer = 64
+visible = false
+
+[node name="ChapterVideoRoot" type="Control" parent="ChapterVideoLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="Backdrop" type="ColorRect" parent="ChapterVideoLayer/ChapterVideoRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02, 0.04, 0.07, 1)
+
+[node name="ChapterVideoPlayer" type="VideoStreamPlayer" parent="ChapterVideoLayer/ChapterVideoRoot"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bus = &"Music"
+volume_db = -14.0
+expand = true
+
+[node name="ChapterHintLabel" type="Label" parent="ChapterVideoLayer/ChapterVideoRoot"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -48.0
+offset_right = 280.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.78, 0.76, 0.7, 0.85)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.65)
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 15
+text = "Enter · Space · Esc · ЛКМ — пропустить"
+horizontal_alignment = 1

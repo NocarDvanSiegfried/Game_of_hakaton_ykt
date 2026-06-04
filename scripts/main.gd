@@ -11,14 +11,33 @@ const SCENE1_OVERLAY_WAKEUP_SIGNAL := "show_scene1_wakeup_pose"
 const SCENE1_OVERLAY_DRESSING_SIGNAL := "show_scene1_dressing_pose"
 const SCENE1_OVERLAY_SCENE: PackedScene = preload("res://scenes/overlays/scene1_grandmother_house_layered.tscn")
 
+const CHAPTER_VIDEO_01_SIGNAL := "play_chapter_video_01"
+const CHAPTER_VIDEO_PATH := "res://assets/video/chapter_01_blizzard.ogv"
+const CHAPTER_VIDEO_STARTUP_FALLBACK_SEC := 4.0
+const CHAPTER_VIDEO_MAX_PLAYBACK_SEC := 15.0
+const CHAPTER_VIDEO_BUS := &"Music"
+const CHAPTER_VIDEO_VOLUME_DB := -14.0
+
+@onready var _chapter_video_layer: CanvasLayer = $ChapterVideoLayer
+@onready var _chapter_video_player: VideoStreamPlayer = %ChapterVideoPlayer
+@onready var _chapter_hint_label: Label = %ChapterHintLabel
+
 var current_timeline := ""
 var scene1_overlay: Control
 var _settings_overlay: Control
 var _settings_layer: CanvasLayer
 
+var _chapter_video_active := false
+var _chapter_video_finishing := false
+var _chapter_video_pause_set := false
+var _chapter_max_timer_started := false
+var _chapter_startup_timer: Timer
+var _chapter_max_timer: Timer
+
 
 func _ready() -> void:
 	AudioSettings.apply_all()
+	_setup_chapter_video_timers()
 	_settings_layer = CanvasLayer.new()
 	_settings_layer.layer = 128
 	add_child(_settings_layer)
@@ -29,8 +48,6 @@ func _ready() -> void:
 	if not Dialogic.signal_event.is_connected(_on_dialogic_signal):
 		Dialogic.signal_event.connect(_on_dialogic_signal)
 
-	# Имя timeline — это имя файла без расширения (.dtl).
-	# Dialogic ищет таймлайны по всему проекту автоматически.
 	var debug_state: Variant = get_node_or_null("/root/DebugState")
 	var start_timeline := ""
 	if debug_state != null:
@@ -42,7 +59,26 @@ func _ready() -> void:
 	_start_timeline(start_timeline)
 
 
+func _setup_chapter_video_timers() -> void:
+	_chapter_startup_timer = Timer.new()
+	_chapter_startup_timer.one_shot = true
+	_chapter_startup_timer.wait_time = CHAPTER_VIDEO_STARTUP_FALLBACK_SEC
+	_chapter_startup_timer.timeout.connect(_on_chapter_startup_fallback_timeout)
+	add_child(_chapter_startup_timer)
+
+	_chapter_max_timer = Timer.new()
+	_chapter_max_timer.one_shot = true
+	_chapter_max_timer.timeout.connect(_on_chapter_max_duration_timeout)
+	add_child(_chapter_max_timer)
+
+
 func _unhandled_input(event: InputEvent) -> void:
+	if _chapter_video_active and not _chapter_video_finishing:
+		if _is_chapter_skip_event(event):
+			get_viewport().set_input_as_handled()
+			_skip_chapter_video()
+		return
+
 	if not event.is_action_pressed("game_open_settings"):
 		return
 	if _settings_overlay != null:
@@ -66,7 +102,9 @@ func _start_timeline(timeline_name: String) -> void:
 
 
 func _on_dialogic_signal(argument: Variant) -> void:
-	if argument == SCENE1_OVERLAY_SHOW_SIGNAL:
+	if argument == CHAPTER_VIDEO_01_SIGNAL:
+		_play_chapter_video_01()
+	elif argument == SCENE1_OVERLAY_SHOW_SIGNAL:
 		_show_scene1_overlay()
 	elif argument == SCENE1_OVERLAY_HIDE_SIGNAL:
 		_hide_scene1_overlay()
@@ -78,6 +116,145 @@ func _on_dialogic_signal(argument: Variant) -> void:
 		_show_scene1_wakeup_pose()
 	elif argument == SCENE1_OVERLAY_DRESSING_SIGNAL:
 		_show_scene1_dressing_pose()
+
+
+func _play_chapter_video_01() -> void:
+	if _chapter_video_active or _chapter_video_finishing:
+		return
+
+	if not ResourceLoader.exists(CHAPTER_VIDEO_PATH):
+		push_warning("Chapter video: файл не найден, продолжаем timeline: %s" % CHAPTER_VIDEO_PATH)
+		return
+
+	Dialogic.paused = true
+	_chapter_video_pause_set = true
+	_configure_chapter_video_audio()
+
+	if not _try_start_chapter_video():
+		_finish_chapter_video_and_resume_dialogic("видео не загрузилось")
+		return
+
+	_chapter_video_active = true
+	_chapter_video_layer.visible = true
+	_chapter_hint_label.visible = true
+	_chapter_startup_timer.start()
+	print("Глава 1 — Пурга: воспроизведение видео")
+
+
+func _configure_chapter_video_audio() -> void:
+	if AudioServer.get_bus_index(CHAPTER_VIDEO_BUS) >= 0:
+		_chapter_video_player.bus = CHAPTER_VIDEO_BUS
+	else:
+		push_warning("Chapter video: bus '%s' не найден, оставляем Master." % CHAPTER_VIDEO_BUS)
+	_chapter_video_player.volume_db = CHAPTER_VIDEO_VOLUME_DB
+
+
+func _try_start_chapter_video() -> bool:
+	if _chapter_video_player.finished.is_connected(_on_chapter_video_finished):
+		_chapter_video_player.finished.disconnect(_on_chapter_video_finished)
+	_chapter_video_player.finished.connect(_on_chapter_video_finished, CONNECT_ONE_SHOT)
+
+	var stream: VideoStream = load(CHAPTER_VIDEO_PATH) as VideoStream
+	if stream == null:
+		var theora := VideoStreamTheora.new()
+		theora.file = CHAPTER_VIDEO_PATH
+		stream = theora
+
+	if stream == null:
+		return false
+
+	_chapter_video_player.stream = stream
+	_chapter_video_player.play()
+	return true
+
+
+func _process(_delta: float) -> void:
+	if not _chapter_video_active or _chapter_video_finishing:
+		return
+	if not _chapter_video_player.is_playing():
+		return
+
+	if _chapter_startup_timer.time_left > 0.0:
+		_chapter_startup_timer.stop()
+		_start_chapter_max_duration_timer()
+
+
+func _start_chapter_max_duration_timer() -> void:
+	if _chapter_max_timer_started:
+		return
+	_chapter_max_timer_started = true
+	_chapter_max_timer.wait_time = CHAPTER_VIDEO_MAX_PLAYBACK_SEC
+	_chapter_max_timer.start()
+
+
+func _is_chapter_skip_event(event: InputEvent) -> bool:
+	if not event.is_pressed() or event.is_echo():
+		return false
+
+	if event.is_action_pressed("ui_accept") or event.is_action_pressed("ui_cancel"):
+		return true
+
+	if event is InputEventKey:
+		var key_event := event as InputEventKey
+		return key_event.keycode in [KEY_ENTER, KEY_KP_ENTER, KEY_SPACE, KEY_ESCAPE]
+
+	if event is InputEventMouseButton:
+		var mouse_event := event as InputEventMouseButton
+		return mouse_event.button_index == MOUSE_BUTTON_LEFT
+
+	if event is InputEventScreenTouch:
+		return (event as InputEventScreenTouch).pressed
+
+	return false
+
+
+func _on_chapter_video_finished() -> void:
+	_finish_chapter_video_and_resume_dialogic("видео завершено")
+
+
+func _on_chapter_startup_fallback_timeout() -> void:
+	if _chapter_video_player.is_playing():
+		return
+	_finish_chapter_video_and_resume_dialogic("таймаут запуска видео")
+
+
+func _on_chapter_max_duration_timeout() -> void:
+	_finish_chapter_video_and_resume_dialogic("максимальный таймаут воспроизведения")
+
+
+func _skip_chapter_video() -> void:
+	_finish_chapter_video_and_resume_dialogic("пропуск игроком")
+
+
+func _finish_chapter_video_and_resume_dialogic(reason: String = "") -> void:
+	if _chapter_video_finishing:
+		return
+	_chapter_video_finishing = true
+	_chapter_video_active = false
+
+	if not reason.is_empty():
+		print("Глава 1 — Пурга → продолжение timeline (%s)" % reason)
+
+	_stop_chapter_video_timers()
+	if _chapter_video_player.is_playing():
+		_chapter_video_player.stop()
+
+	_chapter_video_layer.visible = false
+	_chapter_hint_label.visible = false
+	_chapter_max_timer_started = false
+
+	if _chapter_video_pause_set:
+		_chapter_video_pause_set = false
+		Dialogic.paused = false
+
+	_chapter_video_finishing = false
+
+
+func _stop_chapter_video_timers() -> void:
+	if _chapter_startup_timer != null:
+		_chapter_startup_timer.stop()
+	if _chapter_max_timer != null:
+		_chapter_max_timer.stop()
 
 
 func _show_scene1_overlay() -> void:
