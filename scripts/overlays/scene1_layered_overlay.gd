@@ -98,6 +98,57 @@ func show_dressing_pose() -> void:
 	fade_tween.tween_property(family_group_dressing, "modulate:a", 1.0, 0.6)
 
 
+## Мгновенная поза для Continue (без tween — иначе серый экран до завершения fade).
+func apply_pose_instant(pose: String) -> void:
+	_kill_fade_tween()
+	match pose:
+		"hidden":
+			_set_character_layers_alpha(0.0)
+			visible = false
+			return
+		"day":
+			_reset_to_initial_pose()
+			_set_character_layers_alpha(1.0)
+			family_group.modulate.a = 1.0
+			bargyy.modulate.a = 1.0
+		"amulets":
+			_reset_to_initial_pose()
+			family_group_amulets.visible = true
+			family_group_amulets.modulate.a = 1.0
+			family_group.modulate.a = 0.0
+			bargyy.modulate.a = 1.0
+		"sleep":
+			_reset_to_initial_pose()
+			family_group_amulets.visible = true
+			family_group_sleep.visible = true
+			family_group_sleep.modulate.a = 1.0
+			family_group.modulate.a = 0.0
+			family_group_amulets.modulate.a = 0.0
+			bargyy.modulate.a = 1.0
+		"wakeup":
+			background.texture = MORNING_BACKGROUND
+			family_group.visible = true
+			family_group_amulets.visible = true
+			family_group_sleep.visible = true
+			family_group_wakeup.visible = true
+			family_group_dressing.visible = false
+			_set_character_layers_alpha(0.0)
+			family_group_wakeup.modulate.a = 1.0
+		"dressing":
+			background.texture = MORNING_BACKGROUND
+			family_group.visible = true
+			family_group_amulets.visible = true
+			family_group_sleep.visible = true
+			family_group_wakeup.visible = true
+			family_group_dressing.visible = true
+			_set_character_layers_alpha(0.0)
+			family_group_dressing.modulate.a = 1.0
+		_:
+			_reset_to_initial_pose()
+			_set_character_layers_alpha(1.0)
+	visible = pose != "hidden"
+
+
 func hide_overlay() -> void:
 	if not visible:
 		return

@@ -125,6 +125,8 @@ narrator: Экран темнеет.
 
 [signal arg="play_chapter_video_01"]
 
+label scene1_part2_morning
+
 # ---------- ЧАСТЬ 2: УТРО В ДОМЕ ----------
 # Озвучка автора: narrator_voice. morning_part2_01 — одна запись на три строки утра.
 # Озвучка Айсена: канал aisen_voice. Кюннэй: канал kunney_voice.
@@ -252,6 +254,9 @@ audio blizzard "res://assets/audio/scene_01/blizzard_outside.wav" [loop="true" f
 
 [background arg="res://assets/art/backgrounds/scene_01/bg_scene1_dog_tracks_yard.jpg" fade="0.5"]
 
+label scene1_part3_yard
+[signal arg="checkpoint_scene1_part3_yard"]
+
 audio "res://assets/audio/scene_01/bargyy_missing_4.wav" [volume="-10" loop="false"]
 audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_06_call_bargyy.mp3" [volume="0" loop="false"]
 aisen: Баргый! Баргый, ко мне!
@@ -306,6 +311,9 @@ aisen: Бабушка говорила: «Не ходи на свет в пур�
 	audio narrator_voice "res://assets/audio/scene_01/voice/yard_part3_08_run_back.mp3" [volume="0" loop="false"]
 	narrator: Айсен бежит обратно. Но время упущено — Баргый получит лёгкое обморожение.
 
+label scene1_after_yard_choice
+[signal arg="checkpoint_scene1_after_yard_choice"]
+
 # ---------- ЧАСТЬ 4: ПОГОНЯ В ПУРГЕ ----------
 # Озвучка автора: канал narrator_voice. Ambient snow_run — отдельный канал.
 
@@ -315,6 +323,9 @@ audio kunney_voice -
 audio tongus_voice -
 
 [background arg="res://assets/art/backgrounds/scene_01/snowy_forest_path.png" fade="0.5"]
+
+label scene1_part4_chase
+[signal arg="checkpoint_scene1_part4_chase"]
 
 # TODO portrait: update aisen (run) pos=x0.50 y0.73 size=x0.13 y0.45 [z_index="2"]
 
@@ -344,6 +355,9 @@ audio snow_run "res://assets/audio/scene_01/snow_run_2.wav" [loop="true" fade="0
 audio "res://assets/audio/scene_01/bargyy_bark_whine_3.wav" [volume="-4"]
 audio narrator_voice "res://assets/audio/scene_01/voice/chase_part4_06_turn_bark.mp3" [volume="0" loop="false"]
 narrator: Айсен резко сворачивает. Лай Баргыя — совсем близко.
+
+label scene1_part5_ice_hole
+[signal arg="checkpoint_scene1_part5_ice_hole"]
 
 # ---------- ЧАСТЬ 5: У ПРОРУБИ ----------
 # Озвучка автора: канал narrator_voice. Тонгус: канал tongus_voice. SFX = One-Shot.
@@ -437,6 +451,9 @@ tongus: Я... ч-ч-увствую. Тепло — это когда... когд
 audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_10_victims_words.mp3" [volume="0" loop="false"]
 narrator: Он не знает. Он повторяет то, что слышал от жертв.
 
+label scene1_part6_tactics
+[signal arg="checkpoint_scene1_part6_tactics"]
+
 # ---------- ЧАСТЬ 6: ВЫБОР ТАКТИКИ ПРОТИВ ТОНГУСА ----------
 # Озвучка автора только в ветках выбора (narrator_voice).
 
@@ -495,6 +512,9 @@ aisen: Он слепой. Реагирует на тепло, но не отли
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_heart_02_cracks.mp3" [volume="0" loop="false"]
 	narrator: Внутри ледяной формы бегают трещины. Самый умный, но непредсказуемый вариант.
 
+label scene1_part7_mercy
+[signal arg="checkpoint_scene1_part7_mercy"]
+
 # ---------- ЧАСТЬ 7: ДОБИТЬ ИЛИ ПОЩАДИТЬ ----------
 # Озвучка автора: narrator_voice.
 
@@ -541,6 +561,9 @@ aisen: Готов. Что мне теперь сделать?
 	audio "res://assets/audio/scene_01/ice_crack_steam_4.wav" [volume="-6" loop="false"]
 	audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_spare_01_melt.mp3" [volume="0" loop="false"]
 	narrator: Тонгус, потеряв форму, оплывает в лужу ледяной воды. Возможно, ещё встретится позже — союзником или врагом.
+
+label scene1_part8_after_battle
+[signal arg="checkpoint_scene1_part8_after_battle"]
 
 # ---------- ЧАСТЬ 8: ПОСЛЕ БИТВЫ И ПОХИЩЕНИЕ КЮННЭЙ ----------
 # Озвучка автора: narrator_voice.
@@ -671,6 +694,9 @@ narrator: КОНЕЦ ГЛАВЫ I
 audio snow_run "res://assets/audio/scene_01/snow_run_3.wav" [loop="true" fade="0.6" volume="-10"]
 audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_22_into_darkness.mp3" [volume="0" loop="false"]
 narrator: Айсен поднимается. В груди — твёрдый узел решимости. Он шагает в темноту.
+
+label scene1_chapter1_complete
+[signal arg="checkpoint_chapter2_entry"]
 
 audio narrator_voice -
 audio aisen_voice -

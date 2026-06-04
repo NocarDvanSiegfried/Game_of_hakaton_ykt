@@ -11,6 +11,12 @@ narrator: Кюннэй в плену. Айсен и Баргый идут за �
 
 narrator: Глава II: Теневой Бегун.
 
+label scene2_chapter2_intro
+[signal arg="checkpoint_scene2_intro_safe"]
+
+label scene2_part1_tunnel
+[signal arg="checkpoint_scene2_part1_tunnel"]
+
 # ---------- ЧАСТЬ 1: ЛЕДЯНОЙ ТУННЕЛЬ ----------
 # TODO Scene 2 background: res://assets/art/backgrounds/scene2/bg_scene2_ice_tunnel.png
 
@@ -50,6 +56,9 @@ aisen: Это она? Или опять ловушка?
 	aisen: Свет значит выход. Наверное.
 	narrator: Светлый проход звенит под ногами, будто весь лёд слушает каждый шаг.
 
+label scene2_part2_labyrinth
+[signal arg="checkpoint_scene2_part2_labyrinth"]
+
 # ---------- ЧАСТЬ 2: ЛАБИРИНТ ТЕНЕЙ ----------
 # TODO Scene 2 backgrounds: bg_scene2_shadow_labyrinth.png, bg_scene2_shadow_crossroads.png
 
@@ -88,6 +97,9 @@ aisen: Тише. Я понял. Они слышат нас.
 	shadow: Ответь... ответь... ответь...
 	narrator: В темноте кто-то смеётся её голосом.
 
+label scene2_part3_kunney_pocket
+[signal arg="checkpoint_scene2_part3_kunney_pocket"]
+
 # ---------- ЧАСТЬ 3: ТЕНЕВОЙ КАРМАН КЮННЭЙ ----------
 # TODO Scene 2 background: res://assets/art/backgrounds/scene2/bg_scene2_kunney_shadow_cell.png
 
@@ -124,6 +136,9 @@ kunney: Это мой голос. Но не я.
 	kunney: Эбэ пела её, когда за окном выл ветер...
 	narrator: Песня звучит негромко, но тьма отступает от каждого слова.
 
+label scene2_part4_mirror_hall
+[signal arg="checkpoint_scene2_part4_mirror_hall"]
+
 # ---------- ЧАСТЬ 4: ЗЕРКАЛЬНЫЙ ЗАЛ ----------
 # TODO Scene 2 background: res://assets/art/backgrounds/scene2/bg_scene2_mirror_hall.png
 
@@ -148,6 +163,9 @@ aisen: Отпусти её.
 kyulyuk_suyuryuk: Конечно. Отдай мне свой голос — и она вернётся. Тебе ведь не нужен голос, чтобы любить её?
 
 kunney: Не слушай его!
+
+label scene2_part5_boss
+[signal arg="checkpoint_scene2_part5_boss"]
 
 # ---------- ЧАСТЬ 5: БОСС-СЦЕНА С КЮЛЮК СЮЮРЮК ----------
 # TODO Scene 2 background: res://assets/art/backgrounds/scene2/bg_scene2_boss_arena.png
@@ -184,6 +202,9 @@ aisen: Силой его не взять. Нужно выбрать, кому в
 		set shadow_runner_outcome = "weak_song"
 		kunney: Я... попробую.
 		narrator: Песня рождается тихой. Её хватает, чтобы удержаться, но не хватает, чтобы сломать зал.
+
+label scene2_part6_finale
+[signal arg="checkpoint_scene2_part6_finale"]
 
 # ---------- ЧАСТЬ 6: ИТОГ ----------
 

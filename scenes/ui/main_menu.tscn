@@ -116,6 +116,21 @@ layout_mode = 2
 theme_override_constants/separation = 12
 alignment = 1
 
+[node name="ContinueButton" type="Button" parent="Center/VBox/Buttons"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(280, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.94, 0.92, 0.85, 1)
+theme_override_colors/font_hover_color = Color(0.91, 0.66, 0.36, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_button")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_button_pressed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_button_hover")
+theme_override_styles/focus = SubResource("StyleBoxFlat_button_hover")
+text = "Продолжить"
+
 [node name="NewGameButton" type="Button" parent="Center/VBox/Buttons" unique_id=1675124195]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(280, 48)
