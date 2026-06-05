@@ -824,8 +824,12 @@ func _stop_chapter_video_timers() -> void:
 
 func _show_scene1_overlay() -> void:
 	var overlay := _ensure_scene1_overlay()
-	if overlay != null and overlay.has_method("show_overlay"):
-		overlay.call("show_overlay")
+	if overlay == null or not overlay.has_method("show_overlay"):
+		return
+	if not overlay.is_node_ready():
+		overlay.ready.connect(overlay.show_overlay, CONNECT_ONE_SHOT)
+		return
+	overlay.call("show_overlay")
 
 
 func _hide_scene1_overlay() -> void:
