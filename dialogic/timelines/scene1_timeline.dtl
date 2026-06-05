@@ -345,6 +345,7 @@ narrator: Дальше — проваливается по пояс в снег.
 
 audio "res://assets/audio/scene_01/snow_collapse_2.wav" [volume="-6"]
 audio narrator_voice "res://assets/audio/scene_01/voice/chase_part4_04_climb_out.mp3" [volume="0" loop="false"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_snow_pit_2.png" fade="0.5"]
 narrator: Кое-как выбирается.
 
 audio narrator_voice "res://assets/audio/scene_01/voice/chase_part4_05_light_again.mp3" [volume="0" loop="false"]
