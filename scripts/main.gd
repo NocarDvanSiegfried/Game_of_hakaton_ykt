@@ -29,6 +29,8 @@ const MAIN_MENU_SCENE := "res://scenes/ui/main_menu.tscn"
 const PAUSE_MENU_SCENE := preload("res://scenes/ui/in_game_pause_menu.tscn")
 
 @onready var _chapter_video_layer: CanvasLayer = $ChapterVideoLayer
+@onready var _chapter_video_root: Control = $ChapterVideoLayer/ChapterVideoRoot
+@onready var _chapter_video_backdrop: ColorRect = $ChapterVideoLayer/ChapterVideoRoot/Backdrop
 @onready var _chapter_video_player: VideoStreamPlayer = %ChapterVideoPlayer
 @onready var _chapter_hint_label: Label = %ChapterHintLabel
 
@@ -104,6 +106,12 @@ func _setup_chapter_video_timers() -> void:
 	_chapter_max_timer.one_shot = true
 	_chapter_max_timer.timeout.connect(_on_chapter_max_duration_timeout)
 	add_child(_chapter_max_timer)
+
+
+func _input(event: InputEvent) -> void:
+	if _chapter_video_active and not _chapter_video_finishing and _is_chapter_skip_event(event):
+		get_viewport().set_input_as_handled()
+		_skip_chapter_video()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -581,6 +589,9 @@ func _play_chapter_video_01() -> void:
 
 	_chapter_video_active = true
 	_chapter_video_layer.visible = true
+	_chapter_video_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_chapter_video_backdrop.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_chapter_video_player.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_chapter_hint_label.visible = true
 	_chapter_startup_timer.start()
 	print("Глава 1 — Пурга: воспроизведение видео")
@@ -685,6 +696,9 @@ func _finish_chapter_video_and_resume_dialogic(reason: String = "") -> void:
 		_chapter_video_player.stop()
 
 	_chapter_video_layer.visible = false
+	_chapter_video_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_chapter_video_backdrop.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_chapter_video_player.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_chapter_hint_label.visible = false
 	_chapter_max_timer_started = false
 
