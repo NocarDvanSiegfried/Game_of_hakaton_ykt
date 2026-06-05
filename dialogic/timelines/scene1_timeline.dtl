@@ -271,7 +271,7 @@ narrator: И тут же — мелодичный звон, как будто л
 audio "res://assets/audio/scene_01/anxious_silence_2.wav" [volume="-8" loop="false"]
 audio "res://assets/audio/scene_01/abaasy_presence_3.wav" [volume="-8" loop="false"]
 audio narrator_voice "res://assets/audio/scene_01/voice/yard_part3_05_warm_light.mp3" [volume="0" loop="false"]
-[background arg="res://assets/art/backgrounds/scene_01/bg_s1_blizzard_light_1.png" fade="0.6"]
+[signal arg="show_scene1_blizzard_light"]
 narrator: В белой пелене на мгновение вспыхивает что-то — тёплый, жёлтый огонёк. Он дрожит, манит.
 
 # TODO portrait: update aisen (shocked) pos=x0.50 y0.71 size=x0.13 y0.45 [z_index="2"]
@@ -314,6 +314,7 @@ aisen: Бабушка говорила: «Не ходи на свет в пур�
 
 label scene1_after_yard_choice
 [signal arg="checkpoint_scene1_after_yard_choice"]
+[signal arg="hide_scene1_blizzard_light"]
 
 # ---------- ЧАСТЬ 4: ПОГОНЯ В ПУРГЕ ----------
 # Озвучка автора: канал narrator_voice. Ambient snow_run — отдельный канал.

@@ -10,6 +10,9 @@ const SCENE1_OVERLAY_SLEEP_SIGNAL := "show_scene1_sleep_pose"
 const SCENE1_OVERLAY_WAKEUP_SIGNAL := "show_scene1_wakeup_pose"
 const SCENE1_OVERLAY_DRESSING_SIGNAL := "show_scene1_dressing_pose"
 const SCENE1_OVERLAY_SCENE: PackedScene = preload("res://scenes/overlays/scene1_grandmother_house_layered.tscn")
+const SCENE1_BLIZZARD_LIGHT_SHOW_SIGNAL := "show_scene1_blizzard_light"
+const SCENE1_BLIZZARD_LIGHT_HIDE_SIGNAL := "hide_scene1_blizzard_light"
+const SCENE1_BLIZZARD_LIGHT_SCENE: PackedScene = preload("res://scenes/overlays/scene1_blizzard_light_overlay.tscn")
 
 const CHAPTER_VIDEO_01_SIGNAL := "play_chapter_video_01"
 const SCENE1_PART2_LABEL := "scene1_part2_morning"
@@ -31,6 +34,7 @@ const PAUSE_MENU_SCENE := preload("res://scenes/ui/in_game_pause_menu.tscn")
 
 var current_timeline := ""
 var scene1_overlay: Control
+var blizzard_light_overlay: Control
 var _settings_overlay: Control
 var _settings_layer: CanvasLayer
 var _pause_layer: CanvasLayer
@@ -400,6 +404,10 @@ func clear_continue_transient_layers() -> PackedStringArray:
 		if scene1_overlay.has_method("apply_pose_instant"):
 			scene1_overlay.call("apply_pose_instant", "hidden")
 
+	if blizzard_light_overlay != null and is_instance_valid(blizzard_light_overlay):
+		if blizzard_light_overlay.has_method("stop_flicker"):
+			blizzard_light_overlay.call("stop_flicker")
+
 	return cleared
 
 
@@ -549,6 +557,10 @@ func _on_dialogic_signal(argument: Variant) -> void:
 		_show_scene1_wakeup_pose()
 	elif argument == SCENE1_OVERLAY_DRESSING_SIGNAL:
 		_show_scene1_dressing_pose()
+	elif argument == SCENE1_BLIZZARD_LIGHT_SHOW_SIGNAL:
+		_show_scene1_blizzard_light()
+	elif argument == SCENE1_BLIZZARD_LIGHT_HIDE_SIGNAL:
+		_hide_scene1_blizzard_light()
 
 
 func _play_chapter_video_01() -> void:
@@ -726,6 +738,17 @@ func _show_scene1_dressing_pose() -> void:
 		overlay.call("show_dressing_pose")
 
 
+func _show_scene1_blizzard_light() -> void:
+	var overlay := _ensure_scene1_blizzard_light_overlay()
+	if overlay != null and overlay.has_method("start_flicker"):
+		overlay.call("start_flicker")
+
+
+func _hide_scene1_blizzard_light() -> void:
+	if blizzard_light_overlay != null and blizzard_light_overlay.has_method("stop_flicker"):
+		blizzard_light_overlay.call("stop_flicker")
+
+
 func get_scene1_overlay_for_verify() -> Control:
 	if scene1_overlay != null and is_instance_valid(scene1_overlay):
 		return scene1_overlay
@@ -748,6 +771,21 @@ func _ensure_scene1_overlay() -> Control:
 	dialogic_layout.add_child(scene1_overlay)
 	dialogic_layout.move_child(scene1_overlay, _scene1_overlay_layer_index(dialogic_layout))
 	return scene1_overlay
+
+
+func _ensure_scene1_blizzard_light_overlay() -> Control:
+	if blizzard_light_overlay != null and is_instance_valid(blizzard_light_overlay):
+		return blizzard_light_overlay
+
+	var dialogic_layout := get_tree().get_meta("dialogic_layout_node", null) as Node
+	if dialogic_layout == null:
+		push_warning("Scene 1 blizzard light overlay could not find Dialogic layout node.")
+		return null
+
+	blizzard_light_overlay = SCENE1_BLIZZARD_LIGHT_SCENE.instantiate() as Control
+	dialogic_layout.add_child(blizzard_light_overlay)
+	dialogic_layout.move_child(blizzard_light_overlay, _scene1_overlay_layer_index(dialogic_layout))
+	return blizzard_light_overlay
 
 
 func _scene1_overlay_layer_index(dialogic_layout: Node) -> int:
