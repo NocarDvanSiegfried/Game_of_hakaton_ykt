@@ -5,7 +5,7 @@
 # Озвучка: канал narrator_voice (заменяет предыдущую реплику на канале).
 # SFX без канала = One-Shot — играют параллельно с ambient (Dialogic Audio).
 
-[background arg="res://assets/art/backgrounds/scene_01/bg_scene1_intro_frozen_wasteland.png" fade="0.5"]
+[signal arg="play_scene1_intro_atmosphere"]
 
 audio yakut_night "res://assets/audio/scene_01/yakut_night_wind.wav" [loop="true" fade="0.8" volume="-14"]
 

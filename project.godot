@@ -24,11 +24,13 @@ buses/default_bus_layout="res://assets/audio/default_bus_layout.tres"
 DebugState="*res://scripts/core/debug_state.gd"
 DialogicVoiceStop="*res://scripts/core/dialogic_voice_stop.gd"
 AudioSettings="*res://scripts/core/audio_settings.gd"
-Dialogic="*uid://ds2q0uclmolvu"
 GameSession="*res://scripts/core/game_session.gd"
 GameSaveManager="*res://scripts/core/game_save_manager.gd"
 GameCheckpointRegistry="*res://scripts/core/game_checkpoint_registry.gd"
 CheckpointVisualRestore="*res://scripts/core/checkpoint_visual_restore.gd"
+ManualSaveManager="*res://scripts/core/manual_save_manager.gd"
+GameLoadPipeline="*res://scripts/core/game_load_pipeline.gd"
+Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
