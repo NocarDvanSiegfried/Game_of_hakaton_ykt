@@ -252,7 +252,7 @@ narrator: Звук мгновенно меняется — рёв ветра. М
 
 audio blizzard "res://assets/audio/scene_01/blizzard_outside.wav" [loop="true" fade="0.2" volume="-10"]
 
-[background arg="res://assets/art/backgrounds/scene_01/bg_scene1_dog_tracks_yard.jpg" fade="0.5"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_blizzard_yard.png" fade="0.5"]
 
 label scene1_part3_yard
 [signal arg="checkpoint_scene1_part3_yard"]
@@ -271,6 +271,7 @@ narrator: И тут же — мелодичный звон, как будто л
 audio "res://assets/audio/scene_01/anxious_silence_2.wav" [volume="-8" loop="false"]
 audio "res://assets/audio/scene_01/abaasy_presence_3.wav" [volume="-8" loop="false"]
 audio narrator_voice "res://assets/audio/scene_01/voice/yard_part3_05_warm_light.mp3" [volume="0" loop="false"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_blizzard_light_1.png" fade="0.6"]
 narrator: В белой пелене на мгновение вспыхивает что-то — тёплый, жёлтый огонёк. Он дрожит, манит.
 
 # TODO portrait: update aisen (shocked) pos=x0.50 y0.71 size=x0.13 y0.45 [z_index="2"]
@@ -322,7 +323,7 @@ audio aisen_voice -
 audio kunney_voice -
 audio tongus_voice -
 
-[background arg="res://assets/art/backgrounds/scene_01/snowy_forest_path.png" fade="0.5"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_blizzard_chase.png" fade="0.5"]
 
 label scene1_part4_chase
 [signal arg="checkpoint_scene1_part4_chase"]
@@ -339,6 +340,7 @@ narrator: Ветка дерева обламывается и летит — А�
 
 audio "res://assets/audio/scene_01/snow_collapse_1.wav" [volume="-4"]
 audio narrator_voice "res://assets/audio/scene_01/voice/chase_part4_03_snow_sink.mp3" [volume="0" loop="false"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_snow_pit_1.png" fade="0.5"]
 narrator: Дальше — проваливается по пояс в снег.
 
 audio "res://assets/audio/scene_01/snow_collapse_2.wav" [volume="-6"]
@@ -370,7 +372,7 @@ audio tongus_voice -
 audio snow_run -
 audio blizzard -
 
-[background arg="res://assets/art/backgrounds/scene_01/ice_tunnel.png" fade="0.5"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_ice_hole.png" fade="0.5"]
 
 # TODO portrait: leave bargyy
 # TODO portrait: update aisen (reach) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
@@ -403,12 +405,15 @@ aisen: Сейчас, сейчас... Потерпи.
 
 audio "res://assets/audio/scene_01/leash_ice_untie_3.wav" [volume="-6" loop="false"]
 
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_tongus_rise.png" fade="0.8"]
+
 audio "res://assets/audio/scene_01/tongus_rise_1.wav" [volume="-4" loop="false"]
 audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_06_tongus_rise.mp3" [volume="0" loop="false"]
 narrator: Из проруби медленно поднимается фигура. Без всплеска.
 
 audio "res://assets/audio/scene_01/tongus_rise_2.wav" [volume="-6" loop="false"]
 audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_07_tongus_form.mp3" [volume="0" loop="false"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_tongus_full.png" fade="0.8"]
 narrator: Огромный — метра три высотой, из мутного пузырчатого льда. Внутри плавают замёрзшие листья и рыбы. Один глаз во лоб — огромный, подёрнутый бельмом. Он смотрит сквозь Айсена. Он слеп.
 
 audio "res://assets/audio/scene_01/tongus_voice_1.wav" [volume="-4" loop="false"]
@@ -462,6 +467,8 @@ audio aisen_voice -
 audio kunney_voice -
 audio tongus_voice -
 
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_tongus_fire.png" fade="0.5"]
+
 audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_17_tactic_choice.mp3" [volume="0" loop="false"]
 aisen: Он слепой. Реагирует на тепло, но не отличает настоящее. Можно подсунуть что-то горячее, но неживое. Что выбрать?
 
@@ -511,6 +518,8 @@ aisen: Он слепой. Реагирует на тепло, но не отли
 	audio "res://assets/audio/scene_01/demon_crack_3.wav" [volume="-6" loop="false"]
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_heart_02_cracks.mp3" [volume="0" loop="false"]
 	narrator: Внутри ледяной формы бегают трещины. Самый умный, но непредсказуемый вариант.
+
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_tongus_scarf.png" fade="0.5"]
 
 label scene1_part7_mercy
 [signal arg="checkpoint_scene1_part7_mercy"]
