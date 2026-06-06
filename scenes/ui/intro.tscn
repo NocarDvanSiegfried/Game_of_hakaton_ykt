@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cbojnhytfbh8b"]
 
-[ext_resource type="Script" path="res://scripts/ui/intro.gd" id="1_intro"]
+[ext_resource type="Script" uid="uid://0pg7p2k0lrvy" path="res://scripts/ui/intro.gd" id="1_intro"]
 [ext_resource type="FontFile" uid="uid://c6vdxxc8uyx21" path="res://assets/fonts/NotoSerif-Regular.ttf" id="2_font"]
 
-[node name="Intro" type="Control"]
+[node name="Intro" type="Control" unique_id=1322628765]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_intro")
 
-[node name="Backdrop" type="ColorRect" parent="."]
+[node name="Backdrop" type="ColorRect" parent="." unique_id=24198628]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.02, 0.04, 0.07, 1)
 
-[node name="VideoPlayer" type="VideoStreamPlayer" parent="."]
+[node name="VideoPlayer" type="VideoStreamPlayer" parent="." unique_id=645341715]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -29,11 +29,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-bus = &"Music"
 volume_db = -14.0
 expand = true
+bus = &"Music"
 
-[node name="HintLabel" type="Label" parent="."]
+[node name="HintLabel" type="Label" parent="." unique_id=1135409303]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
