@@ -6,6 +6,31 @@
 [node name="Main" type="Node" unique_id=1568047128]
 script = ExtResource("1_main")
 
+[node name="AtmosphereVideoLayer" type="CanvasLayer" parent="."]
+layer = -1
+visible = false
+
+[node name="AtmosphereVideoRoot" type="Control" parent="AtmosphereVideoLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AtmosphereVideoPlayer" type="VideoStreamPlayer" parent="AtmosphereVideoLayer/AtmosphereVideoRoot"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bus = &"Ambient"
+volume_db = -80.0
+expand = true
+
 [node name="ChapterVideoLayer" type="CanvasLayer" parent="."]
 layer = 64
 visible = false

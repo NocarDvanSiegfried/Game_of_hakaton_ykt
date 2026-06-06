@@ -15,19 +15,25 @@ const SCENE1_BLIZZARD_LIGHT_HIDE_SIGNAL := "hide_scene1_blizzard_light"
 const SCENE1_BLIZZARD_LIGHT_SCENE: PackedScene = preload("res://scenes/overlays/scene1_blizzard_light_overlay.tscn")
 
 const CHAPTER_VIDEO_01_SIGNAL := "play_chapter_video_01"
+const SCENE1_INTRO_ATMOSPHERE_SIGNAL := "play_scene1_intro_atmosphere"
 const SCENE1_PART2_LABEL := "scene1_part2_morning"
 const SCENE2_INTRO_LABEL := "scene2_chapter2_intro"
 const CHAPTER2_ENTRY_REASON := "chapter2_entry"
 const CHECKPOINT_SIGNAL_PREFIX := "checkpoint_"
 const CHAPTER_VIDEO_PATH := "res://assets/video/chapter_01_blizzard.ogv"
+const SCENE1_INTRO_ATMOSPHERE_PATH := "res://assets/video/scene1_intro_atmosphere.ogv"
 const CHAPTER_VIDEO_STARTUP_FALLBACK_SEC := 4.0
 const CHAPTER_VIDEO_MAX_PLAYBACK_SEC := 15.0
 const CHAPTER_VIDEO_BUS := &"Music"
 const CHAPTER_VIDEO_VOLUME_DB := -14.0
+const SCENE1_INTRO_ATMOSPHERE_BUS := &"Ambient"
+const SCENE1_INTRO_ATMOSPHERE_VOLUME_DB := -80.0
 
 const MAIN_MENU_SCENE := "res://scenes/ui/main_menu.tscn"
 const PAUSE_MENU_SCENE := preload("res://scenes/ui/in_game_pause_menu.tscn")
 
+@onready var _atmosphere_video_layer: CanvasLayer = $AtmosphereVideoLayer
+@onready var _atmosphere_video_player: VideoStreamPlayer = %AtmosphereVideoPlayer
 @onready var _chapter_video_layer: CanvasLayer = $ChapterVideoLayer
 @onready var _chapter_video_root: Control = $ChapterVideoLayer/ChapterVideoRoot
 @onready var _chapter_video_backdrop: ColorRect = $ChapterVideoLayer/ChapterVideoRoot/Backdrop
@@ -48,6 +54,7 @@ var _shutting_down := false
 var _chapter_video_active := false
 var _chapter_video_finishing := false
 var _chapter_video_pause_set := false
+var _atmosphere_video_active := false
 var _chapter_max_timer_started := false
 var _chapter_startup_timer: Timer
 var _chapter_max_timer: Timer
@@ -264,6 +271,8 @@ func _shutdown_dialogic_session() -> void:
 	if _chapter_video_layer != null:
 		_chapter_video_layer.visible = false
 
+	_stop_scene1_intro_atmosphere("shutdown")
+
 	get_tree().paused = false
 	Dialogic.paused = false
 
@@ -407,6 +416,10 @@ func clear_continue_transient_layers() -> PackedStringArray:
 	if _chapter_video_layer != null:
 		_chapter_video_layer.visible = false
 		cleared.append("chapter_video_layer")
+
+	_stop_scene1_intro_atmosphere("clear_transient_layers")
+	if _atmosphere_video_layer != null and not _atmosphere_video_layer.visible:
+		cleared.append("atmosphere_video_layer")
 
 	if scene1_overlay != null and is_instance_valid(scene1_overlay):
 		if scene1_overlay.has_method("apply_pose_instant"):
@@ -553,7 +566,10 @@ func _on_dialogic_signal(argument: Variant) -> void:
 		return
 	if argument == CHAPTER_VIDEO_01_SIGNAL:
 		_play_chapter_video_01()
+	elif argument == SCENE1_INTRO_ATMOSPHERE_SIGNAL:
+		_play_scene1_intro_atmosphere()
 	elif argument == SCENE1_OVERLAY_SHOW_SIGNAL:
+		_stop_scene1_intro_atmosphere("переход к дому бабушки")
 		_show_scene1_overlay()
 	elif argument == SCENE1_OVERLAY_HIDE_SIGNAL:
 		_hide_scene1_overlay()
@@ -595,6 +611,95 @@ func _play_chapter_video_01() -> void:
 	_chapter_hint_label.visible = true
 	_chapter_startup_timer.start()
 	print("Глава 1 — Пурга: воспроизведение видео")
+
+
+func _play_scene1_intro_atmosphere() -> void:
+	if _atmosphere_video_active:
+		return
+	if _chapter_video_active or _chapter_video_finishing:
+		return
+
+	if not ResourceLoader.exists(SCENE1_INTRO_ATMOSPHERE_PATH):
+		push_warning(
+			"Scene1 intro atmosphere: файл не найден, оставляем Dialogic фон: %s"
+			% SCENE1_INTRO_ATMOSPHERE_PATH
+		)
+		return
+
+	_clear_dialogic_background_for_atmosphere()
+	_configure_atmosphere_video_audio()
+
+	if not _try_start_atmosphere_video():
+		push_warning("Scene1 intro atmosphere: не удалось запустить видео.")
+		return
+
+	_atmosphere_video_active = true
+	_atmosphere_video_layer.visible = true
+	print("Сцена 1 — вступление: атмосферное видео (без паузы Dialogic)")
+
+
+func _configure_atmosphere_video_audio() -> void:
+	if AudioServer.get_bus_index(SCENE1_INTRO_ATMOSPHERE_BUS) >= 0:
+		_atmosphere_video_player.bus = SCENE1_INTRO_ATMOSPHERE_BUS
+	_atmosphere_video_player.volume_db = SCENE1_INTRO_ATMOSPHERE_VOLUME_DB
+
+
+func _try_start_atmosphere_video() -> bool:
+	if _atmosphere_video_player.finished.is_connected(_on_atmosphere_video_finished):
+		_atmosphere_video_player.finished.disconnect(_on_atmosphere_video_finished)
+	_atmosphere_video_player.finished.connect(_on_atmosphere_video_finished)
+
+	var stream: VideoStream = load(SCENE1_INTRO_ATMOSPHERE_PATH) as VideoStream
+	if stream == null:
+		var theora := VideoStreamTheora.new()
+		theora.file = SCENE1_INTRO_ATMOSPHERE_PATH
+		stream = theora
+
+	if stream == null:
+		return false
+
+	_atmosphere_video_player.stream = stream
+	_atmosphere_video_player.play()
+	return true
+
+
+func _on_atmosphere_video_finished() -> void:
+	if not _atmosphere_video_active:
+		return
+	if _atmosphere_video_player.stream == null:
+		return
+	_atmosphere_video_player.play()
+
+
+func _stop_scene1_intro_atmosphere(reason: String = "") -> void:
+	if not _atmosphere_video_active:
+		if _atmosphere_video_player != null and _atmosphere_video_player.is_playing():
+			_atmosphere_video_player.stop()
+		if _atmosphere_video_layer != null:
+			_atmosphere_video_layer.visible = false
+		return
+
+	_atmosphere_video_active = false
+	if _atmosphere_video_player.finished.is_connected(_on_atmosphere_video_finished):
+		_atmosphere_video_player.finished.disconnect(_on_atmosphere_video_finished)
+	if _atmosphere_video_player.is_playing():
+		_atmosphere_video_player.stop()
+	_atmosphere_video_layer.visible = false
+
+	if not reason.is_empty():
+		print("Сцена 1 — вступление: атмосферное видео остановлено (%s)" % reason)
+
+
+func _clear_dialogic_background_for_atmosphere() -> void:
+	if not Dialogic.has_subsystem("Backgrounds"):
+		return
+	Dialogic.Backgrounds.update_background(
+		"",
+		"",
+		0.35,
+		Dialogic.Backgrounds.default_transition,
+		true
+	)
 
 
 func _configure_chapter_video_audio() -> void:
@@ -719,8 +824,12 @@ func _stop_chapter_video_timers() -> void:
 
 func _show_scene1_overlay() -> void:
 	var overlay := _ensure_scene1_overlay()
-	if overlay != null and overlay.has_method("show_overlay"):
-		overlay.call("show_overlay")
+	if overlay == null or not overlay.has_method("show_overlay"):
+		return
+	if not overlay.is_node_ready():
+		overlay.ready.connect(overlay.show_overlay, CONNECT_ONE_SHOT)
+		return
+	overlay.call("show_overlay")
 
 
 func _hide_scene1_overlay() -> void:
