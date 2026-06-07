@@ -479,6 +479,7 @@ aisen: Он слепой. Реагирует на тепло, но не отли
 	aisen: Я отдам тебе тепло моей одежды. Она грела меня — теперь в ней частица моего тепла.
 	set boss_tactic = "scarf"
 	update aisen (attack_fire) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
+	[background arg="res://assets/art/backgrounds/scene_01/bg_s1_tongus_scarf.png" fade="0.5"]
 	audio "res://assets/audio/scene_01/scarf_fire_1.wav" [volume="-4" loop="false"]
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_scarf_01_throw.mp3" [volume="0" loop="false"]
 	narrator: Айсен поджигает шарф огнивом и бросает демону.
@@ -496,17 +497,22 @@ aisen: Он слепой. Реагирует на тепло, но не отли
 	aisen: Смотри! Вот огонь. Он живой, слышишь, как трещит? Я отдаю его тебе. Забирай.
 	set boss_tactic = "fire"
 	update aisen (attack_fire) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
+	[background arg="res://assets/art/backgrounds/scene_01/bg_s1_fire_1_moss.png" fade="0.5"]
 	audio "res://assets/audio/scene_01/moss_fire_1.wav" [volume="-4" loop="false"]
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_fire_01_moss.mp3" [volume="0" loop="false"]
 	narrator: Айсен быстро разводит костёр из сухого мха.
+	[background arg="res://assets/art/backgrounds/scene_01/bg_s1_fire_2_spark.png" fade="0.5"]
 	audio "res://assets/audio/scene_01/moss_fire_2.wav" [volume="-4" loop="false"]
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_fire_02_jump_fire.mp3" [volume="0" loop="false"]
+	[background arg="res://assets/art/backgrounds/scene_01/bg_s1_fire_3_blaze.png" fade="0.5"]
 	narrator: Демон, осязая тепло, бросается в огонь, пытаясь слиться с ним.
 	audio "res://assets/audio/scene_01/ice_crack_steam_1.wav" [volume="-4" loop="false"]
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_fire_03_ice_crack.mp3" [volume="0" loop="false"]
+	[background arg="res://assets/art/backgrounds/scene_01/bg_s1_fire_4_burning.png" fade="0.5"]
 	narrator: Лёд трескается,
 	audio "res://assets/audio/scene_01/ice_crack_steam_2.wav" [volume="-6" loop="false"]
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_fire_04_steam.mp3" [volume="0" loop="false"]
+	[background arg="res://assets/art/backgrounds/scene_01/bg_s1_fire_5_melted.png" fade="0.5"]
 	narrator: идёт пар.
 	audio "res://assets/audio/scene_01/moss_fire_4.wav" [volume="-8" loop="false"]
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_fire_05_health.mp3" [volume="0" loop="false"]
@@ -516,12 +522,13 @@ aisen: Он слепой. Реагирует на тепло, но не отли
 	aisen: Ты хочешь тепло? Но самое горячее — это сердце, которое любит. Скажи: что ты любишь больше всего? Тогда я отдам тебе его тепло.
 	set boss_tactic = "heart_story"
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_heart_01_freeze.mp3" [volume="0" loop="false"]
+	[background arg="res://assets/art/backgrounds/scene_01/bg_s1_tongus_cracked.png" fade="0.5"]
 	narrator: Демон зависает. Он никогда не любил. Пытается найти ответ внутри своей пустоты. Глаз начинает бешено вращаться.
 	audio "res://assets/audio/scene_01/demon_crack_3.wav" [volume="-6" loop="false"]
 	audio narrator_voice "res://assets/audio/scene_01/voice/tactic_part6_heart_02_cracks.mp3" [volume="0" loop="false"]
 	narrator: Внутри ледяной формы бегают трещины. Самый умный, но непредсказуемый вариант.
 
-[background arg="res://assets/art/backgrounds/scene_01/bg_s1_tongus_scarf.png" fade="0.5"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_tongus_cracked.png" fade="0.5"]
 
 label scene1_part7_mercy
 [signal arg="checkpoint_scene1_part7_mercy"]
@@ -559,6 +566,7 @@ aisen: Готов. Что мне теперь сделать?
 	audio "res://assets/audio/scene_01/ice_shard_strike_2.wav" [volume="-4" loop="false"]
 	audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_finish_02_stab.mp3" [volume="0" loop="false"]
 	narrator: и вонзает в грудь демона.
+	[background arg="res://assets/art/backgrounds/scene_01/bg_s1_tongus_destroyed.png" fade="0.5"]
 	audio "res://assets/audio/scene_01/tongus_collapse_1.wav" [volume="-4" loop="false"]
 	audio narrator_voice "res://assets/audio/scene_01/voice/mercy_part7_finish_03_crunch.mp3" [volume="0" loop="false"]
 	narrator: Тонгус с хрустом
