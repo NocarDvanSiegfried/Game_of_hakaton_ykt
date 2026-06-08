@@ -45,7 +45,6 @@ func _ready() -> void:
 
 
 func show_overlay() -> void:
-	print("SHOW OVERLAY")
 	_kill_fade_tween()
 	_reset_to_initial_pose()
 	_set_character_layers_alpha(0.0)
@@ -187,11 +186,11 @@ func apply_pose_instant(pose: String) -> void:
 
 
 func hide_overlay() -> void:
+	_stop_fire()
 	if not visible:
 		return
 
 	_kill_fade_tween()
-	_stop_fire()
 	fade_tween = create_tween()
 	fade_tween.set_parallel(true)
 	fade_tween.tween_property(family_group, "modulate:a", 0.0, 0.6)
@@ -253,7 +252,6 @@ func _setup_fire_frame_timer() -> void:
 
 
 func _start_fire() -> void:
-	print("START FIRE")
 	if not _ensure_fire_nodes():
 		push_warning("START FIRE: FireMask/Fire nodes not found")
 		return
@@ -270,7 +268,6 @@ func _start_fire() -> void:
 	fire.scale = Vector2.ONE
 	fire_mask.visible = true
 	fire.visible = true
-	print("FIRE FRAME: ", _fire_frame_index)
 
 	if _fire_frame_timer.is_stopped():
 		_fire_frame_timer.start()
@@ -298,7 +295,6 @@ func _on_fire_frame_timeout() -> void:
 	fire.modulate.a = lerpf(FIRE_ALPHA_MIN, FIRE_ALPHA_MAX, pulse)
 	var scale_pulse := lerpf(FIRE_SCALE_MIN, FIRE_SCALE_MAX, 1.0 - pulse)
 	fire.scale = Vector2(scale_pulse, scale_pulse)
-	print("FIRE FRAME: ", _fire_frame_index)
 
 
 func _set_character_layers_alpha(value: float) -> void:

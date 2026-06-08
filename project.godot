@@ -28,8 +28,6 @@ GameSession="*res://scripts/core/game_session.gd"
 GameSaveManager="*res://scripts/core/game_save_manager.gd"
 GameCheckpointRegistry="*res://scripts/core/game_checkpoint_registry.gd"
 CheckpointVisualRestore="*res://scripts/core/checkpoint_visual_restore.gd"
-ManualSaveManager="*res://scripts/core/manual_save_manager.gd"
-GameLoadPipeline="*res://scripts/core/game_load_pipeline.gd"
 Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
