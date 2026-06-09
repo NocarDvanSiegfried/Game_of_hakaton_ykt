@@ -92,6 +92,10 @@ ebe: Зеркальце — для того, у кого нет лица.
 
 [signal arg="hide_scene1_grandmother_house_layered"]
 
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_ebe_gives_amulets_mid.jpeg" fade="0.5"]
+
+narrator: Бабушка раскрывает ладонь и осторожно выкладывает обереги на стол.
+
 [background arg="res://assets/art/backgrounds/scene_01/bg_scene1_house_fireplace_close.png" fade="0.5"]
 
 audio ebe_voice "res://assets/audio/scene_01/voice/ebe_voice_12_remember.mp3" [volume="0" loop="false"]
@@ -391,6 +395,8 @@ narrator: Замёрзшая река. Идеально круглая прор�
 
 audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_02_bargyy_tangled.mp3" [volume="0" loop="false"]
 narrator: Вокруг — ледяные столбы. Баргый запутался поводком в ледяном торосе.
+
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_ice_hole_spirits.jpeg" fade="0.5"]
 
 audio "res://assets/audio/scene_01/bargyy_bark_ice_hole_1.wav" [volume="-4" loop="false"]
 audio narrator_voice "res://assets/audio/scene_01/voice/hole_part5_03_bark_hole.mp3" [volume="0" loop="false"]
