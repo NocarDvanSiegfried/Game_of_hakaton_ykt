@@ -106,14 +106,21 @@ ebe: Спите сейчас. Завтра будет трудный день.
 [signal arg="show_scene1_grandmother_house_layered"]
 [signal arg="show_scene1_sleep_pose"]
 
+audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_06_silence.mp3" [volume="0" loop="false"]
 narrator: Тишина. Только треск дров и вой ветра.
 
+audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_07_aisen_awake.mp3" [volume="0" loop="false"]
 narrator: Айсен не спит. Он смотрит в потолок и думает.
 
+audio "res://assets/audio/scene_01/cloth_rustle_wake_1.wav" [volume="-26" loop="false"]
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_sleep_01_light.mp3" [volume="0" loop="false"]
 aisen: «Не ходи на свет в пурге». Какой свет? Откуда свет в пурге?..
 
+audio "res://assets/audio/scene_01/sleep_house_creak_1.wav" [volume="-12" loop="false"]
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_sleep_02_remember.mp3" [volume="0" loop="false"]
 aisen: Бабушка никогда не говорит просто так. Запомни.
 
+audio narrator_voice "res://assets/audio/scene_01/voice/house_part1_08_close_eyes.mp3" [volume="0" loop="false"]
 narrator: Он закрывает глаза.
 
 [signal arg="hide_scene1_grandmother_house_layered"]
@@ -146,6 +153,7 @@ audio house_morning "res://assets/audio/scene_01/house_after_night_1.wav" [loop=
 [signal arg="show_scene1_wakeup_pose"]
 
 audio "res://assets/audio/scene_01/morning_stove_desc_1.wav" [volume="-12" loop="false"]
+audio narrator_voice "res://assets/audio/scene_01/voice/morning_part2_01_morning.mp3" [volume="0" loop="false"]
 narrator: Утро. Серый свет сочится сквозь ледяное окно. Печь почти погасла.
 
 audio stove_embers "res://assets/audio/scene_01/stove_embers_1.wav" [loop="true" fade="0.5" volume="-14"]
@@ -159,6 +167,7 @@ narrator: Айсен садится. Оглядывает комнату.
 # TODO portrait: leave bargyy
 
 audio "res://assets/audio/scene_01/cloth_rustle_wake_1.wav" [volume="-12" loop="false"]
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_01_morning.mp3" [volume="0" loop="false"]
 aisen: Баргый?
 
 audio house_morning -
@@ -166,6 +175,7 @@ audio "res://assets/audio/scene_01/anxious_silence_1.wav" [volume="-8" loop="fal
 narrator: Тишина.
 
 audio "res://assets/audio/scene_01/cloth_rustle_wake_2.wav" [volume="-12" loop="false"]
+audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_02_wake.mp3" [volume="0" loop="false"]
 aisen: (громче) Баргый!
 
 audio "res://assets/audio/scene_01/bargyy_missing_2.wav" [volume="-12" loop="false"]
@@ -179,6 +189,7 @@ narrator: Баргыя нигде нет. На улице — вой ветра.
 [signal arg="show_scene1_dressing_pose"]
 
 audio "res://assets/audio/scene_01/cloth_rustle_wake_3.wav" [volume="-12" loop="false"]
+audio kunney_voice "res://assets/audio/scene_01/voice/kunney_voice_02_morning.mp3" [volume="0" loop="false"]
 kunney: Айсен? Уже утро?
 
 audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_04_go_bargyy.mp3" [volume="0" loop="false"]
