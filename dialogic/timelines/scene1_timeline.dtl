@@ -392,7 +392,7 @@ audio tongus_voice -
 audio snow_run -
 audio blizzard -
 
-[background arg="res://assets/art/backgrounds/scene_01/bg_s1_ice_hole.png" fade="0.5"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_ice_hole_before_tongus.png" fade="0.8"]
 
 # TODO portrait: leave bargyy
 # TODO portrait: update aisen (reach) pos=x0.25 y0.72 size=x0.13 y0.45 [z_index="2"]
@@ -614,6 +614,8 @@ audio tongus_voice -
 # TODO portrait: join bargyy (default) pos=x0.18 y0.73 size=x0.10 y0.28 [z_index="1"]
 # TODO portrait: update aisen (kneel) pos=x0.25 y0.74 size=x0.13 y0.45 [z_index="2"]
 
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_after_battle_ice_hole.png" fade="0.8"]
+
 audio "res://assets/audio/scene_01/ice_hole_freeze_1.wav" [volume="-4" loop="false"]
 audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_01_ice_freeze.mp3" [volume="0" loop="false"]
 narrator: Прорубь начинает затягиваться новым, чистым льдом.
@@ -681,6 +683,7 @@ narrator: Это Теневой Бегун, второй Абааса, уже п
 
 audio "res://assets/audio/scene_01/kunney_vanish_1.wav" [volume="-4" loop="false"]
 audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_12_kunney_touch.mp3" [volume="0" loop="false"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_kunney_ice_doll_touch_2.png" fade="0.7"]
 narrator: Кюннэй касается её —
 
 audio "res://assets/audio/scene_01/kunney_vanish_2.wav" [volume="-4" loop="false"]
@@ -689,6 +692,7 @@ narrator: и обе исчезают.
 
 audio "res://assets/audio/scene_01/kunney_vanish_3.wav" [volume="-6" loop="false"]
 audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_14_snow_swirl.mp3" [volume="0" loop="false"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_kunney_disappeared_forest.png" fade="0.7"]
 narrator: Только снег кружится на том месте.
 
 audio "res://assets/audio/scene_01/bargyy_howl_mourn_1.wav" [volume="-4" loop="false"]
@@ -698,6 +702,7 @@ narrator: Баргый воет — долго, тоскливо.
 # TODO portrait: update aisen (sorrowful) pos=x0.50 y0.72 size=x0.13 y0.45 [z_index="2"]
 
 audio aisen_voice "res://assets/audio/scene_01/voice/aisen_voice_27_despair.mp3" [volume="0" loop="false"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_after_kunney_lost_kneel.png" fade="0.7"]
 aisen: Нет... нет, нет, нет! Я только спас тебя, Баргый, а теперь... Кюннэй...
 
 audio "res://assets/audio/scene_01/ice_hole_glow_1.wav" [volume="-4" loop="false"]
@@ -719,10 +724,12 @@ aisen: Бабушка говорила: «Не вступай в прямой б
 
 audio "res://assets/audio/scene_01/ice_dive_1.wav" [volume="-4" loop="false"]
 audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_19_dive.mp3" [volume="0" loop="false"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_jump_into_lower_world.png" fade="0.7"]
 narrator: Прыжок в прорубь.
 
 audio "res://assets/audio/scene_01/ice_dive_2.wav" [volume="-6" loop="false"]
 audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_20_fade_black.mp3" [volume="0" loop="false"]
+[background arg="res://assets/art/backgrounds/scene_01/bg_s1_lower_world_transition.png" fade="1.0"]
 narrator: Экран темнеет.
 
 audio narrator_voice "res://assets/audio/scene_01/voice/after_part8_21_chapter_end.mp3" [volume="0" loop="false"]
