@@ -1,18 +1,28 @@
 extends Node
 ## Stops Dialogic voice channels when the speaker changes or the player skips ahead.
 ## Slow advance through split narrator lines keeps one voice clip playing.
-## Rapid clicks (skip) stop the voice immediately.
+## Rapid clicks (skip) stop all voice channels immediately.
+## Scene 1: soft ambient ducking while any voice channel is active.
 
 const VOICE_CHANNELS: Array[String] = [
 	"narrator_voice", "ebe_voice", "aisen_voice", "kunney_voice", "tongus_voice",
+]
+const AMBIENT_DUCK_CHANNELS: Array[String] = [
+	"yakut_night", "fireplace", "house_morning", "stove_embers", "blizzard", "snow_run",
 ]
 const EBE_SPEAKER_ID := "ebe"
 const NARRATOR_SPEAKER_ID := "narrator"
 const AISEN_SPEAKER_ID := "aisen"
 const KUNNEY_SPEAKER_ID := "kunney"
 const TONGUS_SPEAKER_ID := "tongus"
+const SCENE1_TIMELINE_SUFFIX := "scene1_timeline.dtl"
 ## Two advances faster than this are treated as skip (ms).
 const RAPID_ADVANCE_MS := 450
+const VOICE_STOP_FADE_SEC := 0.07
+const AMBIENT_DUCK_OFFSET_DB := -5.0
+const AMBIENT_DUCK_ATTACK_SEC := 0.22
+const AMBIENT_DUCK_RELEASE_SEC := 0.7
+const AMBIENT_UNDUCK_POLL_SEC := 0.15
 
 const CHANNEL_TO_SPEAKER := {
 	"narrator_voice": NARRATOR_SPEAKER_ID,
@@ -29,9 +39,17 @@ const INTRO_COLD_SFX := [
 
 var _dialogic_connected := false
 var _last_advance_msec: int = 0
+var _ambient_duck_active := false
+var _ambient_duck_tweens: Dictionary = {}
+var _unduck_poll_timer: Timer
 
 
 func _ready() -> void:
+	_unduck_poll_timer = Timer.new()
+	_unduck_poll_timer.one_shot = false
+	_unduck_poll_timer.wait_time = AMBIENT_UNDUCK_POLL_SEC
+	_unduck_poll_timer.timeout.connect(_poll_ambient_unduck)
+	add_child(_unduck_poll_timer)
 	call_deferred("_ensure_dialogic_connected")
 
 
@@ -51,6 +69,11 @@ func _ensure_dialogic_connected() -> void:
 
 	if not Dialogic.timeline_ended.is_connected(_on_timeline_ended):
 		Dialogic.timeline_ended.connect(_on_timeline_ended)
+
+	if Dialogic.has_subsystem("Audio"):
+		var audio_started := Callable(self, "_on_dialogic_audio_started")
+		if not Dialogic.Audio.audio_started.is_connected(audio_started):
+			Dialogic.Audio.audio_started.connect(audio_started)
 
 	_dialogic_connected = true
 
@@ -90,6 +113,16 @@ func _on_about_to_show_text(info: Dictionary) -> void:
 		_:
 			stop_voice_channels()
 
+	if not info.get("append", false):
+		_apply_ambient_duck(true)
+
+
+func _on_dialogic_audio_started(_info: Dictionary) -> void:
+	if not _is_scene1_timeline():
+		return
+	if _any_voice_channel_playing():
+		_apply_ambient_duck(true)
+
 
 func _play_intro_cold_sfx_for_segment(info: Dictionary) -> void:
 	if not info.get("append", false):
@@ -108,6 +141,7 @@ func _play_intro_cold_sfx_for_segment(info: Dictionary) -> void:
 func _on_timeline_ended() -> void:
 	stop_voice_channels()
 	_last_advance_msec = 0
+	_apply_ambient_duck(false)
 
 
 func stop_voice_channels() -> void:
@@ -119,12 +153,17 @@ func stop_channels(channels: Array) -> void:
 	if not Dialogic.has_subsystem("Audio"):
 		return
 	for channel_name in channels:
-		Dialogic.Audio.update_audio(channel_name, "", {"fade_length": 0.0, "loop": false})
+		Dialogic.Audio.update_audio(
+			channel_name,
+			"",
+			{"fade_length": VOICE_STOP_FADE_SEC, "loop": false}
+		)
+	_schedule_ambient_unduck_poll()
 
 
 func _channels_to_stop_on_advance(rapid_advance: bool) -> Array[String]:
 	if rapid_advance:
-		return _voice_channels_for_current_speaker()
+		return VOICE_CHANNELS.duplicate()
 
 	if _is_mid_multiline_text_event():
 		return []
@@ -144,15 +183,6 @@ func _channels_to_stop_on_advance(rapid_advance: bool) -> Array[String]:
 		if current_speaker == channel_speaker:
 			stop_list.append(channel_name)
 
-	return stop_list
-
-
-func _voice_channels_for_current_speaker() -> Array[String]:
-	var current_speaker := _speaker_id_from_current_text_event()
-	var stop_list: Array[String] = []
-	for channel_name in VOICE_CHANNELS:
-		if CHANNEL_TO_SPEAKER.get(channel_name, "") == current_speaker:
-			stop_list.append(channel_name)
 	return stop_list
 
 
@@ -240,3 +270,91 @@ func _speaker_id_from_info(info: Dictionary) -> String:
 	if character is DialogicCharacter:
 		return character.get_identifier()
 	return str(character)
+
+
+func _is_scene1_timeline() -> bool:
+	if Dialogic.current_timeline == null:
+		return false
+	return Dialogic.current_timeline.resource_path.ends_with(SCENE1_TIMELINE_SUFFIX)
+
+
+func _any_voice_channel_playing() -> bool:
+	if not Dialogic.has_subsystem("Audio"):
+		return false
+	for channel_name in VOICE_CHANNELS:
+		if Dialogic.Audio.is_channel_playing(channel_name):
+			return true
+	return false
+
+
+func _ambient_base_volume_db(channel_name: String) -> float:
+	var entry: Dictionary = Dialogic.current_state_info.get("audio", {}).get(channel_name, {})
+	var overrides: Dictionary = entry.get("settings_overrides", {})
+	return float(overrides.get("volume", 0.0))
+
+
+func _apply_ambient_duck(duck: bool) -> void:
+	if not _is_scene1_timeline() or not Dialogic.has_subsystem("Audio"):
+		return
+
+	if duck:
+		_ambient_duck_active = true
+		_unduck_poll_timer.start()
+		for channel_name in AMBIENT_DUCK_CHANNELS:
+			if not Dialogic.Audio.is_channel_playing(channel_name):
+				continue
+			var player: AudioStreamPlayer = Dialogic.Audio.current_audio_channels.get(channel_name)
+			if player == null or not is_instance_valid(player):
+				continue
+			var target_db := _ambient_base_volume_db(channel_name) + AMBIENT_DUCK_OFFSET_DB
+			_tween_ambient_player_volume(channel_name, player, target_db, AMBIENT_DUCK_ATTACK_SEC)
+		return
+
+	_ambient_duck_active = false
+	_unduck_poll_timer.stop()
+	for channel_name in AMBIENT_DUCK_CHANNELS:
+		if not Dialogic.Audio.is_channel_playing(channel_name):
+			continue
+		var player: AudioStreamPlayer = Dialogic.Audio.current_audio_channels.get(channel_name)
+		if player == null or not is_instance_valid(player):
+			continue
+		_tween_ambient_player_volume(
+			channel_name,
+			player,
+			_ambient_base_volume_db(channel_name),
+			AMBIENT_DUCK_RELEASE_SEC
+		)
+
+
+func _tween_ambient_player_volume(
+	channel_name: String,
+	player: AudioStreamPlayer,
+	target_db: float,
+	duration_sec: float
+) -> void:
+	if _ambient_duck_tweens.has(channel_name):
+		var existing: Variant = _ambient_duck_tweens[channel_name]
+		if existing is Tween and is_instance_valid(existing):
+			(existing as Tween).kill()
+	var tween := create_tween()
+	_ambient_duck_tweens[channel_name] = tween
+	tween.tween_property(player, "volume_db", target_db, duration_sec).set_trans(Tween.TRANS_SINE).set_ease(
+		Tween.EASE_OUT
+	)
+
+
+func _schedule_ambient_unduck_poll() -> void:
+	if not _is_scene1_timeline():
+		return
+	if not _unduck_poll_timer.is_stopped():
+		return
+	_unduck_poll_timer.start()
+
+
+func _poll_ambient_unduck() -> void:
+	if not _ambient_duck_active or not _is_scene1_timeline():
+		_unduck_poll_timer.stop()
+		return
+	if _any_voice_channel_playing():
+		return
+	_apply_ambient_duck(false)
