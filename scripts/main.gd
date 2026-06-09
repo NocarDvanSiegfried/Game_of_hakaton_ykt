@@ -31,6 +31,7 @@ const SCENE1_INTRO_ATMOSPHERE_VOLUME_DB := -80.0
 
 const MAIN_MENU_SCENE := "res://scenes/ui/main_menu.tscn"
 const PAUSE_MENU_SCENE := preload("res://scenes/ui/in_game_pause_menu.tscn")
+const DEMO_END_SCENE := preload("res://scenes/ui/demo_end_screen.tscn")
 
 @onready var _atmosphere_video_layer: CanvasLayer = $AtmosphereVideoLayer
 @onready var _atmosphere_video_player: VideoStreamPlayer = %AtmosphereVideoPlayer
@@ -240,8 +241,6 @@ func _show_confirm(title: String, message: String, confirm_text: String, on_conf
 
 
 func _on_confirm_exit_to_main_menu() -> void:
-	if _chapter1_story_finished:
-		_save_chapter2_entry_checkpoint("exit_main_menu")
 	await _shutdown_dialogic_session()
 	if not is_inside_tree():
 		return
@@ -533,8 +532,16 @@ func _save_chapter2_entry_checkpoint(source: String) -> bool:
 
 
 func _on_chapter2_entry_checkpoint_signal() -> void:
-	_chapter1_story_finished = true
-	_save_chapter2_entry_checkpoint("scene1_final_signal")
+	print("[DEMO] chapter2_entry пропущен: scene1_final_signal")
+	return
+
+
+func _show_demo_end_screen() -> void:
+	await _shutdown_dialogic_session()
+	if not is_inside_tree():
+		return
+	var screen := DEMO_END_SCENE.instantiate()
+	get_tree().root.add_child(screen)
 
 
 func _persist_checkpoint_from_signal(signal_name: String) -> void:
@@ -985,12 +992,8 @@ func _on_timeline_ended() -> void:
 						"[ДИАГНОСТИКА] scene1→scene2 сразу после Continue (~%d ms). "
 						+ "Проверьте label в .dtl (должно быть: label имя, не [label name=...])." % elapsed_ms
 					)
-			_chapter1_story_finished = true
-			if not _save_chapter2_entry_checkpoint("timeline_ended_fallback"):
-				push_warning("[ChapterTransition] не удалось записать chapter2_entry при end_timeline")
-			print("[Timeline CHAIN] scene1_timeline ended → scene2_timeline (без раннего autosave)")
-			await get_tree().process_frame
-			_start_timeline("scene2_timeline")
+			print("[DEMO] Сцена 1 завершена → экран Конец демо")
+			_show_demo_end_screen()
 		"scene2_timeline":
 			print("[Timeline CHAIN] scene2_timeline ended → scene3_timeline")
 			await get_tree().process_frame
